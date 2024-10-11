@@ -1,0 +1,110 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #090643;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenedor de login */
+.login-container {
+    background-color: white;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #090643;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #090643;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+a.btn-login {
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+
+.btn-login:hover {
+    background-color: #03fa6e;
+    color: #090643;
+}
+
+.registro {
+    margin-top: 20px;
+    color: #666;
+}
+
+.registro a {
+    color: #090643;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.registro a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

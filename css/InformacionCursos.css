@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+    padding-left: 0; /* Elimina padding innecesario */
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 10px 25px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #090643;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo del banner */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados para darle un estilo limpio */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.curso-info {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.curso-info h1 {
+    font-size: 2.5rem;
+    color: #090643;
+    margin-bottom: 10px;
+}
+
+.curso-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.info-extra {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-solicitar {
+    background-color: #090643;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.btn-solicitar:hover {
+    background-color: #03fa6e;
+    color: #090643;
+    margin-bottom: 20px;
+}
+
+.contenido-curso {
+    margin-top: 20px;
+}
+
+.contenido-curso h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #090643;
+}
+
+.contenido-curso ul {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.contenido-curso li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.informacion-lateral {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.habilidades h3, .requisitos h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #090643;
+}
+
+.habilidades ul, .requisitos ul {
+    list-style: none;
+}
+
+.habilidades ul li, .requisitos p {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}

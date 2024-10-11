@@ -1,0 +1,362 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Estilos para el encabezado */
+
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+/* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+    padding-left: 0; /* Elimina padding innecesario */
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Botón de inicio de sesión */
+.login-btn {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto del botón */
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #090643; /* Color azul oscuro al pasar el mouse */
+}
+
+
+
+/* Sección de bienvenida */
+.hero {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #090643;
+    font-size: 2.5rem; /* Texto más grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 1.2rem; /* Tamaño del subtítulo */
+    margin-bottom: 40px;
+}
+
+.hero a {
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+
+
+/* Sección de Nuevos Cursos */
+.new-courses {
+    text-align: center;
+    padding: 50px;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;  /* Centra los elementos en la fila */
+    gap: 30px;                /* Espacio entre los cursos */
+    flex-wrap: wrap;           /* Permite que los cursos se ajusten en filas si es necesario */
+}
+
+.course {
+    background-color: #090643;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;              /* Ancho fijo para que se mantengan consistentes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: left;          /* Alinea el texto a la izquierda dentro de cada curso */
+    color: white;
+}
+
+.course:hover {
+    transform: translateY(-10px);
+}
+
+.course img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.course h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.course p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+}
+
+/* Botón Ver Curso */
+.btn-curso {
+    display: block;
+    text-align: center;
+    background-color: #ffffff;
+    color: #090643;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.btn-curso:hover {
+    background-color: #090643;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*Boton Explorar Cursos*/
+.cta-btn{
+    background-color: #090643;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 10%;
+}
+
+.cta-btn:hover {
+    background-color: #03fa6e;
+    color: #090643;
+}
+
+/* Sección de Beneficios Mejorada */
+.benefits {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+.benefits h2 {
+    font-size: 2.5rem;
+    color: #090643;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Aumenta el espacio entre las tarjetas de beneficio */
+    flex-wrap: wrap;
+}
+
+.benefit {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px; /* Tamaño más grande para cada tarjeta */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.benefit h3 {
+    font-size: 1.8rem;
+    color: #090643;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* Sección de Testimonios Mejorada */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #090643;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Aumenta el espacio entre testimonios */
+}
+
+.testimonial {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 320px; /* Tamaño más grande para las tarjetas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    position: relative;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial::before {
+    content: "“"; /* Añade comillas estilizadas */
+    font-size: 4rem;
+    color: #03fa6e;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+.testimonial::after {
+    content: "”";
+    font-size: 4rem;
+    color: #03fa6e;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+}
+
+.testimonial .quote {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial h3 {
+    font-size: 1.2rem;
+    color: #090643;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Sección de CTA Final */
+.cta-final {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn-final {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.cta-btn-final:hover {
+    background-color: #02d15e;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

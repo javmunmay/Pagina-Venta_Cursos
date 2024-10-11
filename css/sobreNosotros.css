@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mejora de estilos para la página Sobre Nosotros */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+    padding-left: 0; /* Elimina padding innecesario */
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Mejora de la sección hero */
+.hero {
+    background: url('imagenes/heroBackground.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Parallax */
+.parallax {
+    background: url('imagenes/parallaxBackground.jpg') no-repeat center center/cover;
+    min-height: 500px;
+    position: relative;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Sección del equipo */
+.team-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Testimonios mejorados */
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.testimonial-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+/* Animación suave */
+.testimonial-item, .team-member {
+    animation: fadeIn 1s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Sección about */
+.about {
+    background-color: #fff;
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #090643;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Valores */
+.values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.value-item {
+    width: 280px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.value-item:hover {
+    transform: scale(1.05);
+}
+
+.value-item img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.value-item h3 {
+    color: #090643;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Testimonios */
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: left;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-item h4 {
+    margin-top: 15px;
+    color: #090643;
+}
+
+
+/* Sección de CTA Final */
+.cta-final {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn-final {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.cta-btn-final:hover {
+    background-color: #02d15e;
+    color: #090643;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

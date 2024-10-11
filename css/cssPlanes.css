@@ -1,0 +1,339 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+/* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+    padding-left: 0; /* Elimina padding innecesario */
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Botón de inicio de sesión */
+.login-btn {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto del botón */
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #090643; /* Color azul oscuro al pasar el mouse */
+}
+
+/* Sección de bienvenida */
+.hero {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #090643;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+/* Sección de planes */
+.planes {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.plan {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 40%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    margin: 0 10px; /* Añade margen horizontal */
+}
+
+
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plan h2 {
+    color: #090643;
+    margin-bottom: 15px;
+}
+
+.plan p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.plan .precio {
+    font-size: 1.5rem;
+    color: #090643;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.plan ul li {
+    padding: 10px 0;
+    color: #090643;
+    font-weight: bold;
+}
+
+.btn-plan {
+    background-color: #090643;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-plan:hover {
+    background-color: #03fa6e;
+    color: #090643;
+}
+
+/* Plan destacado */
+.plan.destacado {
+    background-color: #090643;
+    color: white;
+    border: 3px solid #03fa6e;
+    position: relative;
+}
+
+.plan.destacado h2 {
+    color: #ffffff;
+}
+
+.plan.destacado p {
+    color: #d1d0d0;
+}
+
+.plan.destacado ul li {
+    color: #ffffff;
+}
+
+.plan.destacado .btn-plan {
+    background-color: white;
+    color: #090643;
+}
+
+.plan.destacado .btn-plan:hover {
+    background-color: #03fa6e;
+    color: #090643;
+}
+
+.badge-popular {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+
+
+
+/* Estilos para la sección de Preguntas Frecuentes Mejorada */
+.preguntas-frecuentes {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preguntas-frecuentes h2 {
+    text-align: center;
+    color: #090643;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.pregunta {
+    margin-bottom: 20px;
+}
+
+.pregunta-btn {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #090643;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pregunta-btn:hover {
+    background-color: #090643;
+    color: #ddd;
+}
+
+.pregunta-btn.active {
+    background-color: #090643;
+    color: #ddd;
+}
+
+.respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-top: 5px;
+}
+
+.respuesta p {
+    margin: 15px 0;
+}
+
+.pregunta-btn.active + .respuesta {
+    max-height: 200px; /* Ajusta la altura según el contenido */
+    padding: 15px 20px;
+}
+
+/* Estilo del icono */
+.icono {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.pregunta-btn.active .icono {
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+/* Sección de CTA Final */
+.cta-final {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn-final {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Elimina el subrayado */
+
+}
+
+.cta-btn-final:hover {
+    background-color: #02d15e;
+}
+
+.ahorro {
+    color: #03fa6e;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
