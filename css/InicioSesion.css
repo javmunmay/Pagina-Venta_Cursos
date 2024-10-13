@@ -6,13 +6,26 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Estilos para el encabezado */
+
 header {
     background-color: #090643;
-    padding: 20px;
+    padding: 10px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+/* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -23,7 +36,11 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 30px; /* Espacio entre los enlaces */
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+    padding-left: 0; /* Elimina padding innecesario */
+    margin: 0;
 }
 
 .nav-links li a {
