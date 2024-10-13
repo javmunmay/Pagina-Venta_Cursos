@@ -1,4 +1,4 @@
-# Estudiante Programador - Página Web de Venta de Cursos
+# Página Web de Venta de Cursos
 
 Este proyecto es una página web de venta de cursos, donde pongo en práctica algunas de mis habilidades de desarrollo web. Está construido utilizando varias tecnologías para ofrecer una experiencia de usuario dinámica y funcional.
 
