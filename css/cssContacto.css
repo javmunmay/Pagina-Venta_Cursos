@@ -96,29 +96,7 @@ nav {
     margin-bottom: 30px;
   }
   
-  /* Estilo para los campos de preferencia de contacto */
-.form-group div {
-    display: inline-block;
-    margin-right: 15px;
-  }
-  
-  input[type="radio"] {
-    width: auto;
-    margin-right: 5px;
-    vertical-align: middle; /* Alinea el radio button al centro del texto */
-  }
-  
-  label[for="contacto-email"], label[for="contacto-telefono"] {
-    vertical-align: middle;
-  }
-  
-  
-  label {
-    font-weight: bold;
-    color: #090643;
-    display: block;
-    margin-bottom: 5px;
-  }
+  /* Estilo para los campos de preferencia de contacto */  
   
   input, textarea, select {
     width: 100%;
@@ -132,7 +110,13 @@ nav {
   input[type="radio"], input[type="checkbox"] {
     width: auto;
     margin-right: 10px;
+    margin: 6px;
   }
+  input[type="radio"]:hover, input[type="checkbox"]:hover {
+    transform:scale(1.5);
+  }
+  
+
   
   .btn-submit {
     background-color: #090643;
@@ -149,8 +133,9 @@ nav {
   }
   
   .btn-submit:hover {
-    background-color: #03fa6e;
+    background-color: white;
     color: #090643;
+    border: solid;
   }
   
   /* Mejoras generales */

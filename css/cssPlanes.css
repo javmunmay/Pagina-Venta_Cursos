@@ -102,12 +102,14 @@ nav {
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     margin: 0 10px; /* Añade margen horizontal */
+    border: solid;
 }
 
 
 .plan:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border: solid;
 }
 
 .plan h2 {
@@ -144,14 +146,17 @@ nav {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 20px;
+    border: solid;
+    padding: 10px 90px;
 }
 
 .btn-plan:hover {
-    background-color: #03fa6e;
+    background-color: white;
     color: #090643;
+    border: solid;
 }
 
 /* Plan destacado */
@@ -177,11 +182,13 @@ nav {
 .plan.destacado .btn-plan {
     background-color: white;
     color: #090643;
+    
 }
 
 .plan.destacado .btn-plan:hover {
-    background-color: #03fa6e;
-    color: #090643;
+    background-color: #090643;
+    color: white;
+    border: solid;
 }
 
 .badge-popular {
