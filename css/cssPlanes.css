@@ -337,3 +337,39 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido del footer */
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en filas si es necesario */
+}
+
+.footer-menu {
+    margin-right: 50px; /* Espacio entre el menú y las redes sociales */
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px; /* Espacio entre los íconos de redes sociales */
+}
+
+.footer-social img {
+    width: 24px; /* Ajusta el tamaño de los íconos */
+    height: auto;
+}
+

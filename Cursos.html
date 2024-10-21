@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos de Desarrollo | Estudiante Programador</title>
+    <link rel="stylesheet" href="css/CursosCss.css" />
+    <link rel="stylesheet" href="css/cssPlanes.css?v=1.0" />
+    <link rel="icon" type="image/png" href="imagenes/favicon.ico" />
+    <script src="App.js"></script>
+    <script src="app.js?v=1.0"></script>
+
+
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="imagenes/LogoFondoAzul.jpg"
+          alt="Logo Estudiante Programador"
+          class="logo"
+        />
+        <ul class="nav-links">
+          <li><a href="Inicio.html">Inicio</a></li>
+          <li><a href="Cursos.html">Cursos</a></li>
+          <li><a href="Planes.html">Planes</a></li>
+          <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+        <a href="InicioSesion/InicioSesion.html" class="login-btn">Iniciar Sesión</a>
+
+      </nav>
+    </header>
+
+    <main>
+      <!-- Sección de bienvenida -->
+      <section class="hero">
+        <h1>Cursos de Desarrollo, IA, Ciberseguridad...</h1>
+        <p>¿Qué quieres aprender hoy?</p>
+        <input type="text" id="buscador" class="search-bar" placeholder="Busca un curso..." />
+      </section>
+
+      <!-- Sección de todos nuestros cursos -->
+      <section class="cursos">
+        <h2>Todos nuestros cursos</h2>
+        <div class="grid-cursos">
+          <article class="curso">
+            <img
+              src="imagenes/CursoJavaBanner.jpg"
+              alt="Curso Java Orientado a Objetos"
+            />
+            <div class="curso-info">
+              <h3>Java Orientado a Objetos desde 0</h3>
+              <p>Aprende a dominar Java Orientado a Objetos desde cero.</p>
+              <a href="informacionCursos/CursoJava.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+          <!--
+          <article class="curso">
+            <img
+              src="imagenes/CursoPythonBanner.jpg"
+              alt="Curso de Python e IA"
+            />
+            <div class="curso-info">
+              <h3>Python: Fundamentos</h3>
+              <p>Aprende los fundamentos de Python.</p>
+              <button class="btn-curso">Ver Curso</button>
+            </div>
+          </article>
+          -->
+
+          <article class="curso">
+            <img src="imagenes/CursoPhpBanner.jpg" alt="Curso PHP" />
+            <div class="curso-info">
+              <h3>Curso de PHP Desde Cero</h3>
+              <p>Aprende PHP desde cero con nuestro curso para principiantes</p>
+              <a href="informacionCursos/CursoPhp.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img src="imagenes/CursoHtmlBanner.jpg" alt="Curso de HTML y CSS" />
+            <div class="curso-info">
+              <h3>Curso de HTML desde Cero</h3>
+              <p>
+                Aprende HTML con este curso completo desde cero hasta avanzado.
+              </p>
+              <a href="informacionCursos/CursoHtml.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoCiberSeguridadBanner.jpg"
+              alt="Curso de Ciberseguridad"
+            />
+            <div class="curso-info">
+              <h3>Curso de Ciberseguridad: Inicios</h3>
+              <p>
+                Aprende los conceptos clave para proteger sistemas y datos.
+              </p>
+              <a href="informacionCursos/CursoCiberseguridad.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoPythonBanner.jpg"
+              alt="Curso de Python e IA"
+            />
+            <div class="curso-info">
+              <h3>Python: Fundamentos</h3>
+              <p>Aprende los fundamentos de Python.</p>
+              <a href="informacionCursos/CursoPython.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img src="imagenes/CursoIAiBanner.jpg" alt="Curso de Python e IA" />
+            <div class="curso-info">
+              <h3>IA: Algoritmos</h3>
+              <p>Aprende a crear algoritmos de IA con Python.</p>
+              <a href="informacionCursos/CursoIA.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoLinuxBanner.jpg"
+              alt="Curso de Python e IA"
+            />
+            <div class="curso-info">
+              <h3>Linux: Comandos terminal</h3>
+              <p>Aprende a usar los comandos de Linux como un experto.</p>
+              <a href="informacionCursos/CursoLinuxComandos.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoFundamentosJSBanner.jpg"
+              alt="Curso de Python e IA"
+            />
+            <div class="curso-info">
+              <h3>JavaScript: Fundamentos</h3>
+              <p>Aprende los fundamentos básicos de Javascript</p>
+              <a href="informacionCursos/CursoJSFundamentos.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoIntroduccionProgramacionBanner.jpg"
+              alt="Introducción a la Programación"
+            />
+            <div class="curso-info">
+              <h3>Introducción a la Programación</h3>
+              <p>
+                Aprende todo lo necesario para saber programar como un
+                profesional.
+              </p>
+              <a href="informacionCursos/CursoIntroduccionProg.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img
+              src="imagenes/CursoPhpFundamentosBanner.jpg"
+              alt="PHP Fundamentos"
+            />
+            <div class="curso-info">
+              <h3>PHP: Fundamentos</h3>
+              <p>Aprende los fundamentos básicos de PHP</p>
+              <a href="informacionCursos/CursoPhpFundamentos.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img src="imagenes/CursoAngularBanner.jpg" alt="PHP Fundamentos" />
+            <div class="curso-info">
+              <h3>Angular: Fundamentos</h3>
+              <p>Aprende los fundamentos básicos de Angular</p>
+              <a href="informacionCursos/CursoAngularFundamentos.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <article class="curso">
+            <img src="imagenes/CursoSqlBanner.jpg" alt="PHP Fundamentos" />
+            <div class="curso-info">
+              <h3>SQL desde 0</h3>
+              <p>Aprende a manejar bases de datos SQL desde cero</p>
+              <a href="informacionCursos/CursoSqlDesdeCero.html" class="btn-curso">Ver Curso</a>
+            </div>
+          </article>
+
+          <!-- Agrega más cursos aquí -->
+        </div>
+      </section>
+
+      <!-- Sección de testimonios -->
+      <section class="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonio">
+          <p>
+            "Gracias a Estudiante Programador conseguí mi primer trabajo como
+            desarrollador web."
+          </p>
+          <h4>- Juan Pérez</h4>
+        </div>
+        <div class="testimonio">
+          <p>
+            "La plataforma es muy completa y fácil de usar. ¡Recomendado 100%!"
+          </p>
+          <h4>- Ana Martínez</h4>
+        </div>
+      </section>
+
+      <!-- Sección de CTA Final -->
+      <section class="cta-final">
+        <h2>Diseñado para potenciar tus habilidades</h2>
+        <p>
+          Comienza uno de nuestros cursos y no pierdas la oportunidad de desarrollar tus habilidades con el apoyo de una comunidad activa.
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-menu">
+          <ul>
+            <li><a href="Inicio.html">Inicio</a></li> 
+            <li><a href="PoliticaPrivacidad.html">Política de privacidad</a></li>
+            <li><a href="TerminosCondiciones.html">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com" target="_blank"><img src="iconos/tik-tok.png" alt="TikTok" /></a>
+          <a href="https://www.instagram.com" target="_blank"><img src="iconos/instagram.png" alt="Instagram" /></a>
+          <a href="https://www.patreon.com" target="_blank"><img src="iconos/patreon.png" alt="Patreon" /></a>
+          <a href="https://www.youtube.com" target="_blank"><img src="iconos/youtube.png" alt="YouTube" /></a>
+        </div>
+      </div>
+      <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
+    </footer>
+    <script src="App.js"></script>
+  </body>
+</html>
