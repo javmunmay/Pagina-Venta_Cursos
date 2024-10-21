@@ -160,6 +160,7 @@ nav {
     background-color: #090643;
     color: white;
     cursor: pointer;
+    border: solid white 1px;
 }
 
 
@@ -177,10 +178,11 @@ nav {
     cursor: pointer;
     margin-top: 10px;
     width: 10%;
+    border: solid;
 }
 
 .cta-btn:hover {
-    background-color: #03fa6e;
+    background-color: white;
     color: #090643;
 }
 

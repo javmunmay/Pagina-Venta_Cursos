@@ -190,10 +190,11 @@ nav {
     display: block; /* Asegura que el botón se comporte como un bloque completo */
     text-align: center; /* Centra el texto dentro del botón */
     text-decoration: none; /* Elimina el subrayado */
+    border: solid;
 }
 
 .btn-curso:hover {
-    background-color: #03fa6e;
+    background-color: white;
     color: #090643;
 }
 
