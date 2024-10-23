@@ -40,9 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Login exitoso
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
-            echo "Login exitoso. Redirigiendo...";
-            // Aquí puedes redirigir a otra página:
-            header("Location: ../InicioSesion/MiAcademia.html");
+            $_SESSION['nombre'] = $user['nombre'];  // Guarda el nombre en la sesión
+            
+            // Redirigir a MiAcademia.html con el nombre en la URL
+            header("Location: ../InicioSesion/MiAcademia.html?nombre=" . urlencode($user['nombre']));
+            exit();
         } else {
             // Contraseña incorrecta
             header("Location: ../InicioSesion/InicioSesion.html?error=Contraseña incorrecta.");
