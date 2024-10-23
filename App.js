@@ -36,6 +36,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Mostrar el popup
+document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById('welcome-popup');
+    const closeButton = document.getElementById('close-popup');
+
+    // Mostrar el popup cuando se cargue la página
+    popup.style.display = 'flex';
+
+    // Cerrar el popup al hacer clic en la "X"
+    closeButton.onclick = function() {
+        popup.style.display = 'none';
+    }
+
+    // Cerrar el popup automáticamente después de 8 segundos
+    setTimeout(function() {
+        popup.style.display = 'none';
+    }, 3000); // 3 segundos
+});
+
+
+
+
+
+
   
 
 

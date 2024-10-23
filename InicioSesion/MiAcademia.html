@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Academia - Estudiante Programador</title>
     <link rel="stylesheet" href="../css/miAcademia.css" />
+    <script src="../App.js"></script>
+  <script src="../App.js?v=1.0"></script>
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
+    
   </head>
   <body>
     <header>
@@ -20,7 +23,7 @@
           <li class="dropdown">
             <a href="#">Mi Perfil</a>
             <div class="dropdown-content">
-              <a href="InformacionPersonal">Información Personal</a>
+              <a href="InformacionPersonal.html">Información Personal</a>
               <a href="#configuracion-seguridad">Configuración de Seguridad</a>
               <a href="#certificados-logros">Certificados y Logros</a>
               <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
@@ -38,10 +41,17 @@
     <!-- Contenedor para el mensaje de bienvenida -->
     <div
       id="welcome-message"
-      style="font-size: 18px; margin: 20px; color: green"
+      style="font-weight: bold; color: #090643; font-size: 30px; padding: 15px"
     ></div>
 
     <main>
+      <div id="welcome-popup" class="welcome-popup">
+        <div class="popup-content">
+          <span id="close-popup" class="close">&times;</span>
+          <h2>Bienvenido a tu Academia</h2>
+        </div>
+      </div>
+
       <section class="hero-banner">
         <div class="banner-content">
           <h1>
@@ -112,21 +122,25 @@
       <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
     </footer>
   </body>
+
+  <script src="../App.js"></script>
+  <script src="../App.js?v=1.0"></script>
+
   <!-- Script para capturar el parámetro de nombre y mostrar el mensaje de bienvenida -->
   <script>
     // Función para obtener el valor de un parámetro en la URL
     function getParameterByName(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
     }
 
     // Obtener el nombre de la URL
-    const nombre = getParameterByName('nombre');
+    const nombre = getParameterByName("nombre");
 
     // Mostrar el mensaje de bienvenida si el nombre existe
     if (nombre) {
-        const welcomeMessage = document.getElementById('welcome-message');
-        welcomeMessage.innerHTML = "¡Bienvenido, " + nombre + "!";
+      const welcomeMessage = document.getElementById("welcome-message");
+      welcomeMessage.innerHTML = "¡Bienvenido, " + nombre + "!";
     }
-</script>
+  </script>
 </html>
