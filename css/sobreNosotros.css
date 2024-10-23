@@ -262,6 +262,7 @@ nav {
 .cta-btn-final:hover {
     background-color: #02d15e;
     color: #090643;
+    border: solid rgb(1, 129, 12) 1px;
 }
 
 

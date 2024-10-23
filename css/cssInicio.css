@@ -60,6 +60,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
 }
 
 .login-btn:hover {
@@ -184,6 +185,8 @@ nav {
 .cta-btn:hover {
     background-color: white;
     color: #090643;
+    border: solid 1px;
+    font-weight: bold;
 }
 
 /* Sección de Beneficios Mejorada */
@@ -345,10 +348,12 @@ nav {
     font-size: 1.2rem;
     transition: background-color 0.3s;
     text-decoration: none; /* Elimina el subrayado */
+    
 }
 
 .cta-btn-final:hover {
     background-color: #02d15e;
+    border: solid rgb(1, 129, 12) 1px;
 }
 
 
@@ -391,6 +396,10 @@ footer {
 .footer-social {
     display: flex;
     gap: 15px; /* Espacio entre los íconos de redes sociales */
+}
+
+.footer-social img:hover{
+    transform: scale(1.3);
 }
 
 .footer-social img {

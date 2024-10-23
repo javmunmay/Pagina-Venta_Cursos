@@ -58,6 +58,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
 }
 
 .login-btn:hover {
@@ -147,6 +148,7 @@ nav {
 
 .cta-btn-final:hover {
     background-color: #02d15e;
+    border: solid rgb(1, 129, 12) 1px;
 }
 
 /* Footer */
@@ -190,4 +192,8 @@ footer {
 .footer-social img {
     width: 24px;
     height: auto;
+}
+
+.footer-social img:hover{
+    transform: scale(1.3);
 }

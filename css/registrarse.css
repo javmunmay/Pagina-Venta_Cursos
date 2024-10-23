@@ -147,7 +147,11 @@ a.btn-login {
 /*Aceptar politica privacidad checkbox*/
 
 
-
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    margin: 6px;
+  }
 
 
 
@@ -193,4 +197,8 @@ footer {
 .footer-social img {
     width: 24px; /* Ajusta el tamaño de los íconos */
     height: auto;
+}
+
+.footer-social img:hover{
+    transform: scale(1.3);
 }
