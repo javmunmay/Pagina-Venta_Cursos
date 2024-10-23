@@ -356,6 +356,30 @@ nav {
     border: solid rgb(1, 129, 12) 1px;
 }
 
+/* Información de contacto */
+.info-contacto, .redes-sociales {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .info-contacto h2, .redes-sociales h2 {
+    color: #090643;
+    margin-bottom: 20px;
+  }
+  
+  /* Redes sociales */
+  .redes-sociales a {
+    margin: 0 15px;
+  }
+  
+  .redes-sociales img {
+    width: 40px;
+    transition: transform 0.3s;
+  }
+  
+  .redes-sociales img:hover {
+    transform: scale(1.2);
+  }
 
 
 
