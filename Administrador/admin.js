@@ -88,10 +88,12 @@ function llenarTabla(usuarios) {
     celdaNacimiento.textContent = usuario.fecha_nacimiento;
 
     let celdaUser = document.createElement("td");
-    celdaUser.textContent = usuario.User ? "Sí" : "No";
+    // Convertir el valor de usuario.User en número o booleano
+    celdaUser.textContent = parseInt(usuario.User) ? "Sí" : "No";
 
     let celdaAdmin = document.createElement("td");
-    celdaAdmin.textContent = usuario.Admin ? "Sí" : "No";
+    // Convertir el valor de usuario.Admin en número o booleano
+    celdaAdmin.textContent = parseInt(usuario.Admin) ? "Sí" : "No";
 
     // Agregar celdas a la fila
     fila.appendChild(celdaID);

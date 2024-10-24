@@ -21,36 +21,41 @@ if (isset($input['servicio'])) {
 
     switch ($servicio) {
         case 'listar':
-            // Listar todos los usuarios
-            $sql = "SELECT id, nombre, email, numero_telefono, fecha_nacimiento FROM usuarios";
+            // Consulta SQL para obtener todos los usuarios
+            $sql = "SELECT id, nombre, email, numero_telefono, fecha_nacimiento, User, Admin FROM usuarios";
             $result = $conn->query($sql);
-
+        
             $usuarios = [];
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    // Asegúrate de que las columnas User y Admin se devuelven correctamente
                     $usuarios[] = $row;
                 }
             }
             echo json_encode($usuarios);
             break;
+        
 
-        case 'insertar':
-            // Insertar un nuevo usuario
-            $nombre = $input['nombre'];
-            $email = $input['email'];  // Asegúrate de tener el campo email en tu formulario
-            $password = password_hash($input['password'], PASSWORD_DEFAULT);  // Encriptar la contraseña
-            $telefono = $input['numero_telefono'];
-            $fecha_nacimiento = $input['fecha_nacimiento'];
-
-            $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento)
-                    VALUES ('$nombre', '$email', '$password', '$telefono', '$fecha_nacimiento')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo json_encode(["message" => "Usuario agregado exitosamente"]);
-            } else {
-                echo json_encode(["error" => "Error: " . $conn->error]);
-            }
-            break;
+            case 'insertar':
+                // Insertar un nuevo usuario
+                $nombre = $input['nombre'];
+                $email = $input['email'];
+                $password = password_hash($input['password'], PASSWORD_DEFAULT);  // Encriptar la contraseña
+                $telefono = $input['numero_telefono'];
+                $fecha_nacimiento = $input['fecha_nacimiento'];
+                $user = $input['User'];  // Asegúrate de que el frontend envía estos valores correctamente
+                $admin = $input['Admin'];
+            
+                $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, user, admin)
+                        VALUES ('$nombre', '$email', '$password', '$telefono', '$fecha_nacimiento', '$user', '$admin')";
+            
+                if ($conn->query($sql) === TRUE) {
+                    echo json_encode(["message" => "Usuario agregado exitosamente"]);
+                } else {
+                    echo json_encode(["error" => "Error: " . $conn->error]);
+                }
+                break;
+            
 
         case 'modificar':
             // Modificar un usuario existente
