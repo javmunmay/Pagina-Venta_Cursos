@@ -1,0 +1,278 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Contenedor para el mensaje de bienvenida */
+.welcome-message{
+    font-weight: bold;
+    color: #090643;
+    font-size: medium;
+}
+
+
+/* Estilos para el popup */
+.welcome-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegurarse de que esté por encima del resto del contenido */
+    
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+}
+
+/* Estilo de la "X" para cerrar el popup */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    
+}
+
+.close:hover {
+    color: red; /* Cambiar de color al pasar el cursor por encima */
+}
+
+
+/* Estilos para el encabezado */
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+    /*left: 1000px;*/
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* Sección Hero Banner */
+.hero-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+
+.banner-content {
+    flex: 2;
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    color: #090643;
+}
+
+.progreso-usuario{
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    border: solid #090643;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/*Tabla de registros, modificaciones, añadidos... (CRUD)*/
+
+.h2TablaUsuarios{
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 20px;
+}
+
+
+.tablaAjax-usuarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+
+
+
+
+/*CSS de la tabla de moficacion... CRUD*/
+
+
+
+  /* CSS para el formulario:   */
+  .formPersonas {
+    visibility:hidden ;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 11;
+    background-color: white;
+    border: 2px solid #090643;
+    border-radius: 10px;
+    padding: 20px 40px;
+    color: #090643;
+    font-weight: bold;
+    outline: none;
+    
+    
+
+    /*	opacity:0;   */
+    /*	transition: all 1s;   */
+  }
+
+  .tabla_personas{
+    color: #090643;
+    background-color: aliceblue;
+    border: solid #090643;
+    border-radius: 20px;
+    outline: none;
+     
+
+  }
+  table th, table td {
+    border: none; /* Elimina los bordes de las celdas */
+    padding: 10px;
+}
+
+
+  .formPersonas div label {
+    display: block;
+    margin-top: 0.5em;
+    outline: none;
+  }
+
+  .formPersonas .btn button {
+    display: block;
+    margin-top: 1em;
+    color: #090643;
+    background-color: white;
+    border: solid #03fa6e;
+    margin: 6px;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+button{
+    color: #090643;
+    background-color: white;
+    border: solid #03fa6e;
+    margin: 6px;
+    padding: 6px;
+    border-radius: 20px;
+    
+  }
+
+  button:hover{
+    color: #090643;
+    background-color: white;
+    border: solid #090643;
+  }
+
+  .formPersonas .btn button:hover {
+    color: #090643;
+    background-color: white;
+    border: solid #090643;
+  }
+
+
+  /* Estilos para el botón "Borrar" en hover */
+  button.btnBorrar:hover {
+    color: #090643;
+    background-color: white;
+    border: solid red;
+    margin: 6px;
+    padding: 6px;
+    border-radius: 20px;
+}
+
+button.btModificar:hover {
+    color: #090643;
+    background-color: white;
+    border: solid orange;
+    margin: 6px;
+    padding: 6px;
+    border-radius: 20px;
+}
+
+
+
+  .ver {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
