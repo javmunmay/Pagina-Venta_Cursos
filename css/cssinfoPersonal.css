@@ -41,6 +41,8 @@ nav {
     margin: 0;
     position: relative;
     /*left: 1000px;*/
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
 }
 
 .nav-links li a {

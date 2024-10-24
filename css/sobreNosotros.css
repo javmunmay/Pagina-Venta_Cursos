@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Encabezado */
+/* Estilos para el encabezado */
 header {
     background-color: #090643;
     padding: 10px;
@@ -19,8 +19,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
 }
 
+/* Estilos para la navegación */
 nav {
     display: flex;
     justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
@@ -49,7 +53,42 @@ nav {
     font-weight: bold;
 }
 
+/* Botón de inicio de sesión */
+.login-btn {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto del botón */
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
 
+.login-btn:hover {
+    background-color: white;
+    color: #090643; /* Color azul oscuro al pasar el mouse */
+}
+
+
+
+.hero {
+    background-color: #e0e0e0;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid #03fa6e;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    color: #090643;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    color: #666;
+  }
 
 
 
@@ -92,6 +131,7 @@ nav {
     margin: 40px auto;
     max-width: 1200px;
     text-align: center;
+    border-radius: 20px;
 }
 
 .about h2 {
@@ -311,4 +351,3 @@ footer {
     width: 24px; /* Ajusta el tamaño de los íconos */
     height: auto;
 }
-
