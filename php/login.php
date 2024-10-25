@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prevenir inyecciones SQL
     $email = $conn->real_escape_string($email);
-    $password = $conn->real_escape_string($password);
 
     // Buscar el usuario por email
     $sql = "SELECT * FROM usuarios WHERE email = ?";
@@ -34,22 +33,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Obtener los datos del usuario
         $user = $result->fetch_assoc();
+        $hashed_password = $user['password']; // Contraseña cifrada o sin cifrar en la base de datos
 
         // Verificar la contraseña
-        if ($password == $user['password']) {  // Comparación simple, mejor usar password_hash() y password_verify()
-            // Login exitoso
+        if (password_verify($password, $hashed_password)) {
+            // Login exitoso con contraseña cifrada
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
-            $_SESSION['nombre'] = $user['nombre'];  // Guarda el nombre en la sesión
-            
+            $_SESSION['nombre'] = $user['nombre'];
+
             // Redirigir al rol adecuado según si es un usuario o un administrador
             if ($user['Admin'] == true) {
-            // Si es administrador, redirigir a HomeAdmin.html
-            header("Location: ../Administrador/HomeAdmin.html");
-        } else {
-            // Si es usuario normal, redirigir a MiAcademia.html con el nombre en la URL
-            header("Location: ../InicioSesion/MiAcademia.html?nombre=" . urlencode($user['nombre']));
-        }
+                header("Location: ../Administrador/HomeAdmin.php");
+            } else {
+                header("Location: ../InicioSesion/MiAcademia.php?nombre=" . urlencode($user['nombre']));
+            }
+            exit();
+
+        } elseif ($password == $hashed_password) {
+            // Si la contraseña está sin cifrar, es correcta, y se debe cifrar ahora
+            $new_hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // Actualizar la contraseña en la base de datos
+            $update_sql = "UPDATE usuarios SET password = ? WHERE id = ?";
+            $update_stmt = $conn->prepare($update_sql);
+            $update_stmt->bind_param("si", $new_hashed_password, $user['id']);
+            $update_stmt->execute();
+            $update_stmt->close();
+
+            // Login exitoso después de actualizar la contraseña
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['nombre'] = $user['nombre'];
+
+            // Redirigir al rol adecuado según si es un usuario o un administrador
+            if ($user['Admin'] == true) {
+                header("Location: ../Administrador/HomeAdmin.php");
+            } else {
+                header("Location: ../InicioSesion/MiAcademia.php?nombre=" . urlencode($user['nombre']));
+            }
             exit();
 
         } else {

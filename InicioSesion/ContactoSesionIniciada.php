@@ -1,3 +1,25 @@
+<?php
+// Verificar si la sesión ya está iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Iniciar la sesión solo si no está ya iniciada
+}
+
+// Configuraciones para deshabilitar el caché
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['user_id'])) {
+    // Redirigir al login si no está autenticado
+    header("Location: InicioSesion.html");
+    exit();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -18,22 +40,22 @@
           class="logo"
         />
         <ul class="nav-links">
-          <li><a href="MiAcademia.html">Inicio</a></li>
+          <li><a href="MiAcademia.php">Inicio</a></li>
           <li class="dropdown">
             <a href="#">Mi Perfil</a>
             <div class="dropdown-content">
-              <a href="InformacionPersonal.html">Información Personal</a>
+              <a href="InformacionPersonal.php">Información Personal</a>
               <a href="#configuracion-seguridad">Configuración de Seguridad</a>
               <a href="#certificados-logros">Certificados y Logros</a>
               <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
               <div class="cerrarSesion">
-                <a href="#cerrar-sesion">Cerrar Sesión</a>
+                <a href="../php/logout.php">Cerrar Sesión</a>
               </div>
             </div>
           </li>
           <li><a href="#">Cursos</a></li>
           <li><a href="#">Mis Certificados</a></li>
-          <li><a href="ContactoSesionIniciada.html">Ayuda</a></li>
+          <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
         </ul>
       </nav>
     </header>
