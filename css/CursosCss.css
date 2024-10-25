@@ -116,6 +116,69 @@ nav {
     border-color: #090643;
 }
 
+/*Sección FILTROS buscador*/
+
+.custom-select {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+    margin: 0 auto 10px;
+    
+    
+}
+
+.filtros-container {
+    margin-top: 10px;
+}
+
+.selected-option {
+    
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: #090643;
+    font-size: 1rem;
+    
+    
+}
+
+
+.options {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    z-index: 10;
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto del ul */
+    margin: 0; /* Elimina el margen por defecto del ul */
+}
+
+
+
+.options li {
+    padding: 10px;
+    color: #090643;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.options li:hover {
+    border-radius: 25px;
+    border: solid #090643;
+}
+
+/* Mostrar opciones cuando esté activo */
+.custom-select.open .options {
+    display: block;
+}
+
+
 /* Sección de todos nuestros cursos */
 .cursos {
     padding: 20px 0; /* Ajustamos para asegurar margen interno superior e inferior */

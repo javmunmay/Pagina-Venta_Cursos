@@ -1,25 +1,74 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Seleccionamos el input de búsqueda y la lista de cursos
     const searchBar = document.getElementById('buscador');
+    const levelSelect = document.getElementById('nivel-select');
+    const categorySelect = document.getElementById('categoria-select');
     const courses = document.querySelectorAll('.curso');
 
-    // Añadimos un evento para cuando el usuario escribe en el campo de búsqueda
-    searchBar.addEventListener('keyup', function (e) {
-        const searchString = e.target.value.toLowerCase();
+    let selectedLevel = "";
+    let selectedCategory = "";
 
-        // Filtramos los cursos que coincidan con el texto
+    // Función para aplicar los filtros
+    function applyFilters() {
+        const searchString = searchBar.value.toLowerCase();
+
         courses.forEach(course => {
             const courseTitle = course.querySelector('h3').textContent.toLowerCase();
-            if (courseTitle.includes(searchString)) {
-                course.style.display = 'block'; // Mostrar si coincide
+            const courseLevel = course.getAttribute('data-nivel');
+            const courseCategory = course.getAttribute('data-categoria');
+
+            const matchesSearch = courseTitle.includes(searchString);
+            const matchesLevel = selectedLevel === "" || courseLevel === selectedLevel;
+            const matchesCategory = selectedCategory === "" || courseCategory === selectedCategory;
+
+            if (matchesSearch && matchesLevel && matchesCategory) {
+                course.style.display = 'block';
             } else {
-                course.style.display = 'none'; // Ocultar si no coincide
+                course.style.display = 'none';
             }
         });
+    }
+
+    // Evento para seleccionar una opción de nivel
+    levelSelect.querySelector('.selected-option').addEventListener('click', () => {
+        levelSelect.classList.toggle('open');
     });
 
+    levelSelect.querySelector('.options').addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            selectedLevel = e.target.getAttribute('data-value');
+            levelSelect.querySelector('.selected-option').textContent = e.target.textContent;
+            levelSelect.classList.remove('open');
+            applyFilters(); // Aplicar filtros cuando cambia la selección
+        }
+    });
+
+    // Evento para seleccionar una opción de categoría
+    categorySelect.querySelector('.selected-option').addEventListener('click', () => {
+        categorySelect.classList.toggle('open');
+    });
+
+    categorySelect.querySelector('.options').addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            selectedCategory = e.target.getAttribute('data-value');
+            categorySelect.querySelector('.selected-option').textContent = e.target.textContent;
+            categorySelect.classList.remove('open');
+            applyFilters(); // Aplicar filtros cuando cambia la selección
+        }
+    });
+
+    // Cerrar el menú si se hace clic fuera
+    document.addEventListener('click', (e) => {
+        if (!levelSelect.contains(e.target)) {
+            levelSelect.classList.remove('open');
+        }
+        if (!categorySelect.contains(e.target)) {
+            categorySelect.classList.remove('open');
+        }
+    });
 });
+
+
+
 
 /*
 // Control del slider para cambiar automáticamente de curso
