@@ -180,6 +180,7 @@ nav {
     color: #090643;
     font-weight: bold;
     outline: none;
+    margin: 0 auto;
     
     
 
@@ -187,15 +188,18 @@ nav {
     /*	transition: all 1s;   */
   }
 
-  .tabla_personas{
-    color: #090643;
-    background-color: aliceblue;
-    border: solid #090643;
-    border-radius: 20px;
-    outline: none;
-     
-
-  }
+  /* Ajustar el ancho y centrar la tabla */
+.tabla_personas {
+  width: 80%; /* Ancho adaptable */
+  max-width: 1000px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar la tabla */
+  color: #090643;
+  background-color: aliceblue;
+  border: solid #090643;
+  border-radius: 20px;
+  border-collapse: collapse; /* Para un diseño más limpio */
+}
+  
   table th, table td {
     border: none; /* Elimina los bordes de las celdas */
     padding: 10px;

@@ -28,34 +28,31 @@ if (isset($input['servicio'])) {
             $usuarios = [];
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    // Asegúrate de que las columnas User y Admin se devuelven correctamente
                     $usuarios[] = $row;
                 }
             }
             echo json_encode($usuarios);
             break;
-        
 
-            case 'insertar':
-                // Insertar un nuevo usuario
-                $nombre = $input['nombre'];
-                $email = $input['email'];
-                $password = password_hash($input['password'], PASSWORD_DEFAULT);  // Encriptar la contraseña
-                $telefono = $input['numero_telefono'];
-                $fecha_nacimiento = $input['fecha_nacimiento'];
-                $user = $input['User'];  // Asegúrate de que el frontend envía estos valores correctamente
-                $admin = $input['Admin'];
+        case 'insertar':
+            // Insertar un nuevo usuario
+            $nombre = $input['nombre'];
+            $email = $input['email'];
+            $password = password_hash($input['password'], PASSWORD_DEFAULT);
+            $telefono = $input['numero_telefono'];
+            $fecha_nacimiento = $input['fecha_nacimiento'];
+            $user = $input['User'];
+            $admin = $input['Admin'];
             
-                $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, user, admin)
-                        VALUES ('$nombre', '$email', '$password', '$telefono', '$fecha_nacimiento', '$user', '$admin')";
+            $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, user, admin)
+                    VALUES ('$nombre', '$email', '$password', '$telefono', '$fecha_nacimiento', '$user', '$admin')";
             
-                if ($conn->query($sql) === TRUE) {
-                    echo json_encode(["message" => "Usuario agregado exitosamente"]);
-                } else {
-                    echo json_encode(["error" => "Error: " . $conn->error]);
-                }
-                break;
-            
+            if ($conn->query($sql) === TRUE) {
+                echo json_encode(["message" => "Usuario agregado exitosamente"]);
+            } else {
+                echo json_encode(["error" => "Error: " . $conn->error]);
+            }
+            break;
 
         case 'modificar':
             // Modificar un usuario existente
@@ -87,6 +84,14 @@ if (isset($input['servicio'])) {
             } else {
                 echo json_encode(["error" => "Error: " . $conn->error]);
             }
+            break;
+
+        case 'contarUsuarios':
+            // Contar el número total de usuarios
+            $sql = "SELECT COUNT(*) as total FROM usuarios";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            echo json_encode($row['total']);
             break;
 
         default:

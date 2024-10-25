@@ -42,9 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $user['email'];
             $_SESSION['nombre'] = $user['nombre'];  // Guarda el nombre en la sesión
             
-            // Redirigir a MiAcademia.html con el nombre en la URL
+            // Redirigir al rol adecuado según si es un usuario o un administrador
+            if ($user['Admin'] == true) {
+            // Si es administrador, redirigir a HomeAdmin.html
+            header("Location: ../Administrador/HomeAdmin.html");
+        } else {
+            // Si es usuario normal, redirigir a MiAcademia.html con el nombre en la URL
             header("Location: ../InicioSesion/MiAcademia.html?nombre=" . urlencode($user['nombre']));
+        }
             exit();
+
         } else {
             // Contraseña incorrecta
             header("Location: ../InicioSesion/InicioSesion.html?error=Contraseña incorrecta.");
