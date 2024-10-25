@@ -59,6 +59,7 @@ nav {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    
 }
 
 .login-container h1 {
@@ -93,17 +94,20 @@ nav {
     font-size: 1rem;
 }
 
-a.btn-login {
-    text-decoration: none; /* Elimina el subrayado */
-    
-}
-
 
 .btn-login:hover {
     background-color: white;
     color: #090643;
     border: solid;
+    
 }
+
+.login-container p.registro {
+    text-align: left; /* Alinea los textos a la izquierda */
+}
+
+
+
 
 .registro {
     margin-top: 20px;
@@ -114,6 +118,7 @@ a.btn-login {
     color: #090643;
     text-decoration: none;
     font-weight: bold;
+    
     
 }
 

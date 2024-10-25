@@ -166,7 +166,7 @@ if (!isset($_SESSION['user_id'])) {
     // Mostrar el mensaje de bienvenida si el nombre existe
     if (nombre) {
       const welcomeMessage = document.getElementById("welcome-message");
-      welcomeMessage.innerHTML = "¡Bienvenido, " + nombre + "!";
+      welcomeMessage.innerHTML = "¡Hola, " + nombre + "! ";
     }
   </script>
 </html>

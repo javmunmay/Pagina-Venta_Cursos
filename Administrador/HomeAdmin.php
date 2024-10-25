@@ -12,7 +12,7 @@ header("Expires: 0"); // Proxies.
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
     // Redirigir al login si no está autenticado
-    header("Location: InicioSesion.html");
+    header("Location: ../InicioSesion/InicioSesion.html");
     exit();
 }
 ?>
