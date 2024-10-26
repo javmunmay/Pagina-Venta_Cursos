@@ -150,6 +150,37 @@ nav {
 }
 
 
+/*Prefijo del numero de telefono en registro*/
+/* Contenedor de prefijo y número de teléfono */
+.prefijo {
+    display: flex;
+    gap: 5px; /* Espacio entre el prefijo y el número */
+    align-items: center; /* Alinea verticalmente ambos elementos */
+    
+}
+
+/* Selector del prefijo */
+.select-prefijo {
+    width: 70px; /* Ajusta el ancho del selector para que sea más pequeño */
+    padding: 8.5px; /* Reduce el padding interno para que no sea tan grande */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente para que sea más compacto */
+    margin-top: -20px; /* Ajusta este valor para subir o bajar el selector */
+
+}
+
+/* Campo de entrada para el número de teléfono */
+.input-telefono {
+    flex: 1; /* Permite que el input ocupe el espacio restante */
+    padding: 4px; /* Ajusta el padding para alinear con el selector */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9em; /* Asegura que el tamaño de la fuente sea el mismo que el selector */
+}
+
+
+
 
 
 /* Footer */
