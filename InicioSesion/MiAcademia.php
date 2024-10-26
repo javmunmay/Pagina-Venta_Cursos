@@ -102,46 +102,22 @@ if (!isset($_SESSION['user_id'])) {
         </div>
       </section>
 
-      <section class="nuevas-certificaciones">
-        <h2>Empieza tu próximo desafío ahora</h2>
-        <div class="certificaciones-grid">
-          <div class="certificacion">
-            <img src="../imagenes/CursoPhpBanner.jpg" alt="Test de PHP" />
-            <h3>Aprende PHP desde 0 hasta avanzado.</h3>
-            <a href="/InformacionCursos/CursoPhp.html" class="login-btn"
-              >Comenzar</a
-            >
-          </div>
-          <div class="certificacion">
-            <img src="../imagenes/CursoSqlBanner.jpg" alt="Test de MySQL" />
-            <h3>Consultas SQL desde 0 hasta profesional.</h3>
-            <a
-              href="/InformacionCursos/CursoSqlDesdeCero.html"
-              class="login-btn"
-              >Comenzar</a
-            >
-          </div>
-          <div class="certificacion">
-            <img
-              src="../imagenes/CursoFundamentosJSBanner.jpg"
-              alt="Test de MongoDB"
-            />
-            <h3>JavaScript: Fundamentos</h3>
-            <a
-              href="/InformacionCursos/CursoJSFundamentos.html"
-              class="login-btn"
-              >Comenzar</a
-            >
-          </div>
-          <div class="certificacion">
-            <img src="../imagenes/CursoPythonBanner.jpg" alt="Test de React" />
-            <h3>Phyton: Fundamentos</h3>
-            <a href="/InformacionCursos/CursoPython.html" class="login-btn"
-              >Comenzar</a
-            >
-          </div>
+      <section class="hero-banner">
+        <div class="banner-content">
+          <h1>
+            Tus Cursos: 
+          </h1>
+          <p>Tus cursos aparecerán aquí...</p>
+
         </div>
+      
       </section>
+
+    
+
+
+      
+
     </main>
 
     <footer>
@@ -166,7 +142,7 @@ if (!isset($_SESSION['user_id'])) {
     // Mostrar el mensaje de bienvenida si el nombre existe
     if (nombre) {
       const welcomeMessage = document.getElementById("welcome-message");
-      welcomeMessage.innerHTML = "¡Hola, " + nombre + "! ";
+      welcomeMessage.innerHTML = "Hola, " + nombre + ". ¡Elige tu siguiente reto! ";
     }
   </script>
 </html>

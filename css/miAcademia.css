@@ -206,49 +206,7 @@ nav {
     border-radius: 5px;
 }
 
-/* Sección Certificaciones */
-.nuevas-certificaciones {
-    padding: 40px;
-}
 
-.nuevas-certificaciones h2 {
-    font-size: 2rem;
-    color: #090643;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.certificaciones-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.certificacion {
-    background-color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.certificacion:hover {
-    transform: scale(1.05);
-}
-
-.certificacion img {
-    width: auto;
-    height: 100px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-}
-
-.certificacion h3 {
-    font-size: 1.2rem;
-    color: #090643;
-}
 
 /* Botón de comenzar curso */
 .login-btn {

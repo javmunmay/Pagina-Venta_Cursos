@@ -14,7 +14,14 @@ if ($conn->connect_error) {
 }
 
 // Verificar si los datos requeridos están en POST
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['email'], $_POST['password'], $_POST['fecha_nacimiento'], $_POST['politica'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['email'], $_POST['password'], $_POST['passwordConfirm'], $_POST['fecha_nacimiento'], $_POST['politica'])) {
+
+    // Verificar que las contraseñas coincidan
+    if ($_POST['password'] !== $_POST['passwordConfirm']) {
+        // Redirigir a la página de registro con un mensaje de error
+        header("Location: ../InicioSesion/Registrarse.html?error=Las contraseñas no coinciden");
+        exit();
+    }
 
     // Recibir y sanitizar los datos del formulario
     $nombre = $conn->real_escape_string($_POST['nombre']);

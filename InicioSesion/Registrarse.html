@@ -26,7 +26,7 @@
   <main>
     <section class="login-container">
       <h1>Crear una cuenta</h1>
-      <form action="../php/registro.php" method="POST">
+      <form action="../php/registro.php" method="POST" id="registroForm">
         <label for="nombre">Nombre Usuario</label>
         <input type="text" id="nombre" name="nombre" required placeholder="Nombre de usuario" />
     
@@ -95,5 +95,34 @@
     <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
   </footer>
 </body>
+<script>
+  window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        console.log("Parámetro de error detectado:", error); // Debugging
+
+        if (error) {
+            const mensajeDiv = document.createElement('div');
+            mensajeDiv.textContent = error;
+            mensajeDiv.style.backgroundColor = '#f8d7da';
+            mensajeDiv.style.color = '#721c24';
+            mensajeDiv.style.padding = '10px';
+            mensajeDiv.style.border = '1px solid #f5c6cb';
+            mensajeDiv.style.borderRadius = '5px';
+            mensajeDiv.style.marginBottom = '15px';
+
+            const formContainer = document.querySelector('.login-container');
+            formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+        }
+    };
+
+    // Capitalizar la primera letra en Nombre Usuario
+    document.getElementById("nombre").addEventListener("input", function() {
+        let nombre = this.value;
+        this.value = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+    });
+
+
+</script>
 
 </html>
