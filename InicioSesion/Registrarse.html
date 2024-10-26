@@ -96,6 +96,7 @@
   </footer>
 </body>
 <script>
+  //Error login
   window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
@@ -114,7 +115,14 @@
             const formContainer = document.querySelector('.login-container');
             formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
         }
+        // Establecer la restricción de la fecha de nacimiento para no permitir fechas futuras
+        const fechaNacimiento = document.getElementById("fecha_nacimiento");
+        const hoy = new Date().toISOString().split("T")[0];
+        fechaNacimiento.setAttribute("max", hoy); // Establece el máximo en la fecha actual
+    
     };
+
+    
 
     // Capitalizar la primera letra en Nombre Usuario
     document.getElementById("nombre").addEventListener("input", function() {
