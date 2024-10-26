@@ -85,7 +85,7 @@ if (!isset($_SESSION['user_id'])) {
             Curso de HTML5 y CSS3
           </h1>
           <p>Etiquetas relacionadas con texto</p>
-          <a href="../InformacionCursos/CursoHtml.html" class="btn-banner"
+          <a href="#" class="btn-banner"
             >Continuar Curso</a
           >
         </div>
@@ -123,10 +123,11 @@ if (!isset($_SESSION['user_id'])) {
     <footer>
       <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
     </footer>
+    <script src="../App.js"></script>
+    <script src="../App.js?v=1.0"></script>
   </body>
 
-  <script src="../App.js"></script>
-  <script src="../App.js?v=1.0"></script>
+  
 
   <!-- Script para capturar el parámetro de nombre y mostrar el mensaje de bienvenida -->
   <script>
@@ -144,5 +145,23 @@ if (!isset($_SESSION['user_id'])) {
       const welcomeMessage = document.getElementById("welcome-message");
       welcomeMessage.innerHTML = "Hola, " + nombre + ". ¡Elige tu siguiente reto! ";
     }
+
+    
+
+    //Desabilita el botón de atrás del navegador
+
+  window.onload = function() {
+      history.pushState(null, null, location.href);
+      window.onpopstate = function() {
+          history.go(1);
+      };
+  };
+
+  window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = "¿Estás seguro de que quieres salir sin cerrar sesión?";
+      e.returnValue = confirmationMessage;
+      return confirmationMessage;
+  });
+
   </script>
 </html>

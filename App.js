@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById('buscador');
     const levelSelect = document.getElementById('nivel-select');
