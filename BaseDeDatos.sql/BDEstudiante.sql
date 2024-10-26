@@ -31,9 +31,48 @@ ADD COLUMN Admin BOOLEAN DEFAULT FALSE;  -- Agregar campo para identificar si es
 */
 
 /* Insertar usuarios de ejemplo */
-INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, User, Admin) 
+
+/*INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, User, Admin) 
 VALUES 
 ('Javier', 'javier@ejemplo.com', '1234', '600123456', '1990-05-21', TRUE, FALSE),
 ('Clara', 'clara@ejemplo.com', '1234', '612321232', '2002-03-20', TRUE, FALSE),
 ('Admin Javi', 'adminjavi@ejemplo.com', 'admin123', '600654321', '1985-01-10', FALSE, TRUE),
 ('Admin Juan', 'admin@ejemplo.com', 'root', '600654321', '1985-01-10', FALSE, TRUE);
+*/
+
+/*ALTER TABLE usuarios
+ADD COLUMN politica_privacidad TINYINT(1) NOT NULL DEFAULT 0;*/
+
+/*CREATE TABLE Incidencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    descripcion_incidencia TEXT NOT NULL,
+    fecha_incidencia TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);*/
+
+
+CREATE TABLE IF NOT EXISTS Incidencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20), -- Opcional
+    asunto VARCHAR(100) NOT NULL,
+    mensaje TEXT NOT NULL,
+    preferencia_contacto VARCHAR(50) NOT NULL,
+    politica_privacidad TINYINT(1) NOT NULL DEFAULT 0,
+    fecha_incidencia TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+/*
+ALTER TABLE Incidencias
+    ADD COLUMN nombre_completo VARCHAR(100) NOT NULL,
+    ADD COLUMN telefono VARCHAR(20),
+    ADD COLUMN asunto VARCHAR(100) NOT NULL,
+    ADD COLUMN mensaje TEXT NOT NULL,
+    ADD COLUMN preferencia_contacto VARCHAR(50) NOT NULL,
+    ADD COLUMN politica_privacidad TINYINT(1) NOT NULL DEFAULT 0;
+*/
+/*
+DROP TABLE Incidencias;
+*/

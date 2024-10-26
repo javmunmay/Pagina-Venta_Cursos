@@ -23,19 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         exit();
     }
 
-
-
     // Recibir y sanitizar los datos del formulario
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $email = $conn->real_escape_string($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encriptar la contraseña
     $telefono = isset($_POST['telefono']) ? $conn->real_escape_string($_POST['telefono']) : NULL;
-    $prefijo = isset($_POST['prefijo']) ? $conn->real_escape_string($_POST['prefijo']) : NULL; // Capturamos el prefijo
+    $prefijo = isset($_POST['prefijo']) ? $conn->real_escape_string($_POST['prefijo']) : NULL;
     $fecha_nacimiento = $conn->real_escape_string($_POST['fecha_nacimiento']);
+    $politica = isset($_POST['politica']) ? 1 : 0; // Captura el valor de la política de privacidad (1 si está marcada, 0 si no)
 
-
-     // Concatenar el prefijo y el número de teléfono si ambos están presentes
-     $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : $telefono;
+    // Concatenar el prefijo y el número de teléfono si ambos están presentes
+    $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : $telefono;
 
     // Verificar si el correo ya existe en la base de datos
     $sql = "SELECT id FROM usuarios WHERE email = '$email'";
@@ -47,10 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         exit();
     }
 
-
-    // Insertar en la base de datos
-    $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento) 
-            VALUES ('$nombre', '$email', '$password', '$numero_telefono', '$fecha_nacimiento')";
+    // Insertar en la base de datos, incluyendo el campo de política de privacidad
+    $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, politica_privacidad) 
+            VALUES ('$nombre', '$email', '$password', '$numero_telefono', '$fecha_nacimiento', '$politica')";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
