@@ -267,4 +267,27 @@
       <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
     </footer>
   </body>
+  <script>
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const mensaje = urlParams.get('mensaje');
+
+        if (mensaje === 'incidencia_exitosa') {
+            const mensajeDiv = document.createElement('div');
+            mensajeDiv.textContent = 'La incidencia ha sido registrada exitosamente.';
+            mensajeDiv.style.backgroundColor = '#d4edda';
+            mensajeDiv.style.color = '#155724';
+            mensajeDiv.style.padding = '10px';
+            mensajeDiv.style.border = '1px solid #c3e6cb';
+            mensajeDiv.style.borderRadius = '5px';
+            mensajeDiv.style.marginBottom = '15px';
+            mensajeDiv.style.textAlign = 'center';
+            
+            // Inserta el mensaje en el contenedor del formulario de contacto
+            const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
+            formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+        }
+    };
+</script>
+
 </html>
