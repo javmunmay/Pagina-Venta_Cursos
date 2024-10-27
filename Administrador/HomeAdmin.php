@@ -181,11 +181,21 @@ if (!isset($_SESSION['user_id'])) {
         <br /><br />
       </section>
     </main>
+    <script src="../App.js"></script>
+    <script src="../App.js?v=1.0"></script>
+    <script>
 
+    window.onload = function() {
+          history.pushState(null, null, location.href);
+          window.onpopstate = function() {
+              history.go(1);
+          };
+    };
+
+    </script>
     
   </body>
-  <script src="../App.js"></script>
-  <script src="../App.js?v=1.0"></script>
+  
   <footer>
     <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
   </footer>
