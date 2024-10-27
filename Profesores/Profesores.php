@@ -85,8 +85,8 @@ $conn->close();
         <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo" />
         <ul class="nav-links">
           <li><a href="Profesores.php">Inicio</a></li>
-          <li><a href="#">Registro de Usuarios</a></li>
-          <li><a href="#">Mis Certificados</a></li>
+          <li><a href="#">Configuración</a></li>
+          <li><a href="#">Mis Ingresos</a></li>
           <li>
             <div class="cerrarSesion">
               <a href="../php/logout.php">Cerrar Sesión</a>
@@ -121,25 +121,76 @@ $conn->close();
 
       <section class="hero-banner">
         <div class="banner-content">
-          <h2>Profesor Especializado en <br /><?php echo htmlspecialchars($profesor['Especializacion']); ?></h2>
-          <h3><u>Información Personal:</u></h3>
+        <h2>Profesor Especializado en <br /><?php echo htmlspecialchars($profesor['Especializacion']); ?></h2>
+          
+
+          <div class="progreso-usuario">
+            <h3>Su ID es el:</h3>
+            <h3><?php echo htmlspecialchars($profesor['ID_Profesor']); ?></h3>
+          </div>
+
+          
+
+        </div>
+
+        
+      </section>
+
+      <section class="hero-banner">
+        <div class="banner-content">
+        
+          <h2><u>Informe Financiero:</u></h2>
+          <h4>Salario Base: <?php echo htmlspecialchars($profesor['Salario_Base']); ?>€ / mes</h4>
+          
+          <div class="progreso-usuario">
+          <h3>Bonificaciones:</h3>
+          <h4><?php echo htmlspecialchars($profesor['Bonificaciones']); ?>€ / mes</h4>
+
+          
+        </div>
+        
+        <h4>* Todos los ingresos son aproximados y no se considerarán definitivos hasta que sean comunicados oficialmente por correo electrónico u otro medio autorizado.</h4>
+        <h4>* Los importes definitivos serán abonados automáticamente en la cuenta indicada.</h4>
+
+        
+        
+      </section>
+
+
+      <section class="hero-banner">
+        <div class="banner-content">
+
+          <h2><u>Información Personal:</u></h2>
           <h4>Nombre: <?php echo htmlspecialchars($profesor['Nombre']); ?></h4>
           <h4>Apellidos: <?php echo htmlspecialchars($profesor['Apellido']); ?></h4>
           <h4>Email: <?php echo htmlspecialchars($profesor['Email']); ?></h4>
           <h4>Teléfono de contacto: <?php echo htmlspecialchars($profesor['Telefono']); ?></h4>
-          <h4>Especialización: <?php echo htmlspecialchars($profesor['Especializacion']); ?></h4>
-          <h4>Experiencia: <?php echo htmlspecialchars($profesor['Experiencia']); ?> años</h4>
-          <h4>Calificación: <?php echo htmlspecialchars($profesor['Calificacion']); ?> / 10</h4>
-          <h4>Salario Base: <?php echo htmlspecialchars($profesor['Salario_Base']); ?>€ / mes</h4>
-          <h4>Bonificaciones: <?php echo htmlspecialchars($profesor['Bonificaciones']); ?>€ / mes</h4>
-          <h4>Fecha de incorporación: <?php echo htmlspecialchars($profesor['Fecha_Inicio']); ?></h4>
-          <h4>Fecha de renovación: <?php echo htmlspecialchars($profesor['Fecha_Renovacion']); ?></h4>
-          <h4>Estado: <?php echo htmlspecialchars($profesor['Estado']); ?></h4>
+          
+          <div class="progreso-usuario">
+          <h3>Renueva con nosotros el:</h3>
+          <h3><?php echo htmlspecialchars($profesor['Fecha_Renovacion']); ?></h3>
         </div>
+
+        </div>
+          
+        
+        
       </section>
 
       <section class="hero-banner">
-        <div class="progreso-usuario">
+      <div class="banner-content">
+      
+        <h2><u>Información Profesional:</u></h2>
+        <h4>Especialización: <?php echo htmlspecialchars($profesor['Especializacion']); ?></h4>
+        <h4>Experiencia: <?php echo htmlspecialchars($profesor['Experiencia']); ?> años</h4>
+        <h4>Tus alumnos te han calificado con: <?php echo htmlspecialchars($profesor['Calificacion']); ?> / 10</h4>
+        <h4>Fecha de incorporación: <?php echo htmlspecialchars($profesor['Fecha_Inicio']); ?></h4>
+        <h4 style="color: <?php echo ($profesor['Estado'] === 'Activo') ? 'green' : 'red'; ?>"> Estado: 
+            <?php echo htmlspecialchars($profesor['Estado']); ?>
+          </h4>
+
+
+          <div class="progreso-usuario">
           <h3>Número de cursos:</h3>
           <h3><?php echo htmlspecialchars($profesor['Numero_Cursos']); ?></h3>
         </div>
@@ -147,15 +198,16 @@ $conn->close();
           <h3>Horas totales de tus cursos:</h3>
           <h3><?php echo htmlspecialchars($profesor['Horas_Totales']); ?> horas</h3>
         </div>
-        <div class="progreso-usuario">
-          <h3>Renueva con nosotros el:</h3>
-          <h3><?php echo htmlspecialchars($profesor['Fecha_Renovacion']); ?></h3>
+
         </div>
-        <div class="progreso-usuario">
-          <h3>Su ID es el:</h3>
-          <h3><?php echo htmlspecialchars($profesor['ID_Profesor']); ?></h3>
-        </div>
+     
+        
       </section>
+
+
+      
+
+      
     </main>
 
     <footer>
