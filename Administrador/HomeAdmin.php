@@ -61,6 +61,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="popup-content">
           <span id="close-popup" class="close">&times;</span>
           <h2>Has accedido como Administrador</h2>
+          <p>Para salir pulse <b>"Cerrar Sesión"</b></p>
         </div>
       </div>
 
@@ -185,12 +186,7 @@ if (!isset($_SESSION['user_id'])) {
     <script src="../App.js?v=1.0"></script>
     <script>
 
-    window.onload = function() {
-          history.pushState(null, null, location.href);
-          window.onpopstate = function() {
-              history.go(1);
-          };
-    };
+
 
     </script>
     

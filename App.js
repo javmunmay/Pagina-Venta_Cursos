@@ -3,13 +3,6 @@
 
 
 
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById('buscador');
     const levelSelect = document.getElementById('nivel-select');
@@ -113,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cerrar el popup automáticamente después de 8 segundos
     setTimeout(function() {
         popup.style.display = 'none';
-    }, 3000); // 3 segundos
+    }, 5000); // 5 segundos
 });
 
 

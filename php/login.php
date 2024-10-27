@@ -41,10 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['nombre'] = $user['nombre'];
+            $_SESSION['Admin'] = $user['Admin'];
+            $_SESSION['Profesor'] = $user['Profesor'];
+            $_SESSION['User'] = $user['User'];
 
-            // Redirigir al rol adecuado según si es un usuario o un administrador
-            if ($user['Admin'] == true) {
+            // Redirigir según el rol del usuario
+            if ($user['Admin'] == 1) {
                 header("Location: ../Administrador/HomeAdmin.php");
+            } elseif ($user['Profesor'] == 1) {
+                header("Location: ../Profesores/Profesores.php");
             } else {
                 header("Location: ../InicioSesion/MiAcademia.php?nombre=" . urlencode($user['nombre']));
             }
@@ -65,10 +70,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['nombre'] = $user['nombre'];
+            $_SESSION['Admin'] = $user['Admin'];
+            $_SESSION['Profesor'] = $user['Profesor'];
+            $_SESSION['User'] = $user['User'];
 
-            // Redirigir al rol adecuado según si es un usuario o un administrador
-            if ($user['Admin'] == true) {
+            // Redirigir según el rol del usuario
+            if ($user['Admin'] == 1) {
                 header("Location: ../Administrador/HomeAdmin.php");
+            } elseif ($user['Profesor'] == 1) {
+                header("Location: ../Profesores/Profesores.php");
             } else {
                 header("Location: ../InicioSesion/MiAcademia.php?nombre=" . urlencode($user['nombre']));
             }
