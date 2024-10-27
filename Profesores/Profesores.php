@@ -152,7 +152,7 @@ $conn->close();
         <h4>* Todos los ingresos son aproximados y no se considerarán definitivos hasta que sean comunicados oficialmente por correo electrónico u otro medio autorizado.</h4>
         <h4>* Los importes definitivos serán abonados automáticamente en la cuenta indicada.</h4>
 
-        
+        <h4>Saldo total estimado: <?php echo htmlspecialchars($profesor['Salario_Base'] + $profesor['Bonificaciones']); ?> € este mes</h4>
         
       </section>
 
