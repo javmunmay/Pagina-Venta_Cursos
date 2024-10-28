@@ -262,6 +262,52 @@ nav {
     color: #090643;
 }
 
+/*CARRUSEL DE CURSOS*/
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .course-card {
+    min-width: 250px; /* Ajusta el tamaño de cada curso */
+    margin-right: 15px; /* Espacio entre cursos */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arrow {
+    background-color: #090643;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .arrow.left {
+    left: 10px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+
 
 /* Sección de testimonios */
 .testimonios h2 {

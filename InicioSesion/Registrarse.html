@@ -31,13 +31,13 @@
         <h1>Crear una cuenta</h1>
         <form action="../php/registro.php" method="POST" id="registroForm">
 
-          <label for="nombre">Nombre Usuario <span class="required">*</span></label></label>
+          <label for="nombre">Nombre y Apellidos <span class="required">*</span></label></label>
           <input
             type="text"
             id="nombre"
             name="nombre"
             required
-            placeholder="Nombre de usuario"
+            placeholder="Nombre y Apellidos (Importante para los certificados)"
           />
 
           <label for="email">Correo Electrónico <span class="required">*</span></label></label>
@@ -64,14 +64,14 @@
             id="passwordConfirm"
             name="passwordConfirm"
             required
-            placeholder="Introduce tu contraseña"
+            placeholder="Confirma tu contraseña"
           />
 
           <label for="telefono">Número de Teléfono <span class="required">*</span></label></label>
           <div class="prefijo">
             <select id="prefijo" name="prefijo" class="select-prefijo">
               <optgroup label="Seleccione un prefijo"></optgroup>
-              <optgroup label=""></optgroup>
+              
               <optgroup label="Regiones Destacadas">
                 <option value="+34">+34 (España)</option>
                 <option value="+52">+52 (México)</option>

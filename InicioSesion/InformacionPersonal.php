@@ -2,20 +2,35 @@
 <?php
 // Verificar si la sesión ya está iniciada
 if (session_status() === PHP_SESSION_NONE) {
-    session_start(); // Iniciar la sesión solo si no está ya iniciada
+    session_start();
 }
 
-// Configuraciones para deshabilitar el caché
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-header("Pragma: no-cache"); // HTTP 1.0.
-header("Expires: 0"); // Proxies.
+// Configuración de caché
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
-    // Redirigir al login si no está autenticado
     header("Location: InicioSesion.html");
     exit();
 }
+
+// Conectar a la base de datos (usando un archivo de conexión común)
+include '../php/conexion.php';
+
+// Obtener el ID del usuario desde la sesión
+$user_id = $_SESSION['user_id'];
+
+// Consulta para obtener la información del usuario
+$sql = "SELECT * FROM usuarios WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+
 ?>
 
 
@@ -43,8 +58,8 @@ if (!isset($_SESSION['user_id'])) {
               <li class="dropdown">
                   <a href="#">Mi Perfil</a>
                   <div class="dropdown-content">
-                      <a href="#informacion-personal">Información Personal</a>
-                      <a href="#configuracion-seguridad">Configuración de Seguridad</a>
+                      <a href="InformacionPersonal.php">Información Personal</a>
+                      <a href="#h2Seguridad">Configuración de Seguridad</a>
                       <a href="#certificados-logros">Certificados y Logros</a>
                       <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
                       <div class="cerrarSesion">
@@ -63,15 +78,60 @@ if (!isset($_SESSION['user_id'])) {
     </header>
 
     <main>
-        <div class="info">
-            <h1>Información Personal</h1>
-            <p><strong>Nombre:</strong> Juan Pérez</p>
-            <p><strong>Edad:</strong> 30 años</p>
-            <p><strong>Email:</strong> juan.perez@email.com</p>
-            <p><strong>Teléfono:</strong> +34 600 123 456</p>
-            <p><strong>Dirección:</strong> Calle Falsa 123, Madrid, España</p>
-            <p><strong>Intereses:</strong> Programación, fotografía, viajes</p>
+
+    <section class="hero-banner">
+      <div class="banner-content">
+          <h1>Información Personal</h1>
+          <img src="../imagenes/perfil/<?php echo $row['foto_perfil'] ?? 'default.png'; ?>" alt="Foto de Perfil" class="foto-perfil">
+
+          <p><strong>Nombre Completo:</strong> <?php echo htmlspecialchars($row['nombre']); ?></p>
+          <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
+          <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($row['numero_telefono']); ?></p>
+          <p><strong>Edad:</strong> 
+          <?php 
+              $fechaNacimiento = new DateTime($row['fecha_nacimiento']);
+              $hoy = new DateTime();
+              echo $hoy->diff($fechaNacimiento)->y;
+          ?>
+          años</p>
+          <p><strong>Fecha de Nacimiento:</strong> <?php echo htmlspecialchars($row['fecha_nacimiento']); ?></p>
+          <p><strong>Fecha de Registro:</strong> <?php echo htmlspecialchars($row['fecha_registro']); ?></p>
+          <p><strong>Aceptó Política de Privacidad:</strong> <?php echo $row['politica_privacidad'] ? 'Sí' : 'No'; ?></p>
+          <button onclick="editarInformacion()">Actualizar Información</button>
         </div>
+    </section>
+
+    <section class="hero-banner">
+    <div class="banner-content">
+          <h2>Progreso en Cursos</h2>
+          <p>Cursos Completados: 3</p>
+          <p>Cursos en Progreso: 2</p>
+          <a href="MisCertificados.php">Ver Certificados</a>
+          <h3>Preferencias de Cuenta</h3>
+          <p><strong>Idioma:</strong> Español</p>
+          <p><strong>Notificaciones por correo:</strong> Activadas</p>
+          <button onclick="configurarPreferencias()">Modificar Preferencias</button>
+          
+          <h2 id="h2Seguridad">Seguridad</h2>
+          <a href="CambiarContrasena.php">Cambiar Contraseña</a>
+          <h3>Historial de Sesiones Recientes</h3>
+          <ul>
+              <li>Fecha: 2024-10-24 20:36:56 - Dispositivo: Chrome en Windows</li>
+              <li>Fecha: 2024-10-22 18:22:34 - Dispositivo: Safari en iOS</li>
+          </ul>
+          <h3>Suscripción</h3>
+          <p><strong>Tipo de Suscripción:</strong> Mensual</p>
+          <p><strong>Fecha de Expiración:</strong> 2024-12-31</p>
+          <p><a href="#">Política de Privacidad</a></p>
+          <p><a href="#">Consejos de Seguridad</a></p>
+
+
+
+        </div>
+    </section>
+        
+            
+        
     
 
     <footer>

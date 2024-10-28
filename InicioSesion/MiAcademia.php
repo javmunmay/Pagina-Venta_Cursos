@@ -50,7 +50,7 @@ if (!isset($_SESSION['user_id'])) {
             <a href="#">Mi Perfil</a>
             <div class="dropdown-content">
               <a href="InformacionPersonal.php">Información Personal</a>
-              <a href="#configuracion-seguridad">Configuración de Seguridad</a>
+              <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
               <a href="#certificados-logros">Certificados y Logros</a>
               <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
               <div class="cerrarSesion">
@@ -75,6 +75,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="popup-content">
           <span id="close-popup" class="close">&times;</span>
           <h2>Bienvenido a tu Academia</h2>
+          <p>Para salir pulse <br> <b>"Mi Pefil" > "Cerrar Sesión"</b></p>
         </div>
       </div>
 
@@ -113,6 +114,15 @@ if (!isset($_SESSION['user_id'])) {
       
       </section>
 
+      <section class="hero-banner">
+        <div class="banner-content">
+          <h1>Todos nuestros Cursos: </h1>
+          
+          
+
+        </div>
+      
+      </section>
     
 
 
@@ -146,7 +156,20 @@ if (!isset($_SESSION['user_id'])) {
       welcomeMessage.innerHTML = "Hola, " + nombre + ". ¡Elige tu siguiente reto! ";
     }
 
-    
+    //Carrusel de cursos
+
+    function moveCarousel(direction) {
+  const carousel = document.querySelector('.carousel');
+  const cardWidth = document.querySelector('.course-card').offsetWidth + 15; // Ancho del curso + margen derecho
+  const scrollDistance = cardWidth * 3; // Desplaza tres cursos a la vez
+  carousel.scrollBy({
+    left: scrollDistance * direction,
+    behavior: 'smooth'
+  });
+}
+
+
+
 
     //Desabilita el botón de atrás del navegador
 
@@ -157,11 +180,7 @@ if (!isset($_SESSION['user_id'])) {
       };
   };
 
-  window.addEventListener("beforeunload", function (e) {
-      var confirmationMessage = "¿Estás seguro de que quieres salir sin cerrar sesión?";
-      e.returnValue = confirmationMessage;
-      return confirmationMessage;
-  });
+
 
   </script>
 </html>
