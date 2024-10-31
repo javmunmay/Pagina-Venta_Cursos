@@ -1,0 +1,434 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+section.cursos {
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+section.testimonios {
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
+    margin: 0 auto; /* Centrar el contenido */
+    
+    text-align: center;
+}
+
+
+/* Estilos para el encabezado */
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+    /*left: 1000px;*/
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #090643;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: white;
+    color: #090643;
+    display: flex;
+    border-radius: 10px;
+}
+.cerrarSesion a:hover {
+    background-color: rgb(255, 3, 3);
+    color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Sección de bienvenida */
+.hero {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #090643;
+    font-size: 3rem; /* Texto más grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px; /* Espacio adicional para el buscador */
+}
+
+/* Estilo del input de búsqueda */
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    margin: 0 auto; /* Centrar el buscador */
+    display: block;
+}
+
+.search-bar:focus {
+    border-color: #090643;
+}
+
+/*Sección FILTROS buscador*/
+
+.custom-select {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+    margin: 0 auto 10px;
+    
+    
+}
+
+.filtros-container {
+    margin-top: 10px;
+}
+
+.selected-option {
+    
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: #090643;
+    font-size: 1rem;
+    
+    
+}
+
+
+.options {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    z-index: 10;
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto del ul */
+    margin: 0; /* Elimina el margen por defecto del ul */
+}
+
+
+
+.options li {
+    padding: 10px;
+    color: #090643;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.options li:hover {
+    border-radius: 25px;
+    border: solid #090643;
+}
+
+/* Mostrar opciones cuando esté activo */
+.custom-select.open .options {
+    display: block;
+}
+
+
+/* Sección de todos nuestros cursos */
+.cursos {
+    padding: 20px 0; /* Ajustamos para asegurar margen interno superior e inferior */
+    max-width: 1200px; /* Controlamos el ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+    box-sizing: border-box; /* Asegura que el padding no sobrepase el contenedor */
+
+}
+
+.cursos h2 {
+    color: #090643;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Asegura que las columnas se distribuyan de manera más uniforme */
+    gap: 70px; /* Aumenta el espacio entre las columnas */
+    padding: 0 20px; /* Espacio lateral */
+    margin: 0 auto; /* Centra la cuadrícula */
+    max-width: 1200px; /* Controla el ancho máximo */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    justify-items: center; /* Centra los elementos dentro de la cuadrícula */
+}
+
+
+.curso {
+    width: 100%;
+    max-width: 350px; /* Ajustamos el tamaño máximo del curso para evitar que se desborde */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.curso img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.curso-info {
+    padding: 10px 0;
+}
+
+.curso-info h3 {
+    color: #090643;
+    margin: 10px 0;
+}
+
+.curso-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-curso {
+    background-color: #090643;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block; /* Asegura que el botón se comporte como un bloque completo */
+    text-align: center; /* Centra el texto dentro del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: solid;
+}
+
+.btn-curso:hover {
+    background-color: white;
+    color: #090643;
+}
+
+/*CARRUSEL DE CURSOS*/
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .course-card {
+    min-width: 250px; /* Ajusta el tamaño de cada curso */
+    margin-right: 15px; /* Espacio entre cursos */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arrow {
+    background-color: #090643;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .arrow.left {
+    left: 10px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+
+
+/* Sección de testimonios */
+.testimonios h2 {
+    color: #090643;
+    margin-bottom: 20px;
+}
+
+.testimonio {
+    margin-bottom: 20px;
+}
+
+.testimonio p {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonio h4 {
+    color: #090643;
+    margin-top: 5px;
+}
+
+/* Sección de CTA Final */
+.cta-final {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn-final {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.cta-btn-final:hover {
+    background-color: #02d15e;
+    border: solid rgb(1, 129, 12) 1px;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido del footer */
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en filas si es necesario */
+}
+
+.footer-menu {
+    margin-right: 50px; /* Espacio entre el menú y las redes sociales */
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px; /* Espacio entre los íconos de redes sociales */
+}
+
+.footer-social img {
+    width: 24px; /* Ajusta el tamaño de los íconos */
+    height: auto;
+}
+
+.footer-social img:hover{
+    transform: scale(1.3);
+}

@@ -1,3 +1,25 @@
+<?php
+// Verificar si la sesión ya está iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Iniciar la sesión solo si no está ya iniciada
+}
+
+// Configuraciones para deshabilitar el caché
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['user_id'])) {
+    // Redirigir al login si no está autenticado
+    header("Location: InicioSesion.html");
+    exit();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

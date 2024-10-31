@@ -58,7 +58,7 @@ if (!isset($_SESSION['user_id'])) {
               </div>
             </div>
           </li>
-          <li><a href="#">Cursos</a></li>
+          <li><a href="CursosDentroSesion.php">Cursos</a></li>
           <li><a href="#">Mis Certificados</a></li>
           <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
         </ul>
