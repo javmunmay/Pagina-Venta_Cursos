@@ -1,0 +1,296 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+p{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #090643;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Hace que el header sea pegajoso */
+    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+    /*left: 1000px;*/
+    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center; /* Centra los enlaces del menú */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #090643;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: white;
+    color: #090643;
+    display: flex;
+    border-radius: 10px;
+}
+.cerrarSesion a:hover {
+    background-color: rgb(255, 3, 3);
+    color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos para el reproductor de video */
+#cursoVideo {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: auto; /* Mantiene la proporción del video */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de profundidad */
+    margin-top: 20px;
+}
+
+/* Contenedor de los controles de video */
+.video-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #090643; /* Fondo oscuro para hacer que los botones destaquen */
+    border-radius: 0 0 10px 10px; /* Esquinas redondeadas en la parte inferior */
+}
+
+.nav-btn {
+    background-color: #03fa6e; /* Color de botón principal */
+    color: #090643;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #02b14b; /* Cambio de color en hover */
+    color: #ffffff;
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+
+
+/* Contenedor de video y rúbrica */
+.video-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.video-player {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.nav-btn {
+    background-color: #090643;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #ffffff;
+    color: #090643;
+    border: 1px solid #090643;
+}
+
+/* Rúbrica de temas */
+.course-outline {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+
+.course-outline h3 {
+    color: #090643;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.course-outline ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-outline li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+    transition: background-color 0.2s;
+}
+
+.course-outline li:hover {
+    background-color: #f9f9f9; /* Color de fondo suave al pasar el mouse */
+    border-bottom: 1px solid #02d15e; /* Línea divisoria */
+    
+}
+
+.course-outline ul li a:hover{
+    color: #090643;
+}
+
+.course-outline .circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #090643;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: transparent; /* Oculta el símbolo al inicio */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.course-outline .circle.completed {
+    background-color: #03fa6e;
+    color: #ffffff; /* Muestra el símbolo al completarse */
+    font-size: 0.8rem;
+}
+
+.course-outline a {
+    text-decoration: none;
+    color: #090643;
+    font-weight: 500;
+    font-size: 1rem;
+    flex-grow: 1;
+    transition: color 0.3s;
+}
+
+.course-outline a:hover {
+    color: #03fa6e;
+    text-decoration: underline;
+}
+
+/*Estilo botones Archivos descargables*/
+
+.matDescargable{
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border-radius: solid #090643;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    margin-bottom: 10px;
+}
+.matDescargable:hover{
+    background-color: #ffffff;
+    border-radius: solid;
+    border: solid #03fa6e;
+    color: #090643;
+}
+
+
+/* Botón Hacer Examen */
+.exam-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #090643;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+.exam-btn.enabled {
+    cursor: pointer;
+    background-color: #02d15e;
+}
+
+.exam-btn.enabled:hover {
+    background-color: #02b14b;
+}
+
+/* Footer */
+footer {
+    background-color: #090643;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
