@@ -1,5 +1,5 @@
 /* Base de datos (Prototipo) */
-
+/*
 /* Tabla de usuarios */
 CREATE TABLE usuarios (
     id SERIAL PRIMARY KEY,
@@ -31,6 +31,7 @@ CREATE TABLE profesores (
     estado TEXT CHECK (estado IN ('Activo', 'Inactivo', 'Suspendido')), -- opciones restringidas
     notas TEXT
 );
+*/
 
 /* Tabla de cursos */
 CREATE TABLE cursos (
@@ -41,10 +42,63 @@ CREATE TABLE cursos (
     id_profesor INT REFERENCES profesores(id_profesor) ON DELETE SET NULL,
     duracion INT CHECK (duracion >= 0), -- duración en horas, debe ser positiva
     nivel TEXT CHECK (nivel IN ('Básico', 'Intermedio', 'Avanzado')), -- restringir a valores específicos
-    estado TEXT CHECK (estado IN ('Activo', 'Inactivo')) -- restringir a valores específicos
+    estado TEXT CHECK (estado IN ('Activo', 'Inactivo')), -- restringir a valores específicos
+    imagen TEXT, -- URL o ruta de la imagen del curso
+    alumnos_inscritos INT DEFAULT 0, -- cantidad de alumnos inscritos
+    valoracion NUMERIC(2,1) CHECK (valoracion >= 0 AND valoracion <= 5), -- valoracion promedio en una escala de 0 a 5
+    contenido JSON, -- Detalles de las secciones (almacenado en JSON para simplicidad)
+    habilidades JSON, -- Lista de habilidades obtenidas (también en JSON para simplicidad)
+    requisitos TEXT -- Requisitos mínimos para tomar el curso
+);
+
+/*
+[
+    {"tema": "Introducción a HTML y su historia", "duracion": "30 min"},
+    {"tema": "Etiquetas y Estructura básica de una página", "duracion": "1h"}
+]
+
+/*habilidades:*/
+
+["Comprender la estructura básica de HTML", "Crear y enlazar páginas web"]
+
+/*Ejemplo de inserción*/
+
+INSERT INTO cursos (
+    titulo,
+    descripcion,
+    id_profesor,
+    duracion,
+    nivel,
+    estado,
+    imagen,
+    alumnos_inscritos,
+    valoracion,
+    contenido,
+    habilidades,
+    requisitos
+) VALUES (
+    'Curso de HTML desde Cero',
+    'Este curso te enseñará los fundamentos de HTML...',
+    1,
+    6,
+    'Básico',
+    'Activo',
+    '../imagenes/CursoHtmlBanner.jpg',
+    1800,
+    4.7,
+    '[{"tema": "Introducción a HTML y su historia", "duracion": "30 min"}, {"tema": "Etiquetas y Estructura básica de una página", "duracion": "1h"}]',
+    '["Comprender la estructura básica de HTML", "Crear y enlazar páginas web"]',
+    'No se requieren conocimientos previos de programación.'
 );
 
 
+
+
+*/
+
+
+
+/*
 
 /* Tabla de suscripciones */
 CREATE TABLE suscripciones (
@@ -67,4 +121,4 @@ CREATE TABLE incidencias (
     preferencia_contacto TEXT CHECK (preferencia_contacto IN ('Email', 'Teléfono')),
     politica_privacidad BOOLEAN DEFAULT FALSE,
     fecha_incidencia DATETIME DEFAULT CURRENT_TIMESTAMP
-);
+);*/

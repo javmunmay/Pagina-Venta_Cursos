@@ -118,19 +118,6 @@ if (!isset($_SESSION['user_id'])) {
               >
             </div>
           </article>
-          <!--
-          <article class="curso">
-            <img
-              src="imagenes/CursoPythonBanner.jpg"
-              alt="Curso de Python e IA"
-            />
-            <div class="curso-info">
-              <h3>Python: Fundamentos</h3>
-              <p>Aprende los fundamentos de Python.</p>
-              <button class="btn-curso">Ver Curso</button>
-            </div>
-          </article>
-          -->
 
           <article
             class="curso"
@@ -161,7 +148,7 @@ if (!isset($_SESSION['user_id'])) {
               <p>
                 Aprende HTML con este curso completo desde cero hasta avanzado.
               </p>
-              <a href="../informacionCursosSesion/CursoHtmlSesion.php" class="btn-curso"
+              <a href="../infoCursosSesion/Curso.php?id=1" class="btn-curso"
                 >Ver Curso</a
               >
             </div>
