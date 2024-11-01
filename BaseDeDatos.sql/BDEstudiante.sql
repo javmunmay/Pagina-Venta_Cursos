@@ -150,3 +150,70 @@ INSERT INTO profesores (ID_Profesor, Nombre, Apellido, Email, Telefono, Especial
 VALUES (36, 'Leandro', 'Ligero Picón', 'leandro@gmail.com', NULL, 'Desarrollo Web ', 1, 5, 0, NULL, NULL, NULL, NULL, NULL, '2025-01-01', '2026-01-01', 'No Activo', 'Profesor experto en desarrollo web');
 
 
+/*Base de datos (Prototipo)*/
+-- Tabla de usuarios  
+CREATE TABLE usuarios (  
+    id SERIAL PRIMARY KEY,  
+    nombre TEXT NOT NULL,  
+    password TEXT NOT NULL,  
+    fecha_registro TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  
+    numero_telefono TEXT,  
+    email TEXT NOT NULL UNIQUE,  
+    fecha_nacimiento DATE,  
+    user BOOLEAN DEFAULT FALSE,  
+    admin BOOLEAN DEFAULT FALSE,  
+    profesor BOOLEAN DEFAULT FALSE,  
+    politica_privacidad BOOLEAN DEFAULT FALSE  
+);  
+  
+-- Tabla de profesores  
+CREATE TABLE profesores (  
+    id_profesor SERIAL PRIMARY KEY,  
+    especializacion TEXT,  
+    experiencia TEXT,  
+    calificacion NUMERIC,  
+    numero_cursos INT,  
+    horas_totales INT,  
+    salario_base NUMERIC,  
+    porcentaje_ventas NUMERIC,  
+    bonificaciones NUMERIC,  
+    fecha_inicio TIMESTAMPTZ,  
+    fecha_renovacion TIMESTAMPTZ,  
+    estado TEXT,  
+    notas TEXT  
+);  
+  
+-- Tabla de cursos  
+CREATE TABLE cursos (  
+    id_curso SERIAL PRIMARY KEY,  
+    titulo TEXT NOT NULL,  
+    descripcion TEXT,  
+    fecha_creacion TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  
+    id_profesor INT REFERENCES profesores(id_profesor),  
+    duracion INT, -- duración en horas  
+    nivel TEXT, -- Ej: Básico, Intermedio, Avanzado  
+    estado TEXT -- Ej: Activo, Inactivo  
+);  
+  
+-- Tabla de suscripciones  
+CREATE TABLE suscripciones (  
+    id_suscripcion SERIAL PRIMARY KEY,  
+    id_usuario INT REFERENCES usuarios(id),  
+    tipo_plan TEXT, -- Ej: Mensual, Anual  
+    fecha_inicio TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,  
+    fecha_fin TIMESTAMPTZ,  
+    estado TEXT -- Ej: Activo, Cancelado  
+);  
+  
+-- Tabla de incidencias  
+CREATE TABLE incidencias (  
+    id_incidencia SERIAL PRIMARY KEY,  
+    id_usuario INT REFERENCES usuarios(id),  
+    email_usuario TEXT,  
+    telefono_usuario TEXT,  
+    asunto TEXT,  
+    mensaje TEXT,  
+    preferencia_contacto TEXT,  
+    politica_privacidad BOOLEAN,  
+    fecha_incidencia TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP  
+);  
