@@ -35,9 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     // Concatenar el prefijo y el número de teléfono si ambos están presentes
     $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : $telefono;
 
-    // Verificar si el correo ya existe en la base de datos
-    $sql = "SELECT id FROM usuarios WHERE email = '$email'";
-    $result = $conn->query($sql);
+    // Verificar si el correo ya existe en la base de datos usando una consulta preparada
+    $sql = "SELECT id FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Redirigir con mensaje de error si el correo ya existe
@@ -45,19 +48,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         exit();
     }
 
-    // Insertar en la base de datos, incluyendo el campo de política de privacidad
-    $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, politica_privacidad) 
-            VALUES ('$nombre', '$email', '$password', '$numero_telefono', '$fecha_nacimiento', '$politica')";
+    // Insertar en la base de datos, incluyendo el campo de política de privacidad y roles predeterminados
+    $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, politica_privacidad, user, admin, profesor) 
+            VALUES (?, ?, ?, ?, ?, ?, 1, 0, 0)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssssi", $nombre, $email, $password, $numero_telefono, $fecha_nacimiento, $politica);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
-        echo "Error en el registro: " . $conn->error;
+        echo "Error en el registro: " . $stmt->error;
     }
 } else {
     echo "Todos los campos son obligatorios.";
 }
 
 // Cerrar conexión
+$stmt->close();
 $conn->close();
 ?>
