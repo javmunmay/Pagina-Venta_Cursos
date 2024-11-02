@@ -34,6 +34,7 @@ CREATE TABLE profesores (
 */
 
 /* Tabla de cursos */
+/*
 CREATE TABLE cursos (
     id_curso SERIAL PRIMARY KEY,
     titulo TEXT NOT NULL,
@@ -50,51 +51,14 @@ CREATE TABLE cursos (
     habilidades JSON, -- Lista de habilidades obtenidas (también en JSON para simplicidad)
     requisitos TEXT -- Requisitos mínimos para tomar el curso
 );
-
-/*
-[
-    {"tema": "Introducción a HTML y su historia", "duracion": "30 min"},
-    {"tema": "Etiquetas y Estructura básica de una página", "duracion": "1h"}
-]
-
-/*habilidades:*/
-
-["Comprender la estructura básica de HTML", "Crear y enlazar páginas web"]
-
-/*Ejemplo de inserción*/
-
-INSERT INTO cursos (
-    titulo,
-    descripcion,
-    id_profesor,
-    duracion,
-    nivel,
-    estado,
-    imagen,
-    alumnos_inscritos,
-    valoracion,
-    contenido,
-    habilidades,
-    requisitos
-) VALUES (
-    'Curso de HTML desde Cero',
-    'Este curso te enseñará los fundamentos de HTML...',
-    1,
-    6,
-    'Básico',
-    'Activo',
-    '../imagenes/CursoHtmlBanner.jpg',
-    1800,
-    4.7,
-    '[{"tema": "Introducción a HTML y su historia", "duracion": "30 min"}, {"tema": "Etiquetas y Estructura básica de una página", "duracion": "1h"}]',
-    '["Comprender la estructura básica de HTML", "Crear y enlazar páginas web"]',
-    'No se requieren conocimientos previos de programación.'
-);
-
-
-
-
 */
+
+
+
+
+
+
+
 
 
 

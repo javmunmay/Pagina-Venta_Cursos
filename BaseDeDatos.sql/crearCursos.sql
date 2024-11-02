@@ -17,6 +17,8 @@ CREATE TABLE cursos (
 );*/
 
 
+/*Ejemplo de inserción*/
+
 INSERT INTO cursos (
     titulo,
     descripcion,
@@ -31,16 +33,43 @@ INSERT INTO cursos (
     habilidades,
     requisitos
 ) VALUES (
-    'Curso de HTML desde Cero',
-    'Este curso te enseñará los fundamentos de HTML desde cero aprendiendo desde la estructura de una página hasta etiquetas avanzadas...',
+    'Curso de PHP: Fundamentos',
+    'Este curso te introduce a los conceptos esenciales de PHP, el lenguaje de programación backend que impulsa a millones de sitios web en todo el mundo. A lo largo del curso, aprenderás desde los principios básicos, como la instalación del entorno y sintaxis inicial, hasta la creación de scripts dinámicos y la interacción con bases de datos.',
     1,
     6,
     'Básico',
     'Activo',
-    '../imagenes/CursoHtmlBanner.jpg',
-    1800,
-    4.8,
-    '[{"tema": "Introducción a HTML y su historia", "duracion": "30 min"}, {"tema": "Etiquetas y Estructura básica de una página", "duracion": "1h"}]',
-    '["Comprender la estructura básica de HTML", "Crear y enlazar páginas web"]',
-    'No se requieren conocimientos previos de programación.'
+    '../imagenes/CursoPhpFundamentosBanner.jpg',
+    1600,
+    4.9,
+    '[
+        { "tema": "Introducción a PHP y configuración del entorno", "duracion": "30 min" },
+        { "tema": "Sintaxis básica y tipos de datos en PHP", "duracion": "1h" },
+        { "tema": "Operadores y estructuras de control", "duracion": "45 min" },
+        { "tema": "Funciones: Definición y uso en PHP", "duracion": "1h" },
+        { "tema": "Manejo de formularios en PHP", "duracion": "1h 30 min" },
+        { "tema": "Manipulación de cadenas y arrays", "duracion": "1h" },
+        { "tema": "Introducción a sesiones y cookies", "duracion": "50 min" },
+        { "tema": "Conexión a bases de datos MySQL", "duracion": "1h 30 min" },
+        { "tema": "Introducción a la Programación Orientada a Objetos en PHP", "duracion": "2h" },
+        { "tema": "Buenas prácticas y seguridad en PHP", "duracion": "45 min" },
+        { "tema": "Proyecto final: Aplicación web básica en PHP", "duracion": "2h" }
+    ]
+    ',
+    '[
+        "Comprender la sintaxis y estructura básica de PHP",
+        "Configurar el entorno de desarrollo para ejecutar scripts PHP",
+        "Utilizar variables y tipos de datos en PHP",
+        "Implementar operadores y estructuras de control de flujo",
+        "Crear y utilizar funciones propias y predefinidas en PHP",
+        "Capturar y procesar datos de formularios HTML",
+        "Manipular cadenas de texto y arrays",
+        "Gestionar sesiones y cookies para el manejo de usuarios",
+        "Conectar y realizar operaciones CRUD con bases de datos MySQL",
+        "Aplicar conceptos básicos de Programación Orientada a Objetos en PHP",
+        "Seguir buenas prácticas y mejorar la seguridad en aplicaciones PHP",
+        "Desarrollar una aplicación web sencilla en PHP como proyecto final"
+    ]
+    ',
+    'No se requieren conocimientos previos de programación. Se recomienda conocimientos básicos de HTML y CSS'
 );

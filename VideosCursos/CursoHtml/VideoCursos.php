@@ -64,7 +64,7 @@ if (!isset($_SESSION['user_id'])) {
         <!-- Contenedor del vídeo -->
         <div class="video-player">
             <video id="cursoVideo" controls autoplay playsinline>
-                <source src="../videos/IntroEstudianteProgramador.mp4" type="video/mp4">
+                <source src="../videos/IntroEstudianteProgramadorSonido.mp4" type="video/mp4">
                 Tu navegador no soporta el vídeo, por favor Inicia sesión en otro navegador o contactanos a través del formulario de Contacto.
             </video>
             <div class="video-controls">
