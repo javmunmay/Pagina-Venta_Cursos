@@ -62,7 +62,7 @@ $conn->close();
     <nav>
         <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo">
         <ul class="nav-links">
-            <li><a href="../Inicio.html">Inicio</a></li>
+            <li><a href="../Index.html">Inicio</a></li>
             <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
             <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
             <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>

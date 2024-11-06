@@ -2,7 +2,7 @@
       <div class="footer-container">
         <div class="footer-menu">
           <ul>
-            <li><a href="Inicio.html">Inicio</a></li> 
+            <li><a href="Index.html">Inicio</a></li> 
             <li><a href="ContenidoPrincipal/PoliticaPrivacidad.html" rel="noopener noreferrer">Política de privacidad</a></li>
             <li><a href="ContenidoPrincipal/TerminosCondiciones.html" rel="noopener noreferrer">Términos y condiciones</a></li>
           </ul>

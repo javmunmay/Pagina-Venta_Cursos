@@ -341,7 +341,7 @@ if (!isset($_SESSION['user_id'])) {
       <div class="footer-container">
         <div class="footer-menu">
           <ul>
-            <li><a href="../Inicio.html">Inicio</a></li>
+            <li><a href="../Index.html">Inicio</a></li>
             <li>
               <a href="PoliticaPrivacidad.html">Política de privacidad</a>
             </li>
