@@ -134,24 +134,32 @@ nav {
     list-style: none;
     padding: 0;
     text-align: left;
+    
 }
 
 .plan ul li {
     padding: 10px 0;
     color: #090643;
     font-weight: bold;
+    
 }
 
 .btn-plan {
+    display: inline-block;
     background-color: #090643;
+    text-decoration:none;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px;
-    border: solid;
+    margin-top: 30px;
     padding: 10px 90px;
+    
+}
+
+.plan .btn-plan {
+    margin-top: 20px; /* Incrementa este valor para aumentar el espacio */
 }
 
 .btn-plan:hover {
@@ -183,6 +191,7 @@ nav {
 .plan.destacado .btn-plan {
     background-color: white;
     color: #090643;
+    
     
 }
 

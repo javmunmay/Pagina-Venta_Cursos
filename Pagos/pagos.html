@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de pago para Estudiante Programador" />
+  <meta name="keywords" content="pago, tarjeta, PayPal, Stripe, desarrollo web" />
+  <title>Pago | Plan Estudiante Programador</title>
+  <link rel="stylesheet" href="pagos.css" />
+  <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
+  <script src="app.js?v=1.0"></script>
+  <!-- Versión 2.1.6 (BETA) -->
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo" />
+      <ul class="nav-links">
+        <li><a href="../Index.html">Inicio</a></li>
+        <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
+        <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
+        <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
+        <li><a href="../ContenidoPrincipal/Contacto.html">Contacto</a></li>
+      </ul>
+      <a href="InicioSesion/InicioSesion.html" class="login-btn">Iniciar Sesión</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección de Pago -->
+    <section class="payment-section">
+      <h1>Selecciona tu método de pago</h1>
+      <p>Elige una opción y completa los datos para finalizar tu suscripción.</p>
+
+      <form id="payment-form" action="procesarPago.html" method="POST">
+        <!-- Opciones de método de pago -->
+        <label>
+          <input type="radio" name="payment-method" value="tarjeta" checked />
+          Pago con Tarjeta
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="paypal" />
+          PayPal
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="stripe" />
+          Stripe
+        </label>
+
+        <!-- Información de tarjeta de crédito -->
+        <div id="card-info" class="payment-info">
+          <!-- Estructura de la tarjeta de crédito -->
+          <div class="container">
+            <div class="col1">
+              <div class="card">
+                <div class="front">
+                  <div class="type">
+                    <img class="bankid"/>
+                  </div>
+                  <span class="chip"></span>
+                  <span class="card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+                  <div class="date"><span class="date_value">MM / YYYY</span></div>
+                  <span class="fullname">FULL NAME</span>
+                </div>
+                <div class="back">
+                  <div class="magnetic"></div>
+                  <div class="bar"></div>
+                  <span class="seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+                  <span class="chip"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col2">
+              <label>Número de Tarjeta</label>
+              <input class="number" type="text" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+              <label>Nombre del Titular</label>
+              <input class="inputname" type="text" placeholder=""/>
+              <label>Fecha de Expiración</label>
+              <input class="expire" type="text" placeholder="MM / YYYY"/>
+              <label>Código de Seguridad</label>
+              <input class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+              <button class="buy"><i class="material-icons">lock</i> Pagar --.-- €</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información para PayPal -->
+        <div id="paypal-info" class="payment-info" style="display: none;">
+          <p>Serás redirigido a PayPal para completar el pago.</p>
+        </div>
+
+        <!-- Información para Stripe -->
+        <div id="stripe-info" class="payment-info" style="display: none;">
+          <p>Serás redirigido a Stripe para completar el pago de forma segura.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-menu">
+        <ul>
+          <li><a href="Index.html">Inicio</a></li>
+          <li><a href="ContenidoPrincipal/PoliticaPrivacidad.html" rel="noopener noreferrer">Política de privacidad</a></li>
+          <li><a href="ContenidoPrincipal/TerminosCondiciones.html" rel="noopener noreferrer">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="creditCardScript.js"></script> <!-- Archivo de la tarjeta de crédito -->
+  <script>
+    // Función para cambiar el método de pago visible
+    document.querySelectorAll('input[name="payment-method"]').forEach((radio) => {
+      radio.addEventListener('change', (event) => {
+        document.querySelectorAll('.payment-info').forEach((div) => (div.style.display = 'none'));
+        const selectedPayment = event.target.value;
+        document.getElementById(selectedPayment + '-info').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
