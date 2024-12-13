@@ -6,6 +6,25 @@ body {
     background-color: #ffffff;
 }
 
+/* Seccion de los curos en la pagina cursos */
+section.cursos {
+    max-width: 1200px;
+    /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    /* Centrar el contenido */
+}
+
+section.testimonios {
+    max-width: 1200px;
+    /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    /* Centrar el contenido */
+
+    text-align: center;
+}
+
+
+
 /* Estilos para el encabezado */
 
 header {
@@ -15,15 +34,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; /* Hace que el header sea pegajoso */
-    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
-    z-index: 1000; /* Asegura que esté encima del contenido */
+    position: sticky;
+    /* Hace que el header sea pegajoso */
+    top: 0;
+    /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000;
+    /* Asegura que esté encima del contenido */
 }
 
 /* Estilos para la navegación */
 nav {
     display: flex;
-    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
+    justify-content: space-between;
+    /* Distribuir espacio entre logo, menú y botón */
     align-items: center;
     width: 100%;
 }
@@ -36,10 +59,14 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px; /* Espacio entre los enlaces */
-    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
-    justify-content: center; /* Centra los enlaces del menú */
-    padding-left: 0; /* Elimina padding innecesario */
+    gap: 30px;
+    /* Espacio entre los enlaces */
+    flex-grow: 1;
+    /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center;
+    /* Centra los enlaces del menú */
+    padding-left: 0;
+    /* Elimina padding innecesario */
     margin: 0;
 }
 
@@ -52,8 +79,10 @@ nav {
 
 /* Botón de inicio de sesión */
 .login-btn {
-    text-decoration: none; /* Elimina el subrayado */
-    color: white; /* Color del texto del botón */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: white;
+    /* Color del texto del botón */
     padding: 10px 25px;
     background-color: transparent;
     border: 2px solid white;
@@ -65,7 +94,8 @@ nav {
 
 .login-btn:hover {
     background-color: white;
-    color: #090643; /* Color azul oscuro al pasar el mouse */
+    color: #090643;
+    /* Color azul oscuro al pasar el mouse */
 }
 
 
@@ -79,20 +109,425 @@ nav {
 
 .hero h1 {
     color: #090643;
-    font-size: 2.5rem; /* Texto más grande */
+    font-size: 2.5rem;
+    /* Texto más grande */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .hero p {
     color: #666;
-    font-size: 1.2rem; /* Tamaño del subtítulo */
+    font-size: 1.2rem;
+    /* Tamaño del subtítulo */
     margin-bottom: 40px;
 }
 
 .hero a {
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
+    /* Elimina el subrayado */
 }
+
+
+/* Estilo del input de búsqueda */
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    margin: 0 auto;
+    /* Centrar el buscador */
+    display: block;
+}
+
+.search-bar:focus {
+    border-color: #090643;
+}
+
+/*Sección FILTROS buscador*/
+
+.custom-select {
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+    margin: 0 auto 10px;
+
+
+}
+
+.filtros-container {
+    margin-top: 10px;
+}
+
+.selected-option {
+
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: #090643;
+    font-size: 1rem;
+
+
+}
+
+
+.options {
+    display: none;
+    /* Oculto inicialmente */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    z-index: 10;
+    list-style-type: none;
+    /* Quita los puntos de la lista */
+    padding: 0;
+    /* Elimina el padding por defecto del ul */
+    margin: 0;
+    /* Elimina el margen por defecto del ul */
+}
+
+
+
+.options li {
+    padding: 10px;
+    color: #090643;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.options li:hover {
+    border-radius: 25px;
+    border: solid #090643;
+}
+
+/* Mostrar opciones cuando esté activo */
+.custom-select.open .options {
+    display: block;
+}
+
+
+/* Sección de todos nuestros cursos */
+.cursos {
+    padding: 20px 0;
+    /* Ajustamos para asegurar margen interno superior e inferior */
+    max-width: 1200px;
+    /* Controlamos el ancho máximo */
+    margin: 0 auto;
+    /* Centra el contenido */
+    box-sizing: border-box;
+    /* Asegura que el padding no sobrepase el contenedor */
+
+}
+
+.cursos h2 {
+    color: #090643;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Asegura que las columnas se distribuyan de manera más uniforme */
+    gap: 70px;
+    /* Aumenta el espacio entre las columnas */
+    padding: 0 20px;
+    /* Espacio lateral */
+    margin: 0 auto;
+    /* Centra la cuadrícula */
+    max-width: 1200px;
+    /* Controla el ancho máximo */
+    box-sizing: border-box;
+    /* Asegura que el padding se incluya en el ancho total */
+    justify-items: center;
+    /* Centra los elementos dentro de la cuadrícula */
+}
+
+
+.curso {
+    width: 100%;
+    max-width: 350px;
+    /* Ajustamos el tamaño máximo del curso para evitar que se desborde */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.curso img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.curso-info {
+    padding: 10px 0;
+}
+
+.curso-info h3 {
+    color: #090643;
+    margin: 10px 0;
+}
+
+.curso-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-curso {
+    background-color: #090643;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    /* Asegura que el botón se comporte como un bloque completo */
+    text-align: center;
+    /* Centra el texto dentro del botón */
+    text-decoration: none;
+    /* Elimina el subrayado */
+    border: solid;
+}
+
+.btn-curso:hover {
+    background-color: white;
+    color: #090643;
+}
+
+
+/* Sección de planes en página de planes*/
+.planes {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.plan {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 40%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    margin: 0 10px;
+    /* Añade margen horizontal */
+    border: solid;
+}
+
+
+.plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border: solid;
+}
+
+.plan h2 {
+    color: #090643;
+    margin-bottom: 15px;
+}
+
+.plan p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.plan .precio {
+    font-size: 1.5rem;
+    color: #090643;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+
+}
+
+.plan ul li {
+    padding: 10px 0;
+    color: #090643;
+    font-weight: bold;
+
+}
+
+.btn-plan {
+    display: inline-block;
+    background-color: #090643;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    padding: 10px 90px;
+
+}
+
+.plan .btn-plan {
+    margin-top: 20px;
+    /* Incrementa este valor para aumentar el espacio */
+}
+
+.btn-plan:hover {
+    background-color: white;
+    color: #090643;
+    border: solid;
+}
+
+/* Plan destacado */
+.plan.destacado {
+    background-color: #090643;
+    color: white;
+    border: 3px solid #03fa6e;
+    position: relative;
+}
+
+.plan.destacado h2 {
+    color: #ffffff;
+}
+
+.plan.destacado p {
+    color: #d1d0d0;
+}
+
+.plan.destacado ul li {
+    color: #ffffff;
+}
+
+.plan.destacado .btn-plan {
+    background-color: white;
+    color: #090643;
+
+
+}
+
+.plan.destacado .btn-plan:hover {
+    background-color: #090643;
+    color: white;
+    border: solid;
+}
+
+.badge-popular {
+    background-color: #03fa6e;
+    color: #090643;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+
+
+
+
+/* Estilos para la sección de Preguntas Frecuentes Mejorada */
+.preguntas-frecuentes {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preguntas-frecuentes h2 {
+    text-align: center;
+    color: #090643;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.pregunta {
+    margin-bottom: 20px;
+}
+
+.pregunta-btn {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #090643;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pregunta-btn:hover {
+    background-color: #090643;
+    color: #ddd;
+}
+
+.pregunta-btn.active {
+    background-color: #090643;
+    color: #ddd;
+}
+
+.respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-top: 5px;
+}
+
+.respuesta p {
+    margin: 15px 0;
+}
+
+.pregunta-btn.active+.respuesta {
+    max-height: 200px;
+    /* Ajusta la altura según el contenido */
+    padding: 15px 20px;
+}
+
+
+/* Estilo del icono */
+.icono {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.pregunta-btn.active .icono {
+    transform: rotate(45deg);
+}
+
 
 
 
@@ -104,19 +539,24 @@ nav {
 
 .courses-container {
     display: flex;
-    justify-content: center;  /* Centra los elementos en la fila */
-    gap: 30px;                /* Espacio entre los cursos */
-    flex-wrap: wrap;           /* Permite que los cursos se ajusten en filas si es necesario */
+    justify-content: center;
+    /* Centra los elementos en la fila */
+    gap: 30px;
+    /* Espacio entre los cursos */
+    flex-wrap: wrap;
+    /* Permite que los cursos se ajusten en filas si es necesario */
 }
 
 .course {
     background-color: #090643;
     border-radius: 8px;
     padding: 20px;
-    width: 250px;              /* Ancho fijo para que se mantengan consistentes */
+    width: 250px;
+    /* Ancho fijo para que se mantengan consistentes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    text-align: left;          /* Alinea el texto a la izquierda dentro de cada curso */
+    text-align: left;
+    /* Alinea el texto a la izquierda dentro de cada curso */
     color: white;
 }
 
@@ -165,12 +605,30 @@ nav {
 }
 
 
+/* Sección de testimonios */
+.testimonios h2 {
+    color: #090643;
+    margin-bottom: 20px;
+}
 
+.testimonio {
+    margin-bottom: 20px;
+}
+
+.testimonio p {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonio h4 {
+    color: #090643;
+    margin-top: 5px;
+}
 
 
 
 /*Boton Explorar Cursos*/
-.cta-btn{
+.cta-btn {
     background-color: #090643;
     color: white;
     padding: 10px 15px;
@@ -179,7 +637,7 @@ nav {
     cursor: pointer;
     margin-top: 10px;
     width: 10%;
-    
+
 }
 
 .cta-btn:hover {
@@ -191,22 +649,45 @@ nav {
 
 /* Sección de Beneficios Mejorada */
 .benefits {
-    background-color: #f9f9f9;
-    padding: 50px;
+    background: linear-gradient(90deg, #090643, #014291, #03fa6e, #004920, #090643);
+    background-size: 400% 400%;
+    animation: aurora 10s infinite;
+    padding: 40px;
     text-align: center;
+    
 }
 
 .benefits h2 {
     font-size: 2.5rem;
-    color: #090643;
-    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+    background: linear-gradient(90deg, #10adc9, #03fa6e, #e0cf35, #0dbfc5, #03fa6e);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: aurora 5s infinite linear;
+}
+
+@keyframes aurora {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .benefits-container {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Aumenta el espacio entre las tarjetas de beneficio */
+    gap: 40px;
+    /* Aumenta el espacio entre las tarjetas de beneficio */
     flex-wrap: wrap;
 }
 
@@ -214,7 +695,8 @@ nav {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 30px;
-    width: 300px; /* Tamaño más grande para cada tarjeta */
+    width: 300px;
+    /* Tamaño más grande para cada tarjeta */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
@@ -264,14 +746,16 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px; /* Aumenta el espacio entre testimonios */
+    gap: 40px;
+    /* Aumenta el espacio entre testimonios */
 }
 
 .testimonial {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 30px;
-    width: 320px; /* Tamaño más grande para las tarjetas */
+    width: 320px;
+    /* Tamaño más grande para las tarjetas */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
@@ -284,7 +768,8 @@ nav {
 }
 
 .testimonial::before {
-    content: "“"; /* Añade comillas estilizadas */
+    content: "“";
+    /* Añade comillas estilizadas */
     font-size: 4rem;
     color: #03fa6e;
     position: absolute;
@@ -347,8 +832,9 @@ nav {
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s;
-    text-decoration: none; /* Elimina el subrayado */
-    
+    text-decoration: none;
+    /* Elimina el subrayado */
+
 }
 
 .cta-btn-final:hover {
@@ -356,30 +842,43 @@ nav {
     border: solid rgb(1, 129, 12) 1px;
 }
 
+
+
+.ahorro {
+    color: #03fa6e;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+
 /* Información de contacto */
-.info-contacto, .redes-sociales {
+.info-contacto,
+.redes-sociales {
     text-align: center;
     padding: 40px 20px;
-  }
-  
-  .info-contacto h2, .redes-sociales h2 {
+}
+
+.info-contacto h2,
+.redes-sociales h2 {
     color: #090643;
     margin-bottom: 20px;
-  }
-  
-  /* Redes sociales */
-  .redes-sociales a {
+}
+
+/* Redes sociales */
+.redes-sociales a {
     margin: 0 15px;
-  }
-  
-  .redes-sociales img {
+}
+
+.redes-sociales img {
     width: 40px;
     transition: transform 0.3s;
-  }
-  
-  .redes-sociales img:hover {
+}
+
+.redes-sociales img:hover {
     transform: scale(1.2);
-  }
+}
 
 
 
@@ -394,14 +893,17 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: center; /* Centra el contenido del footer */
+    justify-content: center;
+    /* Centra el contenido del footer */
     align-items: center;
     padding: 20px;
-    flex-wrap: wrap; /* Permite que el contenido se ajuste en filas si es necesario */
+    flex-wrap: wrap;
+    /* Permite que el contenido se ajuste en filas si es necesario */
 }
 
 .footer-menu {
-    margin-right: 50px; /* Espacio entre el menú y las redes sociales */
+    margin-right: 50px;
+    /* Espacio entre el menú y las redes sociales */
 }
 
 .footer-menu ul {
@@ -409,7 +911,8 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
+    gap: 20px;
+    /* Espacio entre los enlaces */
 }
 
 .footer-menu a {
@@ -419,16 +922,16 @@ footer {
 
 .footer-social {
     display: flex;
-    gap: 15px; /* Espacio entre los íconos de redes sociales */
+    gap: 15px;
+    /* Espacio entre los íconos de redes sociales */
 }
 
-.footer-social img:hover{
+.footer-social img:hover {
     transform: scale(1.3);
 }
 
 .footer-social img {
-    width: 24px; /* Ajusta el tamaño de los íconos */
+    width: 24px;
+    /* Ajusta el tamaño de los íconos */
     height: auto;
 }
-
-

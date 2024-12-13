@@ -32,7 +32,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Mi Academia - Estudiante Programador</title>
     <link rel="stylesheet" href="../css/miAcademia.css" />
     <script src="../App.js"></script>
-  <script src="../App.js?v=1.0"></script>
+  <script src="../js/App.js?v=1.0"></script>
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
     
   </head>
@@ -155,18 +155,6 @@ if (!isset($_SESSION['user_id'])) {
       const welcomeMessage = document.getElementById("welcome-message");
       welcomeMessage.innerHTML = "Hola, " + nombre + ". ¡Elige tu siguiente reto! ";
     }
-
-    //Carrusel de cursos
-
-    function moveCarousel(direction) {
-  const carousel = document.querySelector('.carousel');
-  const cardWidth = document.querySelector('.course-card').offsetWidth + 15; // Ancho del curso + margen derecho
-  const scrollDistance = cardWidth * 3; // Desplaza tres cursos a la vez
-  carousel.scrollBy({
-    left: scrollDistance * direction,
-    behavior: 'smooth'
-  });
-}
 
 
 
