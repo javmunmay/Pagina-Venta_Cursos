@@ -795,7 +795,7 @@ nav {
     margin-top: 10px;
     width: 10%;
     box-shadow: 0 4px 15px white;
-    
+    transition: all 0.2s ease-in-out; /* Aplicamos la transición */
 
 
 }
@@ -810,7 +810,7 @@ nav {
 
 /* Sección de Beneficios Mejorada */
 .benefits {
-    background: linear-gradient(90deg, #090643, #014291, #090643, #014291, #090643);
+    background: linear-gradient(90deg, #090643, #090643, #090643, #014291, #090643, #090643);
     background-size: 400% 400%;
     animation: aurora 10s infinite;
     padding: 40px;
