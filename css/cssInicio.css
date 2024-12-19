@@ -76,6 +76,83 @@ nav {
     font-weight: bold;
 }
 
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* Asegura que esté sobre otros elementos */
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+  
+  /* Para móviles: mostrar el menú hamburguesa */
+  @media (max-width: 835px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none; /* Oculta el menú por defecto */
+      flex-direction: column; /* Cambia a columna */
+      background-color: #090643;
+      position: absolute;
+      top: 400%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+  
+    .nav-links.show {
+      display: flex; /* Muestra el menú cuando se activa */
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .nav-links a,
+    .nav-links .login-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: block;
+    }
+  
+    .nav-links .login-btn {
+      margin-top: 15px;
+      background-color: #03fa6e;
+      color: #090643;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+    .nav-links .login-btn:hover {
+      background-color: white;
+    }
+
+    .nav-links a:hover {
+        color:  #02d25f;
+    }
+  }
+  
+  
+  
+  
 
 /* Botón de inicio de sesión */
 .login-btn {
