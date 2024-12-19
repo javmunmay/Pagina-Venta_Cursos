@@ -96,7 +96,7 @@ nav {
   }
   
   /* Para móviles: mostrar el menú hamburguesa */
-  @media (max-width: 835px) {
+  @media (max-width: 756px) {
     .menu-toggle {
       display: block;
     }
