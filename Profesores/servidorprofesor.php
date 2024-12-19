@@ -1,9 +1,9 @@
 <?php
 // Conectar a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "estudiante_programador";
+$servername = "PMYSQL181.dns-servicio.com:3306";
+$username = "Javier";
+$password = "u70q0Z2p@";
+$dbname = "10718674_estudiante_programador";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -2,10 +2,10 @@
 session_start();
 
 // Datos de la conexión a la base de datos
-$host = "localhost";  // Para XAMPP o servidores locales
-$dbname = "estudiante_programador";  // Nombre de la base de datos
-$username = "root";  // Nombre de usuario de MySQL, generalmente 'root' en XAMPP
-$password = "";  // Contraseña, normalmente vacía para 'root' en XAMPP
+$host = "PMYSQL181.dns-servicio.com:3306";  // Para XAMPP o servidores locales
+$dbname = "10718674_estudiante_programador";  // Nombre de la base de datos
+$username = "Javier";  // Nombre de usuario de MySQL, generalmente 'root' en XAMPP
+$password = "u70q0Z2p@";  // Contraseña, normalmente vacía para 'root' en XAMPP
 
 // Crear la conexión
 $conn = new mysqli($host, $username, $password, $dbname);
