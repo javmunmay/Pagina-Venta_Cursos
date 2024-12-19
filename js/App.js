@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         courses.forEach(course => {
             const courseTitle = course.querySelector('h3').textContent.toLowerCase();
-            const courseLevel = course.getAttribute('data-nivel');
-            const courseCategory = course.getAttribute('data-categoria');
+            const courseLevel = course.getAttribute('data-nivel') || "";
+            const courseCategory = course.getAttribute('data-categoria') || "";
 
             const matchesSearch = courseTitle.includes(searchString);
             const matchesLevel = selectedLevel === "" || courseLevel === selectedLevel;
@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Evento para el buscador
+    searchBar.addEventListener('input', () => {
+        applyFilters();
+    });
+
     // Evento para seleccionar una opción de nivel
     levelSelect.querySelector('.selected-option').addEventListener('click', () => {
         levelSelect.classList.toggle('open');
@@ -43,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedLevel = e.target.getAttribute('data-value');
             levelSelect.querySelector('.selected-option').textContent = e.target.textContent;
             levelSelect.classList.remove('open');
-            applyFilters(); // Aplicar filtros cuando cambia la selección
+            applyFilters();
         }
     });
 
@@ -57,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedCategory = e.target.getAttribute('data-value');
             categorySelect.querySelector('.selected-option').textContent = e.target.textContent;
             categorySelect.classList.remove('open');
-            applyFilters(); // Aplicar filtros cuando cambia la selección
+            applyFilters();
         }
     });
 
@@ -71,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 
@@ -110,10 +116,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-
-  
 
 
 

@@ -106,10 +106,12 @@ nav {
 /* Onda animada */
 .wave {
     position: absolute;
-    top: 0; /* Onda inicia desde la parte superior */
+    top: 0;
+    /* Onda inicia desde la parte superior */
     left: 0;
     width: 100%;
-    height: 250px; /* Ajustamos la altura */
+    height: 250px;
+    /* Ajustamos la altura */
     background: linear-gradient(90deg, white);
     background-size: 200% 200%;
     z-index: -1;
@@ -121,7 +123,8 @@ nav {
 
 .wave:nth-child(2) {
     background: linear-gradient(90deg, #090643, #090643, #090643, #090643);
-    height: 250px; /* Ajustamos la altura */
+    height: 250px;
+    /* Ajustamos la altura */
     background-size: 200% 200%;
     /* Variación en el movimiento */
     animation: moveWaveBgReverse 7s infinite linear reverse, waveSlopeUp2 4s infinite ease-in-out;
@@ -132,6 +135,7 @@ nav {
     0% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -141,6 +145,7 @@ nav {
     0% {
         background-position: 0% 50%;
     }
+
     100% {
         background-position: 100% 50%;
     }
@@ -151,9 +156,11 @@ nav {
     0% {
         clip-path: polygon(0 45%, 25% 40%, 50% 35%, 75% 30%, 100% 25%, 100% 100%, 0 100%);
     }
+
     50% {
         clip-path: polygon(0 50%, 25% 45%, 50% 40%, 75% 35%, 100% 30%, 100% 100%, 0 100%);
     }
+
     100% {
         clip-path: polygon(0 45%, 25% 40%, 50% 35%, 75% 30%, 100% 25%, 100% 100%, 0 100%);
     }
@@ -163,9 +170,11 @@ nav {
     0% {
         clip-path: polygon(0 50%, 25% 45%, 50% 40%, 75% 35%, 100% 30%, 100% 100%, 0 100%);
     }
+
     50% {
         clip-path: polygon(0 55%, 25% 50%, 50% 45%, 75% 40%, 100% 35%, 100% 100%, 0 100%);
     }
+
     100% {
         clip-path: polygon(0 50%, 25% 45%, 50% 40%, 75% 35%, 100% 30%, 100% 100%, 0 100%);
     }
@@ -239,13 +248,13 @@ nav {
     padding: 50px 20px;
     text-align: center;
 
-    
+
 }
 
 .hero h1 {
     color: white;
     font-size: 2.5rem;
-    
+
     /* Texto más grande */
     font-weight: bold;
     margin-bottom: 20px;
@@ -254,7 +263,7 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: aurora 5s infinite linear;
-    
+
 }
 
 
@@ -267,13 +276,19 @@ nav {
     margin-bottom: 40px;
     background-color: #090643;
 
-    padding: 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    text-align: center; /* Alinear el texto */
-    max-width: 80%; /* Limitar el ancho del texto */
-    margin: 10px auto; /* Centrar el contenedor */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra elegante */
-   
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    text-align: center;
+    /* Alinear el texto */
+    max-width: 80%;
+    /* Limitar el ancho del texto */
+    margin: 10px auto;
+    /* Centrar el contenedor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra elegante */
+
     margin-bottom: 20px;
 
 }
@@ -795,7 +810,8 @@ nav {
     margin-top: 10px;
     width: 10%;
     box-shadow: 0 4px 15px white;
-    transition: all 0.2s ease-in-out; /* Aplicamos la transición */
+    transition: all 0.2s ease-in-out;
+    /* Aplicamos la transición */
 
 
 }
@@ -1097,3 +1113,147 @@ footer {
     /* Ajusta el tamaño de los íconos */
     height: auto;
 }
+
+
+/*
+
+----------------------------------------
+     PAGINA TRABAJA CON NOSOTROS
+----------------------------------------
+
+*/
+
+
+.trabaja-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.informacion > ul {
+    list-style: none;
+    padding: 0;
+    /* Opcional: Elimina el padding predeterminado */
+    margin: 0;
+    /* Opcional: Elimina el margen predeterminado */
+    
+}
+
+.anuncios {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    /* Centrado y límites de ancho */
+    max-width: 800px; /* Ajusta este valor según prefieras */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Opcional: Añadir un poco de padding para evitar que el contenido toque los bordes */
+    padding: 0 20px; /* 20px de espacio en los lados */
+}
+
+.anuncio {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.anuncio h2 {
+    color: #090643;
+}
+
+.anuncio p {
+    margin: 10px 0;
+}
+
+.precio {
+    font-size: 1.1em;
+    color: #03fa6e;
+    
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.btn-solicitar {
+    background-color: #090643;
+    color: white;
+    padding: 10px 20px;
+    border: solid #090643;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.btn-solicitar:hover {
+    background-color: white;
+    color: #090643;
+
+}
+
+/*---*/
+/* Contenedor principal */
+.preguntas-frecuentes {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Título */
+  .preguntas-frecuentes h3 {
+    text-align: center;
+    color: #090643;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #090643;
+    padding-bottom: 10px;
+  }
+  
+  /* Pregunta */
+  .pregunta ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.8;
+  }
+  
+  .pregunta ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .pregunta ul li span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .pregunta ul li b {
+    color: #090643;
+  }
+  
+  /* Importante */
+  .pregunta p {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #555;
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .pregunta p b {
+    color: #d9534f;
+  }
+  
+
+/* --------------- */
