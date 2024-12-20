@@ -11,10 +11,10 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Configuración de la base de datos
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "estudiante_programador";
+$host = "PMYSQL181.dns-servicio.com:3306";
+$username = "Javier";
+$password = "u70q0Z2p@";
+$dbname = "10718674_estudiante_programador";
 
 // Conectar a la base de datos
 $conn = new mysqli($host, $username, $password, $dbname);

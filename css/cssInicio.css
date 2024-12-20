@@ -573,7 +573,7 @@ nav {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 30px;
-    max-width: 40%;
+    max-width: 80%;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -692,6 +692,45 @@ nav {
 }
 
 
+@media (max-width: 768px) {
+    .planes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .plan {
+      width: 90%; /* Ajusta el ancho al 90% del viewport */
+      text-align: center; /* Centra el contenido */
+    }
+  
+    .badge-popular {
+      position: relative; /* Corrige el posicionamiento para móviles */
+      margin-top: 15px;
+      text-align: center;
+      align-items: center;
+      
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .preguntas-frecuentes .pregunta {
+      margin-bottom: 15px; /* Más espacio entre preguntas */
+    }
+  
+    .pregunta-btn {
+      font-size: 1rem; /* Tamaño de texto ajustado */
+      padding: 10px;
+    }
+  
+    .respuesta {
+      padding: 10px;
+      font-size: 0.9rem; /* Ajustar el texto de la respuesta */
+    }
+  }
+  
 
 
 
