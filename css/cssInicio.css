@@ -710,7 +710,7 @@ nav {
         position: absolute;
         top: -10px; /* Ajusta el valor según el diseño */
         right: 50%;
-        transform: translateX(270%);
+        transform: translateX(50%);
     }
     
   }
