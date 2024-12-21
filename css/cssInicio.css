@@ -875,8 +875,8 @@ nav {
 .btn-curso {
     display: block;
     text-align: center;
-    background-color: #ffffff;
-    color: #090643;
+    background-color: #090643;
+    color: white;
     padding: 10px 15px;
     margin-top: 10px;
     border-radius: 5px;
@@ -887,10 +887,10 @@ nav {
 }
 
 .btn-curso:hover {
-    background-color: #090643;
-    color: white;
+    background-color: white;
+    color: #090643;
+    border: #090643 solid;
     cursor: pointer;
-    transform: scale(1.1);
     box-shadow: 0 4px 15px #03fa6e(255, 0, 114, 0.5);
 }
 
