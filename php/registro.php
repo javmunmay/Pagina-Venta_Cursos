@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
 
     // Verificar que las contraseñas coincidan
     if ($_POST['password'] !== $_POST['passwordConfirm']) {
-        // Redirigir a la página de registro con un mensaje de error
         header("Location: ../InicioSesion/Registrarse.html?error=Las contraseñas no coinciden");
         exit();
     }
@@ -33,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     $politica = isset($_POST['politica']) ? 1 : 0; // Captura el valor de la política de privacidad (1 si está marcada, 0 si no)
 
     // Concatenar el prefijo y el número de teléfono si ambos están presentes
-    $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : $telefono;
+    $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : NULL;
 
     // Verificar si el correo ya existe en la base de datos usando una consulta preparada
     $sql = "SELECT id FROM usuarios WHERE email = ?";
@@ -43,52 +42,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Redirigir con mensaje de error si el correo ya existe
         header("Location: ../InicioSesion/Registrarse.html?error=El correo ya está registrado");
         exit();
     }
 
-    // Insertar en la base de datos, asignando roles predeterminados y política de privacidad
+    // Insertar en la base de datos
     $sql = "INSERT INTO usuarios (
-    nombre,  
-    password, 
-    fecha_registro,
-    numero_telefono, 
-    email,
-    fecha_nacimiento, 
-    user, 
-    admin, 
-    profesor, 
-    politica_privacidad
-) 
-VALUES (?, ?, ?, ?, ?, 1, 0, 0, 1)";
+        nombre,  
+        password, 
+        numero_telefono, 
+        email,
+        fecha_nacimiento, 
+        user, 
+        admin, 
+        profesor, 
+        politica_privacidad
+    ) 
+    VALUES (?, ?, ?, ?, ?, 1, 0, 0, ?)";
 
     $stmt = $conn->prepare($sql);
 
-    // 'sssssi' = 5 cadenas (s) + 1 entero (i)
-// Ajusta la 'i' a 's' si 'politica_privacidad' se almacena como VARCHAR/CHAR en tu BD
+    // Vincular parámetros en el orden correcto
     $stmt->bind_param(
-    "sssss i", // Tipos: s = string, i = integer
-    $nombre,   // nombre
-    $password, // password
-    $numero_telefono, // numero_telefono
-    $email,    // email
-    $fecha_nacimiento, // fecha_nacimiento
-    $politica  // politica_privacidad
-);
+        "ssssi", // Tipos correctos
+        $nombre,              // nombre
+        $password,            // password
+        $numero_telefono,     // numero_telefono
+        $email,               // email
+        $fecha_nacimiento,    // fecha_nacimiento
+        $politica             // politica_privacidad
+    );
 
+    // Ejecutar y verificar
     if ($stmt->execute()) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
         echo "Error en el registro: " . $stmt->error;
-        
-        
     }
+
+    // Cerrar statement
+    $stmt->close();
 } else {
     echo "Todos los campos son obligatorios.";
 }
 
 // Cerrar conexión
-$stmt->close();
 $conn->close();
 ?>

@@ -31,7 +31,7 @@ CREATE TABLE profesores (
     estado TEXT CHECK (estado IN ('Activo', 'Inactivo', 'Suspendido')), -- opciones restringidas
     notas TEXT
 );
-*/
+
 
 /* Tabla de cursos */
 /*
