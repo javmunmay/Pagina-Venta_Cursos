@@ -100,12 +100,12 @@ nav {
     font-weight: bold;
 }
 
-.nav-links > .cerrarSesion{
+.cerrarSesion > a{
   color: red;
 
 }
 
-.nav-links > .cerrarSesion:hover{
+.cerrarSesion > a:hover{
   color: rgb(180, 11, 11);
 }
 
