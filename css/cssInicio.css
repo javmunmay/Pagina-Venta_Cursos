@@ -23,6 +23,474 @@ section.testimonios {
     text-align: center;
 }
 
+/*************************************
+ * Banner Navideño
+ *************************************/
+.navidad-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre la imagen y el texto */
+    background-color: #fff;
+    color: #090643;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #03fa6e;
+    /* Línea inferior verde */
+}
+
+.navidad-banner img.navidad-hat {
+    width: 40px;
+    /* Ajusta el tamaño del gorro */
+    height: auto;
+}
+
+/*************************************
+ * Efecto de nieve sutil
+ *************************************/
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* No es necesario un alto fijo */
+    pointer-events: none;
+    /* Para que no interfiera con clics */
+    z-index: 9999;
+    /* Encima de todo */
+}
+
+.snowflake {
+    position: absolute;
+    top: -2rem;
+    /* Inicia un poco por encima del viewport */
+    font-size: 1.2rem;
+    /* Tamaño del copo */
+    color: rgba(255, 255, 255, 0.8);
+    user-select: none;
+    animation-name: snowflake-fall, snowflake-shake;
+    animation-duration: 10s, 3s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, ease-in-out;
+}
+
+/* 
+     1) Caída vertical 
+     2) Pequeño “zig-zag” 
+  */
+@keyframes snowflake-fall {
+    0% {
+        top: -5%;
+    }
+
+    100% {
+        top: 110%;
+    }
+}
+
+@keyframes snowflake-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+/* Distribución aleatoria inicial de los copos */
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s, 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s, 1s;
+}
+
+.snowflake:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s, 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s, 3s;
+}
+
+.snowflake:nth-child(5) {
+    left: 80%;
+    animation-delay: 8s, 4s;
+}
+
+.snowflake:nth-child(6) {
+    left: 90%;
+    animation-delay: 10s, 5s;
+}
+
+/*************************************
+ * Guirnalda de luces navideñas
+ *************************************/
+.christmas-lights {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    background: #fff;
+    /* Puedes cambiarlo si quieres otro fondo detrás de las luces */
+}
+
+.christmas-lights .bulb {
+    width: 20px;
+    height: 30px;
+    border-radius: 50% 50% 40% 40%;
+    /* Forma de bombilla */
+    position: relative;
+    animation: blink 2.5s infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.christmas-lights .bulb::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 10px;
+    background-color: #555;
+    border-radius: 2px;
+    /* Pieza gris de unión al cable */
+}
+
+.christmas-lights .red {
+    background-color: #ff1c1c;
+}
+
+.christmas-lights .green {
+    background-color: #2ecc71;
+}
+
+.christmas-lights .gold {
+    background-color: #f1c40f;
+}
+
+.christmas-lights .blue {
+    background-color: #3498db;
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+
+/*************************************
+ * Santa volando
+ *************************************/
+.santa-sleigh {
+    position: fixed;
+    top: 50px;
+    /* Ajusta la altura */
+    left: -300px;
+    /* Empieza fuera de la pantalla por la izquierda */
+    z-index: 9999;
+
+    /* 1) Duración de 20s (más lento).
+       2) Espera 3s antes de comenzar. */
+    animation: santaFlight 20s linear infinite;
+    animation-delay: 3s;
+}
+
+.santa-sleigh img {
+    width: 200px;
+    /* Ajusta el tamaño del trineo */
+    height: auto;
+}
+
+@keyframes santaFlight {
+    0% {
+        left: -300px;
+        transform: scaleX(1) translateY(0);
+    }
+
+    25% {
+        transform: scaleX(1) translateY(-10px);
+    }
+
+    50% {
+        left: 110%;
+        transform: scaleX(1) translateY(0);
+    }
+
+    50.01% {
+        left: 110%;
+        transform: scaleX(-1) translateY(0);
+    }
+
+    75% {
+        transform: scaleX(-1) translateY(-10px);
+    }
+
+    100% {
+        left: -300px;
+        transform: scaleX(-1) translateY(0);
+    }
+}
+
+
+
+/*************************************
+ * Árbol de Navidad flotante
+ *************************************/
+.arbol-navidad {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    animation: bounce 4s infinite ease-in-out;
+}
+
+.arbol-navidad img {
+    width: 100px;
+    /* Tamaño del árbol */
+    height: auto;
+}
+
+/* Animación de rebote suave */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+/*************************************
+ * Banner Black Friday
+ *************************************/
+.blackfriday-banner {
+    background-color: #000000;
+    /* Fondo negro */
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.blackfriday-banner .bf-highlight {
+    color: #ff2d55;
+    /* Rojo vivo */
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: bfFlashing 2s infinite;
+    /* Parpadeo suave opcional */
+}
+
+/* Animación de parpadeo */
+@keyframes bfFlashing {
+
+    0%,
+    100% {
+        color: #ff2d55;
+    }
+
+    50% {
+        color: #ffd700;
+    }
+
+    /* Dorado */
+}
+
+
+
+/*************************************
+ * Contador Black Friday
+ *************************************/
+.bf-countdown-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #090643;
+    /* Fondo negro */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bf-countdown-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.bf-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff2d55;
+}
+
+.time-box small {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #ffd700;
+}
+
+
+/*************************************
+ * Ribbon Black Friday
+ *************************************/
+.bf-ribbon {
+    position: fixed;
+    top: 40px;
+    right: -45px;
+    width: 200px;
+    transform: rotate(45deg);
+    background-color: #ff2d55;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bf-ribbon span {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/*************************************
+ * Estilos para Modal de Cupón
+ *************************************/
+
+/* El contenedor inicia oculto con display: none; 
+   y se ve cuando se abre con display: flex (en JS).
+*/
+.modal-container {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999;
+    /* Encima de todo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    width: 90%;
+    max-width: 400px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    position: relative;
+    /* Para ubicar la X de cierre */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #000;
+}
+
+.modal-content p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botón de cierre (X) */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Botón principal dentro del modal */
+.btn-accept {
+    background-color: white;
+    color: #090643;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: solid #090643;
+}
+
+.btn-accept:hover {
+    background-color: #02d25f;
+}
+
+
+
+/* Botón que muestra el modal (opcional) */
+.btn-show-modal {
+    display: block; 
+    margin: 20px auto; 
+    background-color: #02d25f;
+    color: #090643;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    border:solid #090643;
+    
+}
+
+.btn-show-modal:hover {
+    background-color: white;
+
+    transform: scale(1.15);
+    
+    
+}
+
 
 
 /* Estilos para el encabezado */
@@ -83,76 +551,80 @@ nav {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 1001; /* Asegura que esté sobre otros elementos */
-  }
-  
-  .menu-toggle span {
+    z-index: 1001;
+    /* Asegura que esté sobre otros elementos */
+}
+
+.menu-toggle span {
     display: block;
     width: 30px;
     height: 3px;
     background-color: #ffffff;
     margin: 5px 0;
     transition: 0.3s;
-  }
-  
-  /* Para móviles: mostrar el menú hamburguesa */
-  @media (max-width: 835px) {
+}
+
+/* Para móviles: mostrar el menú hamburguesa */
+@media (max-width: 835px) {
     .menu-toggle {
-      display: block;
+        display: block;
     }
-  
+
     .nav-links {
-      display: none; /* Oculta el menú por defecto */
-      flex-direction: column; /* Cambia a columna */
-      background-color: #090643;
-      position: absolute;
-      top: 400%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      z-index: 1000;
+        display: none;
+        /* Oculta el menú por defecto */
+        flex-direction: column;
+        /* Cambia a columna */
+        background-color: #090643;
+        position: absolute;
+        top: 400%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000;
     }
-  
+
     .nav-links.show {
-      display: flex; /* Muestra el menú cuando se activa */
+        display: flex;
+        /* Muestra el menú cuando se activa */
     }
-  
+
     .nav-links li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
-  
+
     .nav-links a,
     .nav-links .login-btn {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1.2rem;
-      display: block;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: block;
     }
-  
+
     .nav-links .login-btn {
-      margin-top: 15px;
-      background-color: #03fa6e;
-      color: #090643;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
+        margin-top: 15px;
+        background-color: #03fa6e;
+        color: #090643;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
     }
-  
+
     .nav-links .login-btn:hover {
-      background-color: white;
+        background-color: white;
     }
 
     .nav-links a:hover {
-        color:  #02d25f;
+        color: #02d25f;
     }
-  }
-  
-  
-  
-  
+}
+
+
+
+
 
 /* Botón de inicio de sesión */
 .login-btn {
@@ -694,44 +1166,50 @@ nav {
 
 @media (max-width: 768px) {
     .planes {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-  
+
     .plan {
-      width: 90%; /* Ajusta el ancho al 90% del viewport */
-      text-align: center; /* Centra el contenido */
-      
+        width: 90%;
+        /* Ajusta el ancho al 90% del viewport */
+        text-align: center;
+        /* Centra el contenido */
+
     }
-  
+
     .badge-popular {
         position: absolute;
-        top: -10px; /* Ajusta el valor según el diseño */
+        top: -10px;
+        /* Ajusta el valor según el diseño */
         right: 50%;
         transform: translateX(50%);
     }
-    
-  }
-  
 
-  @media (max-width: 768px) {
+}
+
+
+@media (max-width: 768px) {
     .preguntas-frecuentes .pregunta {
-      margin-bottom: 15px; /* Más espacio entre preguntas */
+        margin-bottom: 15px;
+        /* Más espacio entre preguntas */
     }
-  
+
     .pregunta-btn {
-      font-size: 1rem; /* Tamaño de texto ajustado */
-      padding: 10px;
+        font-size: 1rem;
+        /* Tamaño de texto ajustado */
+        padding: 10px;
     }
-  
+
     .respuesta {
-      padding: 10px;
-      font-size: 0.9rem; /* Ajustar el texto de la respuesta */
+        padding: 10px;
+        font-size: 0.9rem;
+        /* Ajustar el texto de la respuesta */
     }
-  }
-  
+}
+
 
 
 
@@ -1246,13 +1724,13 @@ footer {
     text-align: center;
 }
 
-.informacion > ul {
+.informacion>ul {
     list-style: none;
     padding: 0;
     /* Opcional: Elimina el padding predeterminado */
     margin: 0;
     /* Opcional: Elimina el margen predeterminado */
-    
+
 }
 
 .anuncios {
@@ -1262,12 +1740,14 @@ footer {
     margin-top: 20px;
 
     /* Centrado y límites de ancho */
-    max-width: 800px; /* Ajusta este valor según prefieras */
+    max-width: 800px;
+    /* Ajusta este valor según prefieras */
     margin-left: auto;
     margin-right: auto;
 
     /* Opcional: Añadir un poco de padding para evitar que el contenido toque los bordes */
-    padding: 0 20px; /* 20px de espacio en los lados */
+    padding: 0 20px;
+    /* 20px de espacio en los lados */
 }
 
 .anuncio {
@@ -1288,7 +1768,7 @@ footer {
 .precio {
     font-size: 1.1em;
     color: #03fa6e;
-    
+
     border-radius: 20px;
     padding: 10px;
 }
@@ -1319,10 +1799,10 @@ footer {
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-  }
-  
-  /* Título */
-  .preguntas-frecuentes h3 {
+}
+
+/* Título */
+.preguntas-frecuentes h3 {
     text-align: center;
     color: #090643;
     font-size: 2rem;
@@ -1330,35 +1810,35 @@ footer {
     font-weight: bold;
     border-bottom: 2px solid #090643;
     padding-bottom: 10px;
-  }
-  
-  /* Pregunta */
-  .pregunta ul {
+}
+
+/* Pregunta */
+.pregunta ul {
     list-style: none;
     padding-left: 0;
     line-height: 1.8;
-  }
-  
-  .pregunta ul li {
+}
+
+.pregunta ul li {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
     font-size: 1rem;
     color: #333;
-  }
-  
-  .pregunta ul li span {
+}
+
+.pregunta ul li span {
     display: inline-block;
     margin-right: 10px;
     font-size: 1.2rem;
-  }
-  
-  .pregunta ul li b {
+}
+
+.pregunta ul li b {
     color: #090643;
-  }
-  
-  /* Importante */
-  .pregunta p {
+}
+
+/* Importante */
+.pregunta p {
     margin-top: 20px;
     font-size: 0.95rem;
     color: #555;
@@ -1366,11 +1846,11 @@ footer {
     padding: 15px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
-  }
-  
-  .pregunta p b {
+}
+
+.pregunta p b {
     color: #d9534f;
-  }
-  
+}
+
 
 /* --------------- */
