@@ -148,7 +148,7 @@ if (!isset($_SESSION['user_id'])) {
               <p>
                 Aprende HTML con este curso completo desde cero hasta avanzado.
               </p>
-              <a href="../infoCursosSesion/Curso.php?id=1" class="btn-curso"
+              <a href="https://41095220.servicio-online.net/InfoCursosSesion/Curso.php?id=1" class="btn-curso"
                 >Ver Curso</a
               >
             </div>

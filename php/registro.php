@@ -1,4 +1,9 @@
 <?php
+// Habilitar visualización de errores
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Datos de conexión
 $servername = "PMYSQL181.dns-servicio.com:3306";
 $username = "Javier";
@@ -25,29 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     // Recibir y sanitizar los datos del formulario
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $email = $conn->real_escape_string($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encriptar la contraseña
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $telefono = isset($_POST['telefono']) ? $conn->real_escape_string($_POST['telefono']) : NULL;
     $prefijo = isset($_POST['prefijo']) ? $conn->real_escape_string($_POST['prefijo']) : NULL;
-    $fecha_nacimiento = $conn->real_escape_string($_POST['fecha_nacimiento']);
-    $politica = isset($_POST['politica']) ? 1 : 0; // Captura el valor de la política de privacidad (1 si está marcada, 0 si no)
+    $fecha_nacimiento = date("Y-m-d", strtotime($_POST['fecha_nacimiento']));
+    $politica = isset($_POST['politica']) ? 1 : 0;
 
     // Concatenar el prefijo y el número de teléfono si ambos están presentes
     $numero_telefono = ($prefijo && $telefono) ? $prefijo . ' ' . $telefono : NULL;
 
-    // Verificar si el correo ya existe en la base de datos usando una consulta preparada
-    $sql = "SELECT id FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        header("Location: ../InicioSesion/Registrarse.html?error=El correo ya está registrado");
-        exit();
-    }
+    // Obtener el próximo valor de id
+    $result = $conn->query("SELECT MAX(id) AS max_id FROM usuarios");
+    $row = $result->fetch_assoc();
+    $nuevo_id = $row['max_id'] + 1;
 
     // Insertar en la base de datos
     $sql = "INSERT INTO usuarios (
+        id,
         nombre,  
         password, 
         numero_telefono, 
@@ -58,34 +57,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         profesor, 
         politica_privacidad
     ) 
-    VALUES (?, ?, ?, ?, ?, 1, 0, 0, ?)";
+    VALUES (?, ?, ?, ?, ?, ?, 1, 0, 0, ?)";
 
     $stmt = $conn->prepare($sql);
 
-    // Vincular parámetros en el orden correcto
+    // Vincular parámetros
     $stmt->bind_param(
-        "ssssi", // Tipos: 4 strings, 1 integer
-        $nombre,            // nombre
-        $password,          // password
-        $numero_telefono,   // numero_telefono
-        $email,             // email
-        $fecha_nacimiento,  // fecha_nacimiento
-        $politica           // politica_privacidad
+        "isssssi", // Tipos: 1 integer (id) + 5 strings + 1 integer
+        $nuevo_id,
+        $nombre,
+        $password,
+        $numero_telefono,
+        $email,
+        $fecha_nacimiento,
+        $politica
     );
 
-    // Ejecutar y verificar
     if ($stmt->execute()) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
         echo "Error en el registro: " . $stmt->error;
     }
 
-    // Cerrar statement
     $stmt->close();
 } else {
     echo "Todos los campos son obligatorios.";
 }
 
-// Cerrar conexión
 $conn->close();
 ?>
