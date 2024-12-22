@@ -7,9 +7,9 @@
   <title>Contacto | Estudiante Programador</title>
   <link rel="stylesheet" href="../css/cssContacto.css" />
 
-  
+
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
-  
+
   <script src="../js/App.js"></script>
 
 </head>
@@ -139,8 +139,33 @@
             <a href="PoliticaPrivacidad.html" target="_blank" rel="noopener noreferrer">política de
               privacidad</a></label>
         </div>
-        <button type="submit" class="btn-submit">Enviar mensaje</button>
+        <button type="submit" class="btn-submit" id="precupero">Enviar mensaje</button>
+
       </form>
+    </section>
+
+    <section class="contact-form" >
+      
+      <h2>Recuperar contraseña</h2>
+      <!-- olvidaste.php -->
+      <form action="procesar_olvido.php" method="post">
+        <label for="email">Introduce tu correo electrónico:</label>
+        <input type="email" name="email" id="email" required>
+        <p style="color: #090643; 
+          background-color: #f9f9f9; 
+          border: 1px solid #03fa6e; 
+          padding: 10px; 
+          border-radius: 5px;
+          font-weight: bold;">
+          Recibirás un correo con las instrucciones para restablecer tu contraseña.
+          <br>Por favor, revisa tu bandeja de entrada, incluida la carpeta de spam.
+        </p>
+
+        <button type="submit" class="btn-submit">Recuperar contraseña</button>
+
+
+      </form>
+
     </section>
 
     <!-- Redes sociales -->
@@ -148,9 +173,12 @@
       <h2>Síguenos en nuestras redes</h2>
       <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank" rel="noopener noreferrer"><img
           src="../iconos/tik-tok.png" alt="TikTok" /></a>
-      <a href="https://www.instagram.com/estudianteprogramador/" target="_blank" rel="noopener noreferrer"><img src="../iconos/instagram.png" alt="Instagram" /></a>
-      <a href="https://patreon.com/EstudianteProgramador?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" rel="noopener noreferrer"><img src="../iconos/patreon.png" alt="Patreon" /></a>
-      <a href="https://www.youtube.com/@Elestudianteprogramador" target="_blank" rel="noopener noreferrer"><img src="../iconos/youtube.png" alt="YouTube" /></a>
+      <a href="https://www.instagram.com/estudianteprogramador/" target="_blank" rel="noopener noreferrer"><img
+          src="../iconos/instagram.png" alt="Instagram" /></a>
+      <a href="https://patreon.com/EstudianteProgramador?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+        target="_blank" rel="noopener noreferrer"><img src="../iconos/patreon.png" alt="Patreon" /></a>
+      <a href="https://www.youtube.com/@Elestudianteprogramador" target="_blank" rel="noopener noreferrer"><img
+          src="../iconos/youtube.png" alt="YouTube" /></a>
     </section>
 
     <!-- Información de contacto -->
