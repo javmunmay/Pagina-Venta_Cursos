@@ -100,7 +100,14 @@ nav {
     font-weight: bold;
 }
 
+.cerrarSesion{
+  color: red;
 
+}
+
+.cerrarSesion:hover{
+  color: rgb(180, 11, 11);
+}
 
 /* Sección Hero Banner */
 .hero-banner {
