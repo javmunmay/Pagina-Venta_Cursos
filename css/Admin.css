@@ -102,7 +102,7 @@ nav {
 
 .nav-links li a:hover {
   color: #03fa6e;
-  transform: scale3d(1.10);
+  transform: scale(1.10);
 }
 
 .cerrarSesion a{
