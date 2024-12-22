@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Home Admin | Estudiante Programador</title>
     <link rel="stylesheet" href="../css/Admin.css" />
     <script src="admin.js"></script>
-    <script src="App.js"></script>
+    <script src="../js/App.js"></script>
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
   </head>
   <body>
