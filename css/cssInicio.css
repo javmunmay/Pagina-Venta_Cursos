@@ -816,8 +816,6 @@ nav {
 }
 
 
-
-
 .hero p {
     color: white;
     font-size: 1.2rem;
@@ -848,6 +846,47 @@ nav {
 }
 
 
+
+/* Sección de bienvenida */
+.heroCursos {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.heroCursos h1 {
+    color: #090643;
+    font-size: 3rem; /* Texto más grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.heroCursos p {
+    color: #666;
+    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px; /* Espacio adicional para el buscador */
+}
+
+
+/* Sección de bienvenida */
+.heroPlanes {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.heroPlanes h1 {
+    color: #090643;
+    font-size: 3rem; /* Texto más grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.heroPlanes p {
+    color: #666;
+    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px; /* Espacio adicional para el buscador */
+}
 /* Estilo del input de búsqueda */
 .search-bar {
     width: 100%;
