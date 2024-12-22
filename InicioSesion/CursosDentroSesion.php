@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Cursos | Estudiante Programador</title>
     <link rel="stylesheet" href="../css/CursosDentroSesion.css" />
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
-    <script src="../App.js"></script>
+    <script src="../js/App.js"></script>
     <script src="app.js?v=1.0"></script>
   </head>
   <body>
