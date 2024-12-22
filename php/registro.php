@@ -48,12 +48,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         exit();
     }
 
-    // Insertar en la base de datos, incluyendo el campo de política de privacidad y roles predeterminados
-    $sql = "INSERT INTO usuarios (nombre, email, password, numero_telefono, fecha_nacimiento, politica_privacidad, user, admin, profesor) 
-            VALUES (?, ?, ?, ?, ?, ?, 1, 0, 0)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssi", $nombre, $email, $password, $numero_telefono, $fecha_nacimiento, $politica);
+    // Insertar en la base de datos, asignando roles predeterminados y política de privacidad
+    $sql = "INSERT INTO usuarios (
+    nombre, 
+    email, 
+    password, 
+    numero_telefono, 
+    fecha_nacimiento, 
+    user, 
+    admin, 
+    profesor, 
+    politica_privacidad
+) 
+VALUES (?, ?, ?, ?, ?, 1, 0, 0, ?)";
 
+    $stmt = $conn->prepare($sql);
+
+    // 'sssssi' = 5 cadenas (s) + 1 entero (i)
+// Ajusta la 'i' a 's' si 'politica_privacidad' se almacena como VARCHAR/CHAR en tu BD
+    $stmt->bind_param(
+        "sssssi",
+        $nombre,
+        $email,
+        $password,
+        $numero_telefono,
+        $fecha_nacimiento,
+        $politica
+    );
     if ($stmt->execute()) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
@@ -61,6 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     }
 } else {
     echo "Todos los campos son obligatorios.";
+    header("Location: ../InicioSesion/Registrarse.html?error=Todos los campos son obligatorios.");
+
 }
 
 // Cerrar conexión
