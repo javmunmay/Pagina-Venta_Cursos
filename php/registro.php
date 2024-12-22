@@ -50,10 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
 
     // Insertar en la base de datos, asignando roles predeterminados y política de privacidad
     $sql = "INSERT INTO usuarios (
-    nombre, 
-    email, 
+    nombre,  
     password, 
+    fecha_registro,
     numero_telefono, 
+    email,
     fecha_nacimiento, 
     user, 
     admin, 
@@ -67,14 +68,15 @@ VALUES (?, ?, ?, ?, ?, 1, 0, 0, 1)";
     // 'sssssi' = 5 cadenas (s) + 1 entero (i)
 // Ajusta la 'i' a 's' si 'politica_privacidad' se almacena como VARCHAR/CHAR en tu BD
     $stmt->bind_param(
-        "sssssi",
-        $nombre,
-        $email,
-        $password,
-        $numero_telefono,
-        $fecha_nacimiento,
-        $politica
-    );
+    "sssss i", // Tipos: s = string, i = integer
+    $nombre,   // nombre
+    $password, // password
+    $numero_telefono, // numero_telefono
+    $email,    // email
+    $fecha_nacimiento, // fecha_nacimiento
+    $politica  // politica_privacidad
+);
+
     if ($stmt->execute()) {
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
