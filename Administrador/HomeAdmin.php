@@ -31,25 +31,40 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
   </head>
   <body>
-    <header>
-      <nav>
-        <img
-          src="../imagenes/LogoFondoAzul.jpg"
-          alt="Logo Estudiante Programador"
-          class="logo"
-        />
-        <ul class="nav-links">
-          <li><a href="HomeAdmin.php">Inicio</a></li>
-          <li><a href="#h2TablaUsuarios">Registro de Usuarios</a></li>
-          <li><a href="#">Mis Certificados</a></li>
-          <li>
-            <div class="cerrarSesion">
-              <a href="../php/logout.php">Cerrar Sesión</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+  <nav>
+    <!-- Logo -->
+    <a href="HomeAdmin.php">
+      <img
+        src="../imagenes/LogoFondoAzul.jpg"
+        alt="Logo Estudiante Programador"
+        class="logo"
+      />
+    </a>
+
+    <!-- Botón de menú hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Enlaces de navegación -->
+    <ul class="nav-links">
+      <li><a href="HomeAdmin.php">Inicio</a></li>
+      <li><a href="#h2TablaUsuarios">Registro de Usuarios</a></li>
+      <li><a href="#">Gestión de Cursos</a></li>
+      <li><a href="#">Reportes</a></li>
+      <li><a href="#">Configuración</a></li>
+      <li>
+        <div class="cerrarSesion">
+          <a href="../php/logout.php">Cerrar Sesión</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 
     <div
       id="welcome-message"
