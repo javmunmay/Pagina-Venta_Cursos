@@ -188,16 +188,24 @@ nav {
     margin-bottom: 10px;
 }
 
-.value-item-BannerTiktok{
-    width: 1000px;
-    text-align: center;
-    padding: 20px;
+.value-item-BannerTiktok {
+    flex: 1 1 300px;         /* Se expandirá ocupando espacio pero con un mínimo de 300px */
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;           /* Para alinear imagen + texto en horizontal */
+    align-items: center;     /* Centra verticalmente dentro del contenedor */
+    gap: 20px;               /* Espacio entre imagen y texto */
+  }
 
-}
+  /* Ajusta la imagen para que no exceda el contenedor */
+.stats-image {
+    max-width: 200px; /* Controlas el ancho a tu gusto */
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;   /* Evita que la imagen se encoja más de lo definido */
+  }
 
 .value-item-BannerTiktok:hover {
     transform: scale(1.05);
