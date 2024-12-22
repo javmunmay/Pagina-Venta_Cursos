@@ -64,13 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
 
     // Vincular parámetros en el orden correcto
     $stmt->bind_param(
-        "ssssi", // Tipos correctos
-        $nombre,              // nombre
-        $password,            // password
-        $numero_telefono,     // numero_telefono
-        $email,               // email
-        $fecha_nacimiento,    // fecha_nacimiento
-        $politica             // politica_privacidad
+        "ssssi", // Tipos: 4 strings, 1 integer
+        $nombre,            // nombre
+        $password,          // password
+        $numero_telefono,   // numero_telefono
+        $email,             // email
+        $fecha_nacimiento,  // fecha_nacimiento
+        $politica           // politica_privacidad
     );
 
     // Ejecutar y verificar
