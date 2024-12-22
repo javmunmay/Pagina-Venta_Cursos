@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     profesor, 
     politica_privacidad
 ) 
-VALUES (?, ?, ?, ?, ?, 1, 0, 0, ?)";
+VALUES (?, ?, ?, ?, ?, 1, 0, 0, 1)";
 
     $stmt = $conn->prepare($sql);
 
@@ -79,11 +79,11 @@ VALUES (?, ?, ?, ?, ?, 1, 0, 0, ?)";
         header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
     } else {
         echo "Error en el registro: " . $stmt->error;
+        
+        
     }
 } else {
     echo "Todos los campos son obligatorios.";
-    header("Location: ../InicioSesion/Registrarse.html?error=Todos los campos son obligatorios.");
-
 }
 
 // Cerrar conexión
