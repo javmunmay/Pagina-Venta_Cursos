@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         $stmt->close();
 
         if ($count > 0) {
-            header("Location: ../InicioSesion/InicioSesion.html?error=El correo introducido ya tiene una cuenta creada, por favor inicia sesión");
+            header("Location: ../InicioSesion/InicioSesion.html?error=contrasena_coincide");
             exit();
         }
     }

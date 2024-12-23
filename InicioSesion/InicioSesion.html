@@ -138,8 +138,20 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-    }
-  };
+    }else if (mensaje === 'contrasena_coincide') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'El correo introducido ya tiene una cuenta creada, por favor inicia sesión.';
+      mensajeDiv.style.backgroundColor = '#d4edda';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #c3e6cb';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+
+      const formContainer = document.querySelector('.login-container');
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+  }};
+
 </script>
 
 
