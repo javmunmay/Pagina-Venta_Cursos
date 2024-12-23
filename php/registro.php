@@ -27,6 +27,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         exit();
     }
 
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST['email'];
+
+        // Preparar la consulta para evitar inyecciones SQL
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM usuarios WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $stmt->close();
+
+        if ($count > 0) {
+            header("Location: ../InicioSesion/InicioSesion.html?error=El correo introducido ya tiene una cuenta creada, por favor inicia sesión");
+            exit();
+        }
+    }
+
+
+
     // Recibir y sanitizar los datos del formulario
     $nombre = $conn->real_escape_string($_POST['nombre']);
     $email = $conn->real_escape_string($_POST['email']);

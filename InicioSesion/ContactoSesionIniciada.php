@@ -130,7 +130,7 @@ if (!isset($_SESSION['user_id'])) {
       <!-- Información de contacto --> 
       <section class="info-contacto">
         <h2>Información de contacto</h2>
-        <p>📧 Correo: info@estudianteprogramador.com</p>
+        <p>📧 Correo: estudianteprogramador0@gmail.com</p>
       </section>
       
       <!-- Sección de CTA Final -->

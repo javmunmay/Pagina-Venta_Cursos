@@ -279,7 +279,7 @@ if (!isset($_SESSION['user_id'])) {
               <h3>PHP: Fundamentos</h3>
               <p>Aprende los fundamentos básicos de PHP</p>
               <a
-                href="../infoCursosSesion/Curso.php?id=2"
+                href="https://41095220.servicio-online.net/InfoCursosSesion/Curso.php?id=2"
                 class="btn-curso"
                 >Ver Curso</a
               >
