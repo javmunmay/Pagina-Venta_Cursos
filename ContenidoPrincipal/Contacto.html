@@ -144,8 +144,8 @@
       </form>
     </section>
 
-    <section class="contact-form" >
-      
+    <section class="contact-form">
+
       <h2>Recuperar contraseña</h2>
       <!-- olvidaste.php -->
       <form action="procesar_olvido.php" method="post">
@@ -247,7 +247,8 @@
       // Inserta el mensaje en el contenedor del formulario de contacto
       const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-    }else if (mensaje === 'usuario_no_encontrado') {
+
+    } else if (mensaje === 'usuario_no_encontrado') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'Usuario no encontrado, por favor introduzca un correo registrado.';
       mensajeDiv.style.backgroundColor = '#F8D7DA';
@@ -256,10 +257,13 @@
       mensajeDiv.style.border = '1px solid #F8D7DA';
       mensajeDiv.style.borderRadius = '5px';
       mensajeDiv.style.marginBottom = '15px';
+      mensajeDiv.style.textAlign = 'center';
 
-      const formContainer = document.querySelector('contact-form');
+      // Inserta el mensaje en el contenedor del formulario de contacto
+      const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-  }};
+    }
+  };
 </script>
 
 </html>
