@@ -56,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si se encontró el usuario
     if (!$id_usuario) {
-        die("No se encontró un usuario asociado al correo proporcionado.");
+        header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=usuario_no_encontrado");
+        exit();
     }
 
     // Inserción en la tabla Incidencias con el id_usuario obtenido

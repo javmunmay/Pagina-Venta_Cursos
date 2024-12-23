@@ -247,8 +247,19 @@
       // Inserta el mensaje en el contenedor del formulario de contacto
       const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-    }
-  };
+    }else if (mensaje === 'usuario_no_encontrado') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'Usuario no encontrado, por favor introduzca un correo registrado.';
+      mensajeDiv.style.backgroundColor = '#F8D7DA';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #F8D7DA';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+
+      const formContainer = document.querySelector('.login-container');
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+  }};
 </script>
 
 </html>
