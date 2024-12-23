@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $politica = isset($_POST['politica']) ? 1 : 0;
 
         // Consulta SQL
-        $sql = "INSERT INTO Incidencias (nombre_completo, correo, telefono, asunto, mensaje, preferencia_contacto, politica_privacidad) 
-                VALUES ('$nombre', '$correo', '$telefono', '$asunto', '$mensaje', '$preferencia_contacto', '$politica')";
+        $sql = "INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
+                VALUES ('$correo', '$telefono', '$asunto', '$mensaje', '$preferencia_contacto', '$politica')";
 
         if ($conn->query($sql) === TRUE) {
             // Redirigir con mensaje de éxito si el registro en la base de datos es exitoso
