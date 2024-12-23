@@ -150,6 +150,30 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+  }else if (mensaje === 'contrasena_incorrecta') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'Contraseña Incorrecta.';
+      mensajeDiv.style.backgroundColor = '#F8D7DA';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #F8D7DA';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+
+      const formContainer = document.querySelector('.login-container');
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+  }else if (mensaje === 'usuario_no_encontrado') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'Usuario no encontrado.';
+      mensajeDiv.style.backgroundColor = '#F8D7DA';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #F8D7DA';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+
+      const formContainer = document.querySelector('.login-container');
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
   }};
 
 </script>
