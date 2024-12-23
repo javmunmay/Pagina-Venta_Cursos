@@ -14,33 +14,52 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //print_r($_POST);
-    //echo "Método de solicitud recibido: " . $_SERVER["REQUEST_METHOD"];
+    // Log para depuración
+    file_put_contents("log.txt", "POST Data: " . print_r($_POST, true) . PHP_EOL, FILE_APPEND);
 
-
-    if (isset($_POST['nombre'], $_POST['email'], $_POST['asunto'], $_POST['mensaje'], $_POST['preferencia_contacto'], $_POST['politica'])) {
-        $nombre = $conn->real_escape_string($_POST['nombre']);
-        $correo = $conn->real_escape_string($_POST['email']);
-        $telefono = isset($_POST['telefono']) ? $conn->real_escape_string($_POST['telefono']) : NULL;
-        $asunto = $conn->real_escape_string($_POST['asunto']);
-        $mensaje = $conn->real_escape_string($_POST['mensaje']);
-        $preferencia_contacto = $conn->real_escape_string($_POST['preferencia_contacto']);
-        $politica = isset($_POST['politica']) ? 1 : 0;
-
-        // Consulta SQL
-        $stmt = $conn->prepare("INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
-                        VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssi", $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
-
-        if ($stmt->execute()) {
-            header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=incidencia_exitosa");
-            exit();
-        } else {
-            echo "Error al registrar la incidencia: " . $conn->error;
-        }
-    } else {
-        echo "Todos los campos obligatorios deben ser completados.";
+    // Validar campos obligatorios uno por uno
+    if (!isset($_POST['nombre'])) {
+        die("El campo nombre es obligatorio.");
     }
+    if (!isset($_POST['email'])) {
+        die("El campo email es obligatorio.");
+    }
+    if (!isset($_POST['asunto'])) {
+        die("El campo asunto es obligatorio.");
+    }
+    if (!isset($_POST['mensaje'])) {
+        die("El campo mensaje es obligatorio.");
+    }
+    if (!isset($_POST['preferencia_contacto'])) {
+        die("El campo preferencia_contacto es obligatorio.");
+    }
+    if (!isset($_POST['politica'])) {
+        die("Debe aceptar la política de privacidad.");
+    }
+
+    // Sanitizar datos
+    $nombre = $conn->real_escape_string($_POST['nombre']);
+    $correo = $conn->real_escape_string($_POST['email']);
+    $telefono = isset($_POST['telefono']) ? $conn->real_escape_string($_POST['telefono']) : NULL;
+    $asunto = $conn->real_escape_string($_POST['asunto']);
+    $mensaje = $conn->real_escape_string($_POST['mensaje']);
+    $preferencia_contacto = $conn->real_escape_string($_POST['preferencia_contacto']);
+    $politica = isset($_POST['politica']) ? 1 : 0;
+
+    // Consulta SQL preparada
+    $stmt = $conn->prepare("INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
+                            VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssi", $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
+
+    if ($stmt->execute()) {
+        file_put_contents("log.txt", "Consulta ejecutada correctamente." . PHP_EOL, FILE_APPEND);
+        header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=incidencia_exitosa");
+        exit();
+    } else {
+        echo "Error al registrar la incidencia: " . $stmt->error;
+    }
+
+    $stmt->close();
 } else {
     echo "Método de solicitud incorrecto.";
 }
