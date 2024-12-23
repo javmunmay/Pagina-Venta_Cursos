@@ -15,8 +15,8 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //print_r($_POST);
-    echo "Método de solicitud recibido: " . $_SERVER["REQUEST_METHOD"];
-    exit();
+    //echo "Método de solicitud recibido: " . $_SERVER["REQUEST_METHOD"];
+
 
     if (isset($_POST['nombre'], $_POST['email'], $_POST['asunto'], $_POST['mensaje'], $_POST['preferencia_contacto'], $_POST['politica'])) {
         $nombre = $conn->real_escape_string($_POST['nombre']);
@@ -28,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $politica = isset($_POST['politica']) ? 1 : 0;
 
         // Consulta SQL
-        $sql = "INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
-                VALUES ('$correo', '$telefono', '$asunto', '$mensaje', '$preferencia_contacto', '$politica')";
+        $stmt = $conn->prepare("INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
+                        VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssi", $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
 
-        if ($conn->query($sql) === TRUE) {
-            // Redirigir con mensaje de éxito si el registro en la base de datos es exitoso
+        if ($stmt->execute()) {
             header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=incidencia_exitosa");
             exit();
         } else {
