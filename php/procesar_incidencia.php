@@ -46,10 +46,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preferencia_contacto = $conn->real_escape_string($_POST['preferencia_contacto']);
     $politica = isset($_POST['politica']) ? 1 : 0;
 
-    // Consulta SQL preparada
-    $stmt = $conn->prepare("INSERT INTO Incidencias (email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
-                            VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssi", $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
+    // Buscar el id del usuario en la tabla Usuarios basado en el correo
+    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $stmt->bind_result($id_usuario);
+    $stmt->fetch();
+    $stmt->close();
+
+    // Verificar si se encontró el usuario
+    if (!$id_usuario) {
+        die("No se encontró un usuario asociado al correo proporcionado.");
+    }
+
+    // Inserción en la tabla Incidencias con el id_usuario obtenido
+    $stmt = $conn->prepare("INSERT INTO Incidencias (id_usuario, email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("isssssi", $id_usuario, $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
 
     if ($stmt->execute()) {
         file_put_contents("log.txt", "Consulta ejecutada correctamente." . PHP_EOL, FILE_APPEND);
