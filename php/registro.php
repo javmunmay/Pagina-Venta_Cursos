@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         $stmt->close();
 
         if ($count > 0) {
-            header("Location: ../InicioSesion/InicioSesion.html?error=contrasena_coincide");
+            header("Location: ../InicioSesion/InicioSesion.html?mensaje=contrasena_coincide");
             exit();
         }
     }
