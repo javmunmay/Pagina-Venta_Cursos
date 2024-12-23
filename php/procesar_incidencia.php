@@ -15,6 +15,8 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //print_r($_POST);
+    echo "Método de solicitud recibido: " . $_SERVER["REQUEST_METHOD"];
+    exit();
 
     if (isset($_POST['nombre'], $_POST['email'], $_POST['asunto'], $_POST['mensaje'], $_POST['preferencia_contacto'], $_POST['politica'])) {
         $nombre = $conn->real_escape_string($_POST['nombre']);
