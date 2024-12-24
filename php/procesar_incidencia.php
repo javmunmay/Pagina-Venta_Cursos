@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preferencia_contacto = $conn->real_escape_string($_POST['preferencia_contacto']);
     $politica = isset($_POST['politica']) ? 1 : 0;
 
-    $stmt = $conn->prepare("INSERT INTO Incidencias (id_usuario, email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
+    $stmt = $conn->prepare("INSERT INTO incidencias (id_usuario, email_usuario, telefono_usuario, asunto, mensaje, preferencia_contacto, politica_privacidad) 
                             VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("isssssi", $id_usuario, $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
 
