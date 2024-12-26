@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    text-align: center;
 }
 
 header {
@@ -20,6 +19,11 @@ header {
     top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
     z-index: 1000; /* Asegura que esté encima del contenido */
 }
+
+main {
+    text-align: center; 
+}
+
 
 nav {
     display: flex;
