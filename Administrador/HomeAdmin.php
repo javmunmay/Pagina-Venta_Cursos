@@ -17,15 +17,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-
-// =========== Conexión a la base de datos ===========
-include '../php/conexion.php';
-
-// =========== Consulta de incidencias ===========
-$sqlIncidencias = "SELECT * FROM incidencias ORDER BY fecha_reportada DESC";
-$resultIncidencias = $conn->query($sqlIncidencias);
-
-
 ?>
 
 
@@ -223,22 +214,7 @@ $resultIncidencias = $conn->query($sqlIncidencias);
             <!-- Puedes añadir más columnas si lo deseas -->
           </tr>
         </thead>
-        <tbody>
-          <?php if ($resultIncidencias && $resultIncidencias->num_rows > 0): ?>
-            <?php while($row = $resultIncidencias->fetch_assoc()): ?>
-              <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo htmlspecialchars($row['titulo']); ?></td>
-                <td><?php echo htmlspecialchars($row['descripcion']); ?></td>
-                <td><?php echo $row['fecha_reportada']; ?></td>
-                <td><?php echo $row['estado']; ?></td>
-                <td><?php echo $row['usuario_id']; ?></td>
-              </tr>
-            <?php endwhile; ?>
-          <?php else: ?>
-              <tr><td colspan="6">No hay incidencias reportadas.</td></tr>
-          <?php endif; ?>
-        </tbody>
+        
       </table>
     </section>
     <!-- ============================================= -->
