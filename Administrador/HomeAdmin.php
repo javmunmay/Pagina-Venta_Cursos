@@ -54,7 +54,7 @@ if (!isset($_SESSION['user_id'])) {
       <li><a href="HomeAdmin.php">Inicio</a></li>
       <li><a href="#h2TablaUsuarios">Registro de Usuarios</a></li>
       <li><a href="#">Gestión de Cursos</a></li>
-      <li><a href="#">Incidencias</a></li>
+      <li><a href="#h2TablaIncidencias">Incidencias</a></li>
       <li><a href="#">Configuración</a></li>
       <li>
         <div class="cerrarSesion">
