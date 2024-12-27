@@ -54,7 +54,7 @@ if (!isset($_SESSION['user_id'])) {
       <li><a href="HomeAdmin.php">Inicio</a></li>
       <li><a href="#h2TablaUsuarios">Registro de Usuarios</a></li>
       <li><a href="#">Gestión de Cursos</a></li>
-      <li><a href="#">Reportes</a></li>
+      <li><a href="#">Incidencias</a></li>
       <li><a href="#">Configuración</a></li>
       <li>
         <div class="cerrarSesion">
@@ -195,6 +195,12 @@ if (!isset($_SESSION['user_id'])) {
         </table>
 
         <br /><br />
+      </section>
+
+      <section class="h2TablaIncidencias" id="h2TablaIncidencias">
+        <h2>Incidencias</h2>
+        <button class="btn" id="btNuevaIncidencia">Nueva Incidencia</button>
+      
       </section>
     </main>
     <script src="../App.js"></script>
