@@ -247,7 +247,7 @@ $resultIncidencias = $conn->query($sqlIncidencias);
 
   <script src="../App.js"></script>
   <script src="../App.js?v=1.0"></script>
-  <scrip>
+  <script>
     
     // Aquí podrías manejar el botón "Nueva Incidencia" y demás lógicas
     const btnNuevaIncidencia = document.getElementById("btNuevaIncidencia");
