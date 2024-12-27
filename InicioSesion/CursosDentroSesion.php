@@ -111,8 +111,8 @@ if (!isset($_SESSION['user_id'])) {
               alt="Curso Java Orientado a Objetos"
             />
             <div class="curso-info">
-              <h3>Java Orientado a Objetos desde 0</h3>
-              <p>Aprende a dominar Java Orientado a Objetos desde cero.</p>
+              <h3>Introducción a Java Orientado a Objetos</h3>
+              <p>Aprende a dominar Java Orientado a Objetos desde cero hasta un nivel intermedio.</p>
               <a href="../informacionCursos/CursoJava.html" class="btn-curso"
                 >Ver Curso</a
               >
@@ -126,7 +126,7 @@ if (!isset($_SESSION['user_id'])) {
           >
             <img src="../imagenes/CursoPhpBanner.jpg" alt="Curso PHP" />
             <div class="curso-info">
-              <h3>Curso de PHP Desde Cero</h3>
+              <h3>Introducción a PHP</h3>
               <p>Aprende PHP desde cero con nuestro curso para principiantes</p>
               <a href="../informacionCursos/CursoPhp.html" class="btn-curso"
                 >Ver Curso</a
@@ -144,7 +144,7 @@ if (!isset($_SESSION['user_id'])) {
               alt="Curso de HTML y CSS"
             />
             <div class="curso-info">
-              <h3>Curso de HTML desde Cero</h3>
+              <h3>Curso de HTML desde Cero hasta Avanzado</h3>
               <p>
                 Aprende HTML con este curso completo desde cero hasta avanzado.
               </p>
@@ -164,7 +164,7 @@ if (!isset($_SESSION['user_id'])) {
               alt="Curso de Ciberseguridad"
             />
             <div class="curso-info">
-              <h3>Curso de Ciberseguridad: Inicios</h3>
+              <h3>Introducción a Ciberseguridad</h3>
               <p>Aprende los conceptos clave para proteger sistemas y datos.</p>
               <a
                 href="../informacionCursos/CursoCiberseguridad.html"
@@ -255,8 +255,8 @@ if (!isset($_SESSION['user_id'])) {
             <div class="curso-info">
               <h3>Introducción a la Programación</h3>
               <p>
-                Aprende todo lo necesario para saber programar como un
-                profesional.
+                Aprende las bases de programación para saber pensar como un
+                programador profesional.
               </p>
               <a
                 href="../informacionCursos/CursoIntroduccionProg.html"
@@ -311,10 +311,30 @@ if (!isset($_SESSION['user_id'])) {
             data-nivel="principiante"
             data-categoria="desarrollo"
           >
+            <img
+              src="../imagenes/CursoAngularBanner.jpg"
+              alt="PHP Fundamentos"
+            />
+            <div class="curso-info">
+              <h3>TypeScript: Fundamentos</h3>
+              <p>Aprende los fundamentos básicos de TypeScript</p>
+              <a
+                href="../informacionCursos/CursoAngularFundamentos.html"
+                class="btn-curso"
+                >Ver Curso</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="curso"
+            data-nivel="principiante"
+            data-categoria="desarrollo"
+          >
             <img src="../imagenes/CursoSqlBanner.jpg" alt="PHP Fundamentos" />
             <div class="curso-info">
-              <h3>SQL desde 0</h3>
-              <p>Aprende a manejar bases de datos SQL desde cero</p>
+              <h3>SQL desde 0 hasta Avanzado</h3>
+              <p>Aprende a manejar bases de datos SQL desde cero hasta Avanzado como un profesional en la gestion, administración... de las bases de datos SQL.</p>
               <a
                 href="../informacionCursos/CursoSqlDesdeCero.html"
                 class="btn-curso"
