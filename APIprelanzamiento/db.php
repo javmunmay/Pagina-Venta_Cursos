@@ -1,6 +1,6 @@
 <?php
 // Configuración de la base de datos
-$servername = "host=PMYSQL181.dns-servicio.com:3306"; // Dirección del servidor de la base de datos
+$servername = "PMYSQL181.dns-servicio.com:3306"; // Dirección del servidor de la base de datos
 $username = "Javier";        // Usuario de la base de datos (cambia según tu configuración)
 $password = "u70q0Z2p@";            // Contraseña de la base de datos (cambia según tu configuración)
 $dbname = "10718674_prelanzamiento"; // Nombre de tu base de datos (cambia por el nombre real)
