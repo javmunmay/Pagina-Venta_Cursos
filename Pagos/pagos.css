@@ -7,14 +7,14 @@ body {
   }
   
   header {
-    background-color: #090643;
+    
     padding: 10px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky; /* Hace que el header sea pegajoso */
-    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
+    /*top: 0;  Se adhiere a la parte superior cuando se hace scroll */
     z-index: 1000; /* Asegura que esté encima del contenido */
 }
 
@@ -28,7 +28,7 @@ nav {
 
 .logo {
     width: 150px;
-    height: auto;
+    height: max-content;
 }
 
 .nav-links {
@@ -66,155 +66,148 @@ nav {
     color: #090643; /* Color azul oscuro al pasar el mouse */
 }
   
-  /* Sección de pago */
-  .payment-section {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+:root {
+  --primary-color: #090643;
+  --secondary-color: #090643;
+  --accent-color: #22c55e;
+  --text-color: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.checkout-container {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+}
+
+.payment-methods {
+  padding: 2rem;
+  border-right: 2px solid #f1f5f9;
+}
+
+.payment-header {
+  margin-bottom: 2rem;
+}
+
+.payment-header h1 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.payment-btn {
+  background: white;
+  border: 2px solid #e2e8f0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-btn:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.payment-btn img {
+  height: 24px;
+}
+
+.card-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.input-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.split-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.order-summary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 2rem;
+  color: white;
+}
+
+.order-details {
+  margin-bottom: 2rem;
+}
+
+.checkout-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+}
+
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+      grid-template-columns: 1fr;
   }
   
-  .payment-section h1 {
-    font-size: 2rem;
-    color: #090643;
+  .order-summary {
+      order: -1;
   }
-  
-  .payment-section p {
-    color: #666;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Opciones de pago */
-  .payment-section form label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: bold;
-    color: #090643;
-  }
-  
-  .payment-section form input[type="radio"] {
-    accent-color: #03fa6e;
-  }
-  
-  /* Información de pago */
-  .payment-info {
-    display: none;
-  }
-  
-  .payment-info.active {
-    display: block;
-  }
-  
-  /* Tarjeta de crédito */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
-  }
-  
-  .card {
-    width: 400px;
-    height: 250px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #4e5c6e, #2a2f3e);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .card_number,
-  .fullname,
-  .date_value,
-  .seccode {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-  }
-  
-  .card_number {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-  }
-  
-  .date {
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-  }
-  
-  .fullname {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-  }
-  
-  .chip {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 30px;
-    background-color: #bbb;
-    border-radius: 5px;
-  }
-  
-  .seccode {
-    font-size: 1rem;
-  }
-  
-  /* Información adicional de la tarjeta */
-  .col2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  .col2 label {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .col2 input {
-    width: 100%;
-    max-width: 280px;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    transition: border 0.3s ease;
-  }
-  
-  .col2 input:focus {
-    border-color: #03fa6e;
-    outline: none;
-  }
-  
-  .buy {
-    background-color: #03fa6e;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .buy:hover {
-    background-color: #02e55e;
-  }
-  
+}
   /* Footer */
   footer {
     background-color: #090643;
