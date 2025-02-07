@@ -1,6 +1,16 @@
 <?php
 // Archivo: process_form.php
 
+header("Access-Control-Allow-Origin: *"); // allow request from all origin
+header('Access-Control-Allow-Credentials: true');
+header("Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT");
+header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization");
+
+
+
+
+
+
 // Lista de dominios de correos temporales a bloquear
 $disposable_domains = ['mailinator.com', 'tempmail.com', '10minutemail.com'];
 
