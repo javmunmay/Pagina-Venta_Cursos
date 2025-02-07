@@ -1,5 +1,5 @@
 <?php
-// Archivo: process_form.php
+// process_form.php
 
 // Habilitar CORS si es necesario (ajustar según tu entorno)
 if (isset($_SERVER['HTTP_ORIGIN'])) {
@@ -65,10 +65,7 @@ try {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        // Redirección segura sin conflicto con la salida JSON
-        session_start();
-        $_SESSION['registration_success'] = true;
-        header("Location: https://patreon.com/EstudianteProgramador");
+        echo json_encode(['success' => true, 'message' => 'Registro exitoso.']);
         exit;
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al registrar los datos.']);
