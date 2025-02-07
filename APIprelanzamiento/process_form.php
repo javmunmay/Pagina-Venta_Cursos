@@ -9,9 +9,6 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 header("Access-Control-Allow-Methods: GET, HEAD, OPTIONS, POST, PUT");
 header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
-// Lista de dominios de correos temporales a bloquear
-$disposable_domains = ['mailinator.com', 'tempmail.com', '10minutemail.com'];
-
 // Verificar si se ha enviado el formulario mediante POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode(['success' => false, 'message' => 'Método no permitido.']);
@@ -21,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 // Obtener datos del formulario
 $name = isset($_POST['name']) ? trim($_POST['name']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$honeypot = isset($_POST['honeypot']) ? $_POST['honeypot'] : ''; // Campo oculto para evitar bots
 
 // Validaciones básicas
 if (empty($name) || !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/u", $name)) {
@@ -31,19 +27,6 @@ if (empty($name) || !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/u", $name
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(['success' => false, 'message' => 'El correo electrónico no es válido.']);
-    exit;
-}
-
-// Extraer el dominio del correo electrónico
-$email_domain = substr(strrchr($email, "@"), 1);
-if (in_array(strtolower($email_domain), array_map('strtolower', $disposable_domains))) {
-    echo json_encode(['success' => false, 'message' => 'No se permiten correos temporales.']);
-    exit;
-}
-
-// Verificar si el campo honeypot está vacío (si no, es un bot)
-if (!empty($honeypot)) {
-    echo json_encode(['success' => false, 'message' => 'Acción no permitida.']);
     exit;
 }
 
