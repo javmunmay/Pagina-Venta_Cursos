@@ -22,23 +22,27 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_POST['name']) || !isset($_POST['email'])) {
-            die("Error: No llegaron los datos.");
+            header("Location: https://www.estudianteprogramador.com/?error=No llegaron los datos.");
+            exit;
         }
 
         $name = trim($_POST['name']);
         $correo = trim($_POST['email']);
 
         if (empty($name) || empty($correo)) {
-            die("Error: Todos los campos son obligatorios.");
+            header("Location: https://www.estudianteprogramador.com/?error=Todos los campos son obligatorios.");
+            exit;
         }
 
         if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            die("Error: Correo electrónico no válido.");
+            header("Location: https://www.estudianteprogramador.com/?error=Correo electrónico no válido.");
+            exit;
         }
 
         // Verificación de reCAPTCHA
         if (!isset($_POST['g-recaptcha-response'])) {
-            die("Error: No se detectó reCAPTCHA.");
+            header("Location: https://www.estudianteprogramador.com/?error=No se detectó reCAPTCHA.");
+            exit;
         }
 
         $recaptcha = $_POST['g-recaptcha-response'];
@@ -49,28 +53,28 @@ try {
         $responseKeys = json_decode($response, true);
 
         if (!$responseKeys["success"]) {
-            die("Error: reCAPTCHA falló, intenta de nuevo.");
+            header("Location: https://www.estudianteprogramador.com/?error=reCAPTCHA falló, intenta de nuevo.");
+            exit;
         }
 
         // Verificar si el email ya está registrado
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         if ($stmt->fetch()) {
-            die("Error: Este correo ya está registrado.");
+            header("Location: https://www.estudianteprogramador.com/?error=Este correo ya está registrado.");
+            exit;
         }
 
         // Insertar en la base de datos
         $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
         $stmt->execute([$name, $correo]);
 
-        // Guardar mensaje de éxito en sesión
-        $_SESSION['mensaje_exito'] = "Todo correcto, gracias por registrarte.";
-
-        // Redirigir de vuelta a index.html
-        header("Location: https://www.estudianteprogramador.com/?success=1");
+        // Redirigir con mensaje de éxito
+        header("Location: https://www.estudianteprogramador.com/?success=Todo correcto, gracias por registrarte.");
         exit;
     }
 } catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+    header("Location: https://www.estudianteprogramador.com/?error=Error de conexión: " . urlencode($e->getMessage()));
+    exit;
 }
 ?>
