@@ -47,7 +47,7 @@ try {
         $response = file_get_contents($verify_url . "?secret=" . $recaptcha_secret . "&response=" . $captcha_response);
         $response_data = json_decode($response);
 
-        if (!$response_data->success || $response_data->score < 0.5) {
+        if (!$response_data->success || $response_data->score < 0.7) {
             header("Location: https://www.estudianteprogramador.com/?error=Error en la verificación de reCAPTCHA");
             exit;
         }
