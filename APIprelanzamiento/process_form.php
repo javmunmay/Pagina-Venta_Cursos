@@ -56,7 +56,7 @@ try {
         $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
         $stmt->execute([$name, $correo]);
 
-        echo "Registro exitoso. ¡Gracias por registrarte!";
+       
     }
 } catch (PDOException $e) {
     die("Error de conexión: " . $e->getMessage());
