@@ -1,30 +1,52 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *'); // Permitir solicitudes desde cualquier origen
+header('Access-Control-Allow-Methods: GET, POST, DELETE'); // Permitir métodos
+header('Access-Control-Allow-Headers: Content-Type');
 
-// Incluir el archivo de conexión
 include 'db.php';
 
-// Consulta SQL para obtener todos los usuarios
-$sql = "SELECT id, nombre, correo, fecha_registro FROM usuarios ORDER BY fecha_registro DESC";
-$result = $conn->query($sql);
+$method = $_SERVER['REQUEST_METHOD'];
 
-$usuarios = [];
+if ($method === 'GET') {
+    // Obtener todos los usuarios
+    $sql = "SELECT id, nombre, correo, fecha_registro FROM usuarios ORDER BY fecha_registro DESC";
+    $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $usuarios[] = [
-            'id' => htmlspecialchars($row['id']),
-            'nombre' => htmlspecialchars($row['nombre']),
-            'correo' => htmlspecialchars($row['correo']),
-            'fecha_registro' => htmlspecialchars($row['fecha_registro'])
-        ];
+    $usuarios = [];
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $usuarios[] = [
+                'id' => htmlspecialchars($row['id']),
+                'nombre' => htmlspecialchars($row['nombre']),
+                'correo' => htmlspecialchars($row['correo']),
+                'fecha_registro' => htmlspecialchars($row['fecha_registro'])
+            ];
+        }
     }
+
+    echo json_encode(['usuarios' => $usuarios]);
+} elseif ($method === 'DELETE') {
+    // Eliminar un usuario
+    $data = json_decode(file_get_contents('php://input'), true);
+    if (!isset($data['id'])) {
+        echo json_encode(['error' => 'ID requerido']);
+        exit;
+    }
+
+    $id = $data['id'];
+    $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo json_encode(['mensaje' => 'Usuario eliminado']);
+    } else {
+        echo json_encode(['error' => 'Error al eliminar usuario']);
+    }
+
+    $stmt->close();
 }
 
-// Cerrar la conexión
 $conn->close();
-
-// Devolver los datos en formato JSON
-echo json_encode(['usuarios' => $usuarios]);
 ?>
