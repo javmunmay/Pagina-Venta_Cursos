@@ -33,11 +33,6 @@ try {
         $email = trim($_POST['email']);
 
 
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
-        exit;
-
 
 
         // Validar que no estén vacíos
