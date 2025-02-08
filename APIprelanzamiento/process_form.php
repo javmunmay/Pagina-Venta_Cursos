@@ -1,6 +1,5 @@
 <?php
-session_start(); // Iniciar sesión para almacenar el mensaje de éxito
-
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -16,44 +15,40 @@ $dbname = "10718674_prelanzamiento";
 $username = "Javier";
 $password = "u70q0Z2p@";
 
+// Clave secreta de reCAPTCHA v3
+$recaptcha_secret = "6Lcd0NAqAAAAAK-iUg4BAgUvAbtRfQo5IZOQIikQ";
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (!isset($_POST['name']) || !isset($_POST['email'])) {
-            header("Location: https://www.estudianteprogramador.com/?error=No llegaron los datos.");
+        if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['recaptcha_response'])) {
+            header("Location: index.html?error=Faltan datos en el formulario");
             exit;
         }
 
         $name = trim($_POST['name']);
         $correo = trim($_POST['email']);
+        $captcha_response = $_POST['recaptcha_response'];
 
         if (empty($name) || empty($correo)) {
-            header("Location: https://www.estudianteprogramador.com/?error=Todos los campos son obligatorios.");
+            header("Location: index.html?error=Todos los campos son obligatorios");
             exit;
         }
 
         if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            header("Location: https://www.estudianteprogramador.com/?error=Correo electrónico no válido.");
+            header("Location: index.html?error=Correo electrónico no válido");
             exit;
         }
 
-        // Verificación de reCAPTCHA
-        if (!isset($_POST['g-recaptcha-response'])) {
-            header("Location: https://www.estudianteprogramador.com/?error=No se detectó reCAPTCHA.");
-            exit;
-        }
+        // Verificar reCAPTCHA v3
+        $verify_url = "https://www.google.com/recaptcha/api/siteverify";
+        $response = file_get_contents($verify_url . "?secret=" . $recaptcha_secret . "&response=" . $captcha_response);
+        $response_data = json_decode($response);
 
-        $recaptcha = $_POST['g-recaptcha-response'];
-        $secretKey = "6Lcd0NAqAAAAAK-iUg4BAgUvAbtRfQo5IZOQIikQ"; // Tu clave secreta
-
-        // Validar con la API de Google
-        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptcha");
-        $responseKeys = json_decode($response, true);
-
-        if (!$responseKeys["success"]) {
-            header("Location: https://www.estudianteprogramador.com/?error=reCAPTCHA falló, intenta de nuevo.");
+        if (!$response_data->success || $response_data->score < 0.5) {
+            header("Location: index.html?error=Error en la verificación de reCAPTCHA");
             exit;
         }
 
@@ -61,7 +56,7 @@ try {
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         if ($stmt->fetch()) {
-            header("Location: https://www.estudianteprogramador.com/?error=Este correo ya está registrado.");
+            header("Location: index.html?error=Este correo ya está registrado");
             exit;
         }
 
@@ -69,12 +64,13 @@ try {
         $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
         $stmt->execute([$name, $correo]);
 
-        // Redirigir con mensaje de éxito
-        header("Location: https://www.estudianteprogramador.com/?success=Todo correcto, gracias por registrarte.");
+        // Redirigir con éxito
+        header("Location: index.html?success=Registro exitoso");
         exit;
     }
 } catch (PDOException $e) {
-    header("Location: https://www.estudianteprogramador.com/?error=Error de conexión: " . urlencode($e->getMessage()));
+    header("Location: index.html?error=Error de conexión");
     exit;
 }
+
 ?>
