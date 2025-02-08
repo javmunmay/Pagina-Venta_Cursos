@@ -30,31 +30,31 @@ try {
 
         // Obtener y limpiar los valores
         $name = trim($_POST['name']);
-        $email = trim($_POST['email']);
+        $correo = trim($_POST['email']);
 
 
 
 
         // Validar que no estén vacíos
-        if (empty($name) || empty($email)) {
+        if (empty($name) || empty($correo)) {
             die("Error: Todos los campos son obligatorios.");
         }
 
         // Validar formato de email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
             die("Error: Correo electrónico no válido.");
         }
 
         // Verificar si el email ya está registrado
-        $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
-        $stmt->execute([$email]);
+        $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = ?");
+        $stmt->execute([$correo]);
         if ($stmt->fetch()) {
             die("Error: Este correo ya está registrado.");
         }
 
         // Insertar en la base de datos
         $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
-        $stmt->execute([$name, $email]);
+        $stmt->execute([$name, $correo]);
 
         echo "Registro exitoso. ¡Gracias por registrarte!";
     }
