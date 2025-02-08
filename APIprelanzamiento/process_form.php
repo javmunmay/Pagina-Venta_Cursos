@@ -1,4 +1,17 @@
 <?php
+
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+// Manejo de pre-flight request (para evitar errores con OPTIONS)
+if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+    http_response_code(200);
+    exit;
+}
+
+
 // Datos de conexión a la base de datos
 $host = "PMYSQL181.dns-servicio.com:3306";  // Cambia esto si tu DB está en otro servidor
 $dbname = "10718674_prelanzamiento";
