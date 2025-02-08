@@ -24,7 +24,7 @@ try {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['recaptcha_response'])) {
-            header("Location: index.html?error=Faltan datos en el formulario");
+            header("Location: https://www.estudianteprogramador.com/?error=Faltan datos en el formulario");
             exit;
         }
 
@@ -33,12 +33,12 @@ try {
         $captcha_response = $_POST['recaptcha_response'];
 
         if (empty($name) || empty($correo)) {
-            header("Location: index.html?error=Todos los campos son obligatorios");
+            header("Location: https://www.estudianteprogramador.com/?error=Todos los campos son obligatorios");
             exit;
         }
 
         if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            header("Location: index.html?error=Correo electrónico no válido");
+            header("Location: https://www.estudianteprogramador.com/?error=Correo electrónico no válido");
             exit;
         }
 
@@ -48,7 +48,7 @@ try {
         $response_data = json_decode($response);
 
         if (!$response_data->success || $response_data->score < 0.5) {
-            header("Location: index.html?error=Error en la verificación de reCAPTCHA");
+            header("Location: https://www.estudianteprogramador.com/?error=Error en la verificación de reCAPTCHA");
             exit;
         }
 
@@ -56,7 +56,7 @@ try {
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         if ($stmt->fetch()) {
-            header("Location: index.html?error=Este correo ya está registrado");
+            header("Location: https://www.estudianteprogramador.com/?error=Este correo ya está registrado");
             exit;
         }
 
@@ -65,11 +65,11 @@ try {
         $stmt->execute([$name, $correo]);
 
         // Redirigir con éxito
-        header("Location: index.html?success=Registro exitoso");
+        header("Location: https://www.estudianteprogramador.com/?success=Registro exitoso");
         exit;
     }
 } catch (PDOException $e) {
-    header("Location: index.html?error=Error de conexión");
+    header("Location: https://www.estudianteprogramador.com/?error=Error de conexión");
     exit;
 }
 
