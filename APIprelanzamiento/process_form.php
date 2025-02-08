@@ -6,18 +6,27 @@ $username = "Javier";
 $password = "u70q0Z2p@";
 
 try {
-    // Conectar a la base de datos con PDO
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Obtener los datos del formulario
+        // Verificar si los datos fueron enviados
+        if (!isset($_POST['name']) || !isset($_POST['email'])) {
+            die("Error: No llegaron los datos.");
+        }
+
+        // Obtener y limpiar los valores
         $name = trim($_POST['name']);
         $email = trim($_POST['email']);
 
         // Validar que no estén vacíos
         if (empty($name) || empty($email)) {
             die("Error: Todos los campos son obligatorios.");
+        }
+
+        // Validar formato de email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            die("Error: Correo electrónico no válido.");
         }
 
         // Verificar si el email ya está registrado
@@ -37,3 +46,4 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 ?>
+
