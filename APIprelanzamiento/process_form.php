@@ -36,6 +36,22 @@ try {
             die("Error: Correo electrónico no válido.");
         }
 
+        // Verificación de reCAPTCHA
+        if (!isset($_POST['g-recaptcha-response'])) {
+            die("Error: No se detectó reCAPTCHA.");
+        }
+
+        $recaptcha = $_POST['g-recaptcha-response'];
+        $secretKey = "6Lcd0NAqAAAAAK-iUg4BAgUvAbtRfQo5IZOQIikQ"; // Tu clave secreta
+
+        // Validar con la API de Google
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptcha");
+        $responseKeys = json_decode($response, true);
+
+        if (!$responseKeys["success"]) {
+            die("Error: reCAPTCHA falló, intenta de nuevo.");
+        }
+
         // Verificar si el email ya está registrado
         $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
