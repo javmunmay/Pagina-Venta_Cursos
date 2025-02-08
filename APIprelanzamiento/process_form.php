@@ -53,7 +53,7 @@ try {
         }
 
         // Insertar en la base de datos
-        $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, email) VALUES (?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nombre, correo) VALUES (?, ?)");
         $stmt->execute([$name, $email]);
 
         echo "Registro exitoso. ¡Gracias por registrarte!";
