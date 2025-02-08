@@ -1,8 +1,8 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *'); // Permitir solicitudes desde cualquier origen
-header('Access-Control-Allow-Methods: GET, POST, DELETE'); // Permitir métodos
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Origin: *'); // Permite peticiones desde cualquier origen
+header('Access-Control-Allow-Methods: GET, POST, DELETE, OPTIONS'); // Métodos permitidos
+header('Access-Control-Allow-Headers: Content-Type, Authorization'); // Cabeceras permitidas
 
 include 'db.php';
 
