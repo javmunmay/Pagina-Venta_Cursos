@@ -88,6 +88,8 @@
                 </div>
             </div>
 
+            
+
 
             <!-- Nueva presentación del equipo con efectos de tarjeta -->
             <h2>Nuestro Equipo</h2>
