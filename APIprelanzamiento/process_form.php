@@ -48,7 +48,7 @@ try {
         $response_data = json_decode($response);
 
         if (!$response_data->success || $response_data->score < 0.5) {
-            header("Location: https://www.estudianteprogramador.com/?error=Error en la verificación de reCAPTCHA");
+            header("Location: https://www.estudianteprogramador.com/?error=reCAPTCHA ha bloqueado el registro por posible Bot, por favor inténtelo de nuevo.");
             exit;
         }
 
