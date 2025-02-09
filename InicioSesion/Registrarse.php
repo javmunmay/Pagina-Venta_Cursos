@@ -6,6 +6,7 @@
     <title>Iniciar Sesión - Estudiante Programador</title>
     <link rel="stylesheet" href="../css/InicioSesion.css" />
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="css/InicioSesion.css?v=1.0">
     
@@ -19,10 +20,10 @@
         </a>
         <ul class="nav-links">
           <li><a href="/">Inicio</a></li>
-          <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
-          <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
-          <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
-          <li><a href="../ContenidoPrincipal/Contacto.html">Contacto</a></li>
+          <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+          <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+          <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+          <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -75,20 +76,22 @@
               
               <optgroup label="Regiones Destacadas">
                 <option value="+34">+34 (España)</option>
+                <option value="+1">+1 (Estados Unidos)</option>
+                <option value="+39">+39 (Italia)</option>
+                <option value="+33">+33 (Francia)</option>
+                <option value="+41">+41 (Suiza)</option>
+                <option value="+54">+54 (Argentina)</option>
                 <option value="+52">+52 (México)</option>
                 <option value="+57">+57 (Colombia)</option>
                 <option value="+51">+51 (Perú)</option>
                 <option value="+591">+591 (Bolivia)</option>
                 <option value="+56">+56 (Chile)</option>
-                <option value="+54">+54 (Argentina)</option>
                 <option value="+593">+593 (Ecuador)</option>
                 <option value="+40">+40 (Rumanía)</option>
                 <option value="+502">+502 (Guatemala)</option>
-                <option value="+1">+1 (Estados Unidos)</option>
                 <option value="+39">+39 (Italia)</option>
                 <option value="+351">+351 (Portugal)</option>
-                <option value="+33">+33 (Francia)</option>
-                <option value="+41">+41 (Suiza)</option>
+                
                 <option value="">Otro (introduce prefijo)</option>
             </optgroup>
               
@@ -262,7 +265,7 @@
             <label for="politica"
               >Acepto la
               <a
-                href="../ContenidoPrincipal/PoliticaPrivacidad.html"
+                href="../ContenidoPrincipal/PoliticaPrivacidad.php"
                 target="_blank"
                 >política de privacidad</a
               >
@@ -273,7 +276,7 @@
           <button type="submit" class="btn-login">Registrarse</button>
           <p class="registro">
             ¿Tienes una cuenta?
-            <a href="InicioSesion.html">Inicia Sesión aquí</a>
+            <a href="InicioSesion.php">Inicia Sesión aquí</a>
           </p>
         </form>
       </section>
@@ -288,38 +291,8 @@
       </section>
     </main>
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-menu">
-          <ul>
-            <li><a href="/">Inicio</a></li>
-            <li>
-              <a href="../PoliticaPrivacidad.html">Política de privacidad</a>
-            </li>
-            <li>
-              <a href="../TerminosCondiciones.html">Términos y condiciones</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <a
-            href="https://www.tiktok.com/@estudianteprogramador"
-            target="_blank"
-            ><img src="../iconos/tik-tok.png" alt="TikTok"
-          /></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><img src="../iconos/instagram.png" alt="Instagram"
-          /></a>
-          <a href="https://www.patreon.com" target="_blank"
-            ><img src="../iconos/patreon.png" alt="Patreon"
-          /></a>
-          <a href="https://www.youtube.com" target="_blank"
-            ><img src="../iconos/youtube.png" alt="YouTube"
-          /></a>
-        </div>
-      </div>
-      <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-    </footer>
+    <?php include '../php/footer.php'; ?>
+    
   </body>
   <script>
     //Error login

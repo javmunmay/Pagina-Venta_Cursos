@@ -9,6 +9,7 @@
   <title>Estudiante Programador</title>
   <link rel="stylesheet" href="css/cssInicio.css" />
   <link rel="icon" type="image/png" href="imagenes/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
   <link rel="stylesheet" href="css/cssInicio.css?v=1.0">
@@ -16,11 +17,78 @@
   <script src="js/App.js"></script>
 
 
-  <!-- Versión 2.6.9 -->
+  <!-- Versión Black Friday -->
+
+
+
+
+
+  <script>
+    // Fecha y hora en que finaliza la oferta (Año, Mes-1, Día, Hora, Minutos)
+    const blackFridayEnd = new Date(2025, 11, 31, 59, 59, 59);
+    // Ejemplo: 29 de Noviembre de 2024 a las 23:59:59
+    // Ojo: meses en JS van de 0 a 11 (Enero=0, Noviembre=10)
+
+    function actualizarContadorBF() {
+      const now = new Date();
+      const tiempoRestante = blackFridayEnd - now;
+
+      if (tiempoRestante <= 0) {
+        document.getElementById("bf-countdown").innerHTML = "¡Oferta finalizada!";
+        return;
+      }
+
+      const segundos = Math.floor(tiempoRestante / 1000) % 60;
+      const minutos = Math.floor(tiempoRestante / 1000 / 60) % 60;
+      const horas = Math.floor(tiempoRestante / 1000 / 60 / 60) % 24;
+      const dias = Math.floor(tiempoRestante / 1000 / 60 / 60 / 24);
+
+      document.getElementById("bf-days").textContent = dias;
+      document.getElementById("bf-hours").textContent = ("0" + horas).slice(-2);
+      document.getElementById("bf-minutes").textContent = ("0" + minutos).slice(-2);
+      document.getElementById("bf-seconds").textContent = ("0" + segundos).slice(-2);
+    }
+
+    // Actualiza cada segundo
+    setInterval(actualizarContadorBF, 1000);
+
+
+
+    function abrirModal() {
+      const modal = document.getElementById("modal-cupon");
+      if (modal) {
+        modal.style.display = "flex";
+        // 'flex' para centrar con justify-content y align-items
+      }
+    }
+
+    function cerrarModal() {
+      const modal = document.getElementById("modal-cupon");
+      if (modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // (Opcional) cerrar con 'Esc'
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        cerrarModal();
+      }
+    });
+  </script>
+
+
 
 </head>
 
 <body>
+  <!-- Banner Black Friday -->
+  <div class="blackfriday-banner">
+    <span class="bf-highlight">BLACK FRIDAY</span>
+    <span>¡Descuentos de hasta el 70% por tiempo limitado!</span>
+  </div>
+
+
   <header>
     <nav>
       <a href="/">
@@ -33,11 +101,11 @@
       </button>
       <ul class="nav-links">
         <li><a href="/">Inicio</a></li>
-        <li><a href="ContenidoPrincipal/Cursos.html">Cursos</a></li>
-        <li><a href="ContenidoPrincipal/Planes.html">Planes</a></li>
-        <li><a href="ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="ContenidoPrincipal/Contacto.html">Contacto</a></li>
-        <li><a href="InicioSesion/InicioSesion.html" class="login-btn">Iniciar Sesión</a></li>
+        <li><a href="ContenidoPrincipal/Cursos.php">Cursos</a></li>
+        <li><a href="ContenidoPrincipal/Planes.php">Planes</a></li>
+        <li><a href="ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+        <li><a href="ContenidoPrincipal/Contacto.php">Contacto</a></li>
+        <li><a href="InicioSesion/InicioSesion.php" class="login-btn">Iniciar Sesión</a></li>
       </ul>
     </nav>
   </header>
@@ -53,6 +121,12 @@
   <main>
     <!-- Sección de bienvenida -->
 
+    <!-- Cinta / Pin de Black Friday en la esquina -->
+    <div class="bf-ribbon">
+      <span>BLACK FRIDAY</span>
+    </div>
+
+
 
 
     <section class="hero">
@@ -63,6 +137,47 @@
       </p>
       <a href="ContenidoPrincipal/Cursos.html" class="cta-btn">Comienza tu primera lección</a>
     </section>
+
+    <!-- Botón o enlace para mostrar el modal (opcional) -->
+    <button onclick="abrirModal()" class="btn-show-modal">¡Ver cupón Black Friday!</button>
+
+    <!-- Contenedor del modal -->
+    <div id="modal-cupon" class="modal-container">
+      <!-- Contenido del modal -->
+      <div class="modal-content">
+        <span class="modal-close" onclick="cerrarModal()">&times;</span>
+        <h2>¡Descuento Especial Black Friday!</h2>
+        <p>Utiliza el cupón <strong>BLACKFRIDAY</strong> para obtener un 50% de descuento en tus cursos.</p>
+        <p>¡Solo por tiempo limitado!</p>
+        <button onclick="cerrarModal()" class="btn-accept">¡Aprovechar Ahora!</button>
+      </div>
+    </div>
+
+    <!-- Sección del contador -->
+    <div class="bf-countdown-container">
+      <h2>La oferta termina en:</h2>
+      <div id="bf-countdown" class="bf-countdown">
+        <div class="time-box">
+          <span id="bf-days">0</span>
+          <small>Días</small>
+        </div>
+        <div class="time-box">
+          <span id="bf-hours">0</span>
+          <small>Horas</small>
+        </div>
+        <div class="time-box">
+          <span id="bf-minutes">0</span>
+          <small>Min</small>
+        </div>
+        <div class="time-box">
+          <span id="bf-seconds">0</span>
+          <small>Seg</small>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- Sección de Nuevos Cursos -->
     <section class="new-courses">
@@ -75,7 +190,8 @@
             Domina los principios de la programación orientada a objetos con
             uno de los lenguajes más usados en la industria.
           </p>
-          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoJava.html" class="btn-curso">Ver Curso</a>
+          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoJava.html" class="btn-curso">Ver
+            Curso</a>
         </div>
         <div class="course">
           <img src="imagenes/CursoPhpBanner.jpg" alt="Curso de PHP" />
@@ -93,7 +209,8 @@
             Crea páginas web modernas y adaptables usando las mejores
             prácticas de HTML5 y CSS3.
           </p>
-          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoHtml.html" class="btn-curso">Ver Curso</a>
+          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoHtml.html" class="btn-curso">Ver
+            Curso</a>
         </div>
       </div>
     </section>
@@ -130,7 +247,7 @@
         </div>
 
         <div class="benefit">
-          <img src="imagenes/Certificados.jpg" alt="Comunidad de estudiantes" />
+          <img src="imagenes/ComunidadDeApoyo.PNG" alt="Comunidad de estudiantes" />
           <h3>Certificados</h3>
           <p>
             Finaliza nuestros cursos y obtén certificados que
@@ -200,34 +317,7 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-menu">
-        <ul>
-          <li><a href="Index.html"><u>Inicio</u></a></li>
-          <li><a href="ContenidoPrincipal/PoliticaPrivacidad.html" rel="noopener noreferrer"><u>Política de privacidad</u></a>
-          </li>
-          <li><a href="ContenidoPrincipal/TerminosCondiciones.html" rel="noopener noreferrer"><u>Términos y condiciones</u></a>
-          </li>
-          <li><a href="ContenidoPrincipal/TrabajaConNosotros.html" rel="noopener noreferrer"><u>Trabaja con nosotros</u></a>
-          </li>
-        </ul>
-        <br>
-      </div>
-      
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank" rel="noopener noreferrer"><img
-            src="iconos/tik-tok.png" alt="TikTok" /></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.png"
-            alt="Instagram" /></a>
-        <a href="https://www.patreon.com" target="_blank" rel="noopener noreferrer"><img src="iconos/patreon.png"
-            alt="Patreon" /></a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.png"
-            alt="YouTube" /></a>
-      </div>
-    </div>
-    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-  </footer>
+  <?php include 'php/footer.php'; ?>
 
 </body>
 

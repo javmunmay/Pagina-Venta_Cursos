@@ -7,6 +7,7 @@
   <title>Iniciar Sesión - Estudiante Programador</title>
   <link rel="stylesheet" href="../css/InicioSesion.css" />
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="css/InicioSesion.css?v=1.0">
   <script src="../js/App.js"></script>
@@ -25,10 +26,10 @@
       </button>
       <ul class="nav-links">
         <li><a href="/">Inicio</a></li>
-        <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
-        <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
-        <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../ContenidoPrincipal/Contacto.html">Contacto</a></li>
+        <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+        <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+        <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+        <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -55,11 +56,11 @@
 
         <p class="registro">
           ¿No tienes una cuenta?
-          <a href="Registrarse.html">Regístrate aquí</a>
+          <a href="Registrarse.php">Regístrate aquí</a>
         </p>
         <p class="registro">
           ¿Has olvidado tu contraseña?
-          <a href="../ContenidoPrincipal/Contacto.html#recuperarcontrasena">Restaurar contraseña</a>
+          <a href="../ContenidoPrincipal/Contacto.php#recuperarcontrasena">Restaurar contraseña</a>
         </p>
       </form>
 
@@ -84,29 +85,8 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-menu">
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li>
-            <a href="../PoliticaPrivacidad.html">Política de privacidad</a>
-          </li>
-          <li>
-            <a href="../TerminosCondiciones.html">Términos y condiciones</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank"><img src="../iconos/tik-tok.png"
-            alt="TikTok" /></a>
-        <a href="https://www.instagram.com" target="_blank"><img src="../iconos/instagram.png" alt="Instagram" /></a>
-        <a href="https://www.patreon.com" target="_blank"><img src="../iconos/patreon.png" alt="Patreon" /></a>
-        <a href="https://www.youtube.com" target="_blank"><img src="../iconos/youtube.png" alt="YouTube" /></a>
-      </div>
-    </div>
-    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-  </footer>
+  <?php include '../php/footer.php'; ?>
+  
 </body>
 <script>
   // Función para mostrar un mensaje si hay un parámetro en la URL

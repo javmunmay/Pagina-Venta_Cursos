@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/cssInicio.css?v=1.0" />
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
   <script src="../js/App.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
   
@@ -31,11 +32,11 @@
       </button>
       <ul class="nav-links">
         <li><a href="/">Inicio</a></li>
-        <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
-        <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
-        <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../ContenidoPrincipal/Contacto.html">Contacto</a></li>
-        <li><a href="../InicioSesion/InicioSesion.html" class="login-btn">Iniciar Sesión</a></li>
+        <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+        <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+        <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+        <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
+        <li><a href="../InicioSesion/InicioSesion.php" class="login-btn">Iniciar Sesión</a></li>
       </ul>
     </nav>
   </header>
@@ -217,32 +218,8 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-menu">
-        <ul>
-          <li><a href="/"><u>Inicio</u></a></li>
-          <li>
-            <a href="PoliticaPrivacidad.html" rel="noopener noreferrer"><u>Política de privacidad</u></a>
-          </li>
-          <li>
-            <a href="TerminosCondiciones.html" rel="noopener noreferrer"><u>Términos y condiciones</u></a>
-          </li>
-          <li><a href="TrabajaConNosotros.html" rel="noopener noreferrer"><u>Trabaja con nosotros</u></a>
-          </li>
-        </ul>
-        <br>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank"><img src="../iconos/tik-tok.png"
-            alt="TikTok" /></a>
-        <a href="https://www.instagram.com" target="_blank"><img src="../iconos/instagram.png" alt="Instagram" /></a>
-        <a href="https://www.patreon.com" target="_blank"><img src="../iconos/patreon.png" alt="Patreon" /></a>
-        <a href="https://www.youtube.com" target="_blank"><img src="../iconos/youtube.png" alt="YouTube" /></a>
-      </div>
-    </div>
-    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-  </footer>
+  <?php include '../php/footer.php'; ?>
+
   <script src="App.js"></script>
 </body>
 
