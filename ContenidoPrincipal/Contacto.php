@@ -136,7 +136,7 @@
         <div class="form-group">
           <input type="checkbox" id="politica" name="politica" required />
           <label for="politica">Acepto la
-            <a href="PoliticaPrivacidad.html" target="_blank" rel="noopener noreferrer">política de
+            <a href="PoliticaPrivacidad.php" target="_blank" rel="noopener noreferrer">política de
               privacidad</a></label>
         </div>
         <button type="submit" class="btn-submit" id="recuperarcontrasena">Enviar mensaje</button>
