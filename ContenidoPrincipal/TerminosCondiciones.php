@@ -181,10 +181,10 @@
         <section class="redes-sociales">
           <h2>Síguenos en nuestras redes</h2>
           <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank" rel="noopener noreferrer"><img
-              src="iconos/tik-tok.png" alt="TikTok" /></a>
-          <a href="https://www.instagram.com/estudianteprogramador/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.png" alt="Instagram" /></a>
-          <a href="https://www.patreon.com/c/EstudianteProgramador?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_fan&utm_content=join_link" target="_blank" rel="noopener noreferrer"><img src="iconos/patreon.png" alt="Patreon" /></a>
-          <a href="https://www.youtube.com/@ElEstudianteProgramador" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.png" alt="YouTube" /></a>
+              src="../iconos/tik-tok.png" alt="TikTok" /></a>
+          <a href="https://www.instagram.com/estudianteprogramador/" target="_blank" rel="noopener noreferrer"><img src="../iconos/instagram.png" alt="Instagram" /></a>
+          <a href="https://www.patreon.com/c/EstudianteProgramador?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_fan&utm_content=join_link" target="_blank" rel="noopener noreferrer"><img src="../iconos/patreon.png" alt="Patreon" /></a>
+          <a href="https://www.youtube.com/@ElEstudianteProgramador" target="_blank" rel="noopener noreferrer"><img src="../iconos/youtube.png" alt="YouTube" /></a>
         </section>
 
       </div>
