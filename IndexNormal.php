@@ -63,7 +63,7 @@
         Aprende de expertos y mejora tu futuro con acceso a más de 40 cursos
         prácticos y actualizados. ¡Empieza ahora!
       </p>
-      <a href="ContenidoPrincipal/Cursos.html" class="cta-btn">Comienza tu primera lección</a>
+      <a href="ContenidoPrincipal/Cursos.php" class="cta-btn">Comienza tu primera lección</a>
     </section>
 
     <!-- Sección de Nuevos Cursos -->

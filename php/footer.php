@@ -10,11 +10,11 @@ $year = date("Y");
     <div class="footer-menu">
       <ul>
         <li><a href="/"><u>Inicio</u></a></li>
-        <li><a href="ContenidoPrincipal/PoliticaPrivacidad.php" rel="noopener noreferrer"><u>Política de privacidad</u></a>
+        <li><a href="https://41095220.servicio-online.net/ContenidoPrincipal/PoliticaPrivacidad.php" rel="noopener noreferrer"><u>Política de privacidad</u></a>
         </li>
-        <li><a href="ContenidoPrincipal/TerminosCondiciones.php" rel="noopener noreferrer"><u>Términos y condiciones</u></a>
+        <li><a href="https://41095220.servicio-online.net/ContenidoPrincipal/TerminosCondiciones.php" rel="noopener noreferrer"><u>Términos y condiciones</u></a>
         </li>
-        <li><a href="ContenidoPrincipal/TrabajaConNosotros.php" rel="noopener noreferrer"><u>Trabaja con nosotros</u></a>
+        <li><a href="https://41095220.servicio-online.net/ContenidoPrincipal/TrabajaConNosotros.php" rel="noopener noreferrer"><u>Trabaja con nosotros</u></a>
         </li>
       </ul>
       <br>
