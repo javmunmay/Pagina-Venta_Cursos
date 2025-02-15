@@ -86,12 +86,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         } else {
             // Contraseña incorrecta
-            header("Location: ../InicioSesion/InicioSesion.html?mensaje=contrasena_incorrecta");
+            header("Location: ../InicioSesion/InicioSesion.php?mensaje=contrasena_incorrecta");
             exit();
         }
     } else {
         // Usuario no encontrado
-        header("Location: ../InicioSesion/InicioSesion.html?mensaje=usuario_no_encontrado");
+        header("Location: ../InicioSesion/InicioSesion.php?mensaje=usuario_no_encontrado");
         exit();
     }
 

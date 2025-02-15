@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
 
     // Verificar que las contraseñas coincidan
     if ($_POST['password'] !== $_POST['passwordConfirm']) {
-        header("Location: ../InicioSesion/Registrarse.html?error=Las contraseñas no coinciden");
+        header("Location: ../InicioSesion/Registrarse.php?error=Las contraseñas no coinciden");
         exit();
     }
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
         $stmt->close();
 
         if ($count > 0) {
-            header("Location: ../InicioSesion/InicioSesion.html?mensaje=contrasena_coincide");
+            header("Location: ../InicioSesion/InicioSesion.php?mensaje=contrasena_coincide");
             exit();
         }
     }
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nombre'], $_POST['emai
     );
 
     if ($stmt->execute()) {
-        header("Location: ../InicioSesion/InicioSesion.html?mensaje=registro_exitoso");
+        header("Location: ../InicioSesion/InicioSesion.php?mensaje=registro_exitoso");
     } else {
         echo "Error en el registro: " . $stmt->error;
     }

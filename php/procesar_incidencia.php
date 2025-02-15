@@ -46,7 +46,7 @@ $stmt->fetch();
 $stmt->close();
 
 if ($count == 0) {
-    header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=usuario_no_encontrado");
+    header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=usuario_no_encontrado");
     exit();
 }
 
@@ -71,7 +71,7 @@ $stmt = $conn->prepare("INSERT INTO incidencias (id_usuario, email_usuario, tele
 $stmt->bind_param("isssssi", $id_usuario, $correo, $telefono, $asunto, $mensaje, $preferencia_contacto, $politica);
 
 if ($stmt->execute()) {
-    header("Location: ../ContenidoPrincipal/Contacto.html?mensaje=incidencia_exitosa");
+    header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=incidencia_exitosa");
     exit();
 } else {
     echo "Error al registrar la incidencia: " . $stmt->error;

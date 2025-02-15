@@ -30,5 +30,5 @@ $stmt2->execute([
     'id' => $usuario['id']
 ]);
 
-echo "Tu contraseña ha sido cambiada exitosamente. <a href='login.php'>Iniciar sesión</a>";
+echo "Tu contraseña ha sido cambiada exitosamente. <a href='../InicioSesion.php'>Iniciar sesión</a>";
 ?>
