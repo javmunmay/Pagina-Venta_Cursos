@@ -132,7 +132,7 @@
         </div>
 
         <div class="benefit">
-          <img src="imagenes/Certificados.jpg" alt="Comunidad de estudiantes" />
+          <img src="imagenes/Certificados.png" alt="Comunidad de estudiantes" />
           <h3>Certificados</h3>
           <p>
             Finaliza nuestros cursos y obtén certificados que
