@@ -143,6 +143,7 @@
     </section>
 
     <!-- Sección de Testimonios Mejorada -->
+
     <section class="testimonials">
       <h2>Lo que dicen nuestros estudiantes</h2>
       <div class="testimonials-container">

@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, X-Re
 
 header('Content-Type: application/json');
 
-$conn = Conectar2("facturas", "root", "");
+$conn = Conectar2("10718674_jenkins", "Javier", "u70q0Z2p@");
 $datos = file_get_contents('php://input');  
 $objeto=json_decode($datos);
 
@@ -113,7 +113,7 @@ function modificarDetalle($objeto) {
 function conectar2($bd, $usuario, $clave) {
   try {
 		$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-		@$bd = new PDO('mysql:host=localhost;dbname='. $bd, $usuario, $clave, $opciones);
+		@$bd = new PDO('mysql:host=PMYSQL181.dns-servicio.com:3306;dbname='. $bd, $usuario, $clave, $opciones);
 		$bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //aquí le digo que voy a utilizar excepciones
 		return $bd;
   } catch (PDOException $e) {
