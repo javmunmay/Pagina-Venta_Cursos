@@ -30,25 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Mostrar el modal después de 7 segundo (7000 ms)
-    setTimeout(function () {
-        var myModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
-        myModal.show();
-    }, 7000);
-
-    // Manejar el envío del formulario
-    document.getElementById("newsletterForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita recargar la página
-        alert("¡Gracias por suscribirte! Usa el código: DESCUENTO10");
-        var modalEl = document.getElementById("newsletterModal");
-        var modal = bootstrap.Modal.getInstance(modalEl);
-        modal.hide(); // Cierra el modal después de suscribirse
-    });
-});
-
-
-
 
 
 
