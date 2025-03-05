@@ -10,11 +10,12 @@
   <link rel="stylesheet" href="css/cssInicio.css" />
   <link rel="icon" type="image/png" href="imagenes/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <!-- Bootstrap CSS -->
+ 
 
   <link rel="stylesheet" href="css/cssInicio.css?v=1.0">
 
-  <script src="js/App.js"></script>
+
 
   <!-- ************* -->
   <!--  Versión 2.7  -->
@@ -46,6 +47,7 @@
 
 
 
+
   <!-- Onda principal -->
   <div class="wave"></div>
 
@@ -57,6 +59,7 @@
 
 
 
+
     <section class="hero">
       <h1>Impulsa tu carrera con habilidades en desarrollo web</h1>
       <p>
@@ -65,6 +68,19 @@
       </p>
       <a href="ContenidoPrincipal/Cursos.php" class="cta-btn">Comienza tu primera lección</a>
     </section>
+
+
+    <!-- Animación al cargar Imagen -->
+    <!-- Fondo oscuro -->
+    <div class="overlay"></div>
+
+    <!-- Preloader con el logo animado -->
+    <div class="preloader">
+      <div class="logo-container-animacion">
+        <img src="imagenes/LogoEstudianteBlanco.png" alt="Logo" class="logo-animacion">
+      </div>
+    </div>
+
 
     <!-- Sección de Nuevos Cursos -->
     <section class="new-courses">
@@ -205,6 +221,9 @@
 
   <?php include 'php/footer.php'; ?>
 
+  <!-- Bootstrap JS y Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/App.js"></script>
 </body>
 
 </html>

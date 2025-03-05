@@ -1,3 +1,108 @@
+/* ********************* */
+/*Animación del inicio*/
+
+/* Fondo oscuro semitransparente */
+.overlay {
+    position: fixed;
+    /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro con 80% de opacidad */
+    z-index: 9998;
+    /* Está por debajo del logo */
+}
+
+/* Estilo básico del logo */
+.logo-container-animacion {
+    position: fixed;
+    /* Fija el logo en la pantalla */
+    top: 50%;
+    /* Centra el logo verticalmente */
+    left: 50%;
+    /* Centra el logo horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajuste para centrar exacto */
+    z-index: 9999;
+    /* Asegura que el logo esté por encima del fondo oscuro */
+    width: 50vw;
+    /* Ancho relativo al 60% del ancho de la ventana */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo de la imagen del logo */
+.logo-animacion {
+    width: 115%;
+    /* Hace que el logo ocupe el 100% del contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    opacity: 0;
+    /* Inicialmente el logo está invisible */
+    transform: scale(0);
+    /* Empieza pequeño */
+    animation: logo-animation 2s forwards;
+    /* Aplica la animación durante 2 segundos */
+}
+
+
+/* Definir la animación de entrada del logo */
+@keyframes logo-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        /* Comienza pequeño y transparente */
+    }
+
+    50% {
+        opacity: 0.5;
+        /* Hace que el logo sea medio visible */
+        transform: scale(1.2);
+        /* Aumenta el tamaño del logo */
+    }
+
+    100% {
+        opacity: 1;
+        /* Hace que el logo sea completamente visible */
+        transform: scale(1);
+        /* El logo vuelve a su tamaño normal */
+    }
+}
+
+/* Animación de salida para el fondo oscuro */
+@keyframes fadeOutOverlay {
+    0% {
+        opacity: 1;
+        /* Comienza completamente visible */
+    }
+
+    100% {
+        opacity: 0;
+        /* Termina completamente transparente */
+    }
+}
+
+
+
+/* Aplicar la animación de salida al fondo oscuro */
+.overlay.fade-out {
+    animation: fadeOutOverlay 1s forwards;
+    /* Duración de 1 segundo */
+}
+
+/* Aplicar la animación de salida al logo */
+.logo-containerlogo-container-animacion.fade-out {
+    animation: fadeOutLogo 1s forwards;
+    /* Duración de 1 segundo */
+}
+
+
+/* ******************** */
+
+
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -471,25 +576,28 @@ section.testimonios {
 
 /* Botón que muestra el modal (opcional) */
 .btn-show-modal {
-    display: block; 
-    margin: 20px auto; 
+    display: block;
+    margin: 20px auto;
     background-color: #02d25f;
     color: #090643;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 20px;
-    border:solid #090643;
-    
+    border: solid #090643;
+
 }
 
 .btn-show-modal:hover {
     background-color: white;
 
     transform: scale(1.15);
-    
-    
+
+
 }
+
+
+
 
 
 
@@ -856,15 +964,18 @@ nav {
 
 .heroCursos h1 {
     color: #090643;
-    font-size: 3rem; /* Texto más grande */
+    font-size: 3rem;
+    /* Texto más grande */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .heroCursos p {
     color: #666;
-    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
-    margin-bottom: 40px; /* Espacio adicional para el buscador */
+    font-size: 1.5rem;
+    /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px;
+    /* Espacio adicional para el buscador */
 }
 
 
@@ -877,16 +988,20 @@ nav {
 
 .heroPlanes h1 {
     color: #090643;
-    font-size: 3rem; /* Texto más grande */
+    font-size: 3rem;
+    /* Texto más grande */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .heroPlanes p {
     color: #666;
-    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
-    margin-bottom: 40px; /* Espacio adicional para el buscador */
+    font-size: 1.5rem;
+    /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px;
+    /* Espacio adicional para el buscador */
 }
+
 /* Estilo del input de búsqueda */
 .search-bar {
     width: 100%;
@@ -1155,7 +1270,7 @@ nav {
 .btn-plan:hover {
     background-color: white;
     color: #090643;
-    
+
 }
 
 /* Plan destacado */

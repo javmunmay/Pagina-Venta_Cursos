@@ -1,4 +1,55 @@
 
+// JavaScript para ocultar el logo después de la animación
+window.onload = function() {
+    setTimeout(function() {
+        document.querySelector('.logo-container-animacion').style.display = 'none'; // Oculta el logo
+    }, 3000); // El tiempo en milisegundos (3000ms = 3 segundos)
+};
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Esperar 3 segundos (el tiempo de la animación de entrada) y luego iniciar la salida
+    setTimeout(function () {
+        const overlay = document.querySelector('.overlay');
+        const logoContainer = document.querySelector('.logo-container-animacion');
+
+        // Aplicar la animación de salida al fondo oscuro y al logo
+        if (overlay && logoContainer) {
+            overlay.classList.add('fade-out');
+            logoContainer.classList.add('fade-out');
+
+            // Eliminar los elementos del DOM después de que termine la animación
+            setTimeout(function () {
+                overlay.remove();
+                logoContainer.remove();
+            }, 1000); // 1000 ms = 1 segundo (duración de la animación de salida)
+        }
+    }, 3000); // 3000 ms = 3 segundos (tiempo de la animación de entrada)
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar el modal después de 7 segundo (7000 ms)
+    setTimeout(function () {
+        var myModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
+        myModal.show();
+    }, 7000);
+
+    // Manejar el envío del formulario
+    document.getElementById("newsletterForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita recargar la página
+        alert("¡Gracias por suscribirte! Usa el código: DESCUENTO10");
+        var modalEl = document.getElementById("newsletterModal");
+        var modal = bootstrap.Modal.getInstance(modalEl);
+        modal.hide(); // Cierra el modal después de suscribirse
+    });
+});
+
+
+
+
 
 
 
