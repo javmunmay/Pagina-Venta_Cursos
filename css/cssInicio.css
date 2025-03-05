@@ -27,7 +27,7 @@
     /* Ajuste para centrar exacto */
     z-index: 9999;
     /* Asegura que el logo esté por encima del fondo oscuro */
-    width: 50vw;
+    width: 30vw;
     /* Ancho relativo al 60% del ancho de la ventana */
     height: auto;
     /* Mantiene la proporción de la imagen */
