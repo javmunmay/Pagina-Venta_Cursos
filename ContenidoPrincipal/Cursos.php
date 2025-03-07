@@ -84,9 +84,9 @@
             src="../imagenes/CursoJavaBanner.jpg"
             alt="Curso Java Orientado a Objetos" />
           <div class="curso-info">
-            <h3>Introducción a Java Orientado a Objetos</h3>
-            <p>Aprende a dominar Java Orientado a Objetos desde cero hasta un nivel intermedio.</p>
-            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
+            <h3>Curso de Java desde Cero hasta Avanzado</h3>
+            <p>Aprende a dominar Java Orientado a Objetos desde cero hasta un nivel Avanzado.</p>
+            <a href="../InformacionCursos/InfoCurso.php?id=4" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -145,7 +145,7 @@
             <h3>Introducción a Ciberseguridad</h3>
             <p>Aprende los conceptos clave para proteger sistemas y datos.</p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=5"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -160,7 +160,7 @@
           <div class="curso-info">
             <h3>Python: Fundamentos</h3>
             <p>Aprende los fundamentos de Python.</p>
-            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
+            <a href="../InformacionCursos/InfoCurso.php?id=6" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -169,7 +169,7 @@
           <div class="curso-info">
             <h3>Curso Iniciación IA: Algoritmos</h3>
             <p>Aprende a crear algoritmos de IA con Python.</p>
-            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
+            <a href="../InformacionCursos/InfoCurso.php?id=7" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -184,7 +184,7 @@
             <h3>Linux: Comandos terminal</h3>
             <p>Aprende a usar los comandos de Linux como un experto.</p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=8"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -200,7 +200,7 @@
             <h3>JavaScript: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Javascript</p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=9"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -219,7 +219,7 @@
               programador profesional.
             </p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=10"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -236,7 +236,7 @@
             <h3>Angular: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Angular</p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=11"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -251,7 +251,7 @@
             <h3>SQL desde 0 hasta Avanzado</h3>
             <p>Aprende a manejar bases de datos SQL desde cero hasta Avanzado como un profesional en la gestion, administración... de las bases de datos SQL.</p>
             <a
-              href="../InformacionCursos/InfoCurso.php?id="
+              href="../InformacionCursos/InfoCurso.php?id=12"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>

@@ -18,7 +18,6 @@ CREATE TABLE cursos (
 
 
 /*Ejemplo de inserción*/
-
 INSERT INTO cursos (
     titulo,
     descripcion,
@@ -33,47 +32,39 @@ INSERT INTO cursos (
     habilidades,
     requisitos
 ) VALUES (
-    'Curso de CSS desde Cero hasta Avanzado',
-    'Este curso te introduce a los conceptos esenciales de CSS (Cascading Style Sheets), 
-        el lenguaje de diseño que da vida y estilo a millones de sitios web en todo el mundo. 
-        A lo largo del curso, aprenderás desde los principios básicos, como la estructura de reglas, 
-        selectores y propiedades, hasta técnicas avanzadas como animaciones, diseño responsivo y 
-        el uso de frameworks modernos. Dominarás la creación de diseños atractivos y funcionales, 
-        optimizando la experiencia del usuario en cualquier dispositivo. Al finalizar, estarás 
-        preparado para transformar cualquier estructura HTML en una interfaz visualmente 
-        impresionante y profesional.',
-    1,
-    20,
-    'Básico',
-    'Activo',
-    '../imagenes/CursoCSSBanner.jpg',
-    600,
-    4.9,
+    'SQL desde 0 hasta Avanzado',
+    'Este curso te lleva desde los conceptos básicos de SQL hasta técnicas avanzadas para gestionar y manipular bases de datos. Aprenderás a crear y gestionar bases de datos, realizar consultas complejas, optimizar el rendimiento y trabajar con transacciones. Además, explorarás temas avanzados como vistas, procedimientos almacenados, triggers y la integración de SQL con otros lenguajes de programación. Al finalizar, estarás preparado para manejar bases de datos de manera profesional y eficiente.',
+    9,  -- Cambia el ID del profesor según tu base de datos
+    30,  -- Duración en horas
+    'Avanzado',  -- Nivel del curso
+    'Activo',  -- Estado del curso
+    '../imagenes/CursoSQLBanner.jpg',  -- Ruta de la imagen del banner
+    1400,  -- Número de alumnos inscritos
+    4.8,  -- Valoración del curso
     '[
-        { "tema": "Introducción a CSS", "duracion": "1h" },
-        { "tema": "Fundamentos de Diseño", "duracion": "2h" },
-        { "tema": "Selectores Avanzados y Especificidad", "duracion": "4h" },
-        { "tema": "Diseño Responsivo", "duracion": "1h" },
-        { "tema": "Flexbox y Grid Layout", "duracion": "1h 30 min" },
-        { "tema": "Animaciones y Transiciones", "duracion": "1h" },
-        { "tema": "Frameworks y Herramientas Modernas", "duracion": "50 min" },
-        { "tema": "Proyecto Final", "duracion": "1h 30 min" }
-    ]
-    ',
+        { "tema": "Introducción a SQL y Bases de Datos", "duracion": "2h" },
+        { "tema": "Creación y Gestión de Bases de Datos", "duracion": "3h" },
+        { "tema": "Consultas Básicas: SELECT, INSERT, UPDATE, DELETE", "duracion": "4h" },
+        { "tema": "Consultas Avanzadas: JOINs y Subconsultas", "duracion": "4h" },
+        { "tema": "Funciones Agregadas y Agrupación de Datos", "duracion": "3h" },
+        { "tema": "Optimización de Consultas", "duracion": "3h" },
+        { "tema": "Transacciones y Control de Concurrencia", "duracion": "3h" },
+        { "tema": "Vistas, Procedimientos Almacenados y Triggers", "duracion": "4h" },
+        { "tema": "Integración de SQL con Otros Lenguajes", "duracion": "2h" },
+        { "tema": "Proyecto Final: Base de Datos Completa", "duracion": "4h" }
+    ]',  -- Contenido del curso en formato JSON
     '[
-        "Escribir código CSS limpio y eficiente utilizando sintaxis básica y avanzada.",
-        "Diseñar layouts modernos y atractivos aplicando el modelo de caja y posicionamiento.",
-        "Crear diseños responsivos que se adapten a cualquier dispositivo usando media queries y unidades relativas.",
-        "Dominar Flexbox y CSS Grid para construir layouts complejos y flexibles.",
-        "Implementar animaciones y transiciones para mejorar la interactividad y experiencia del usuario.",
-        "Utilizar frameworks como Bootstrap y Tailwind CSS para acelerar el desarrollo de proyectos.",
-        "Optimizar y mantener código CSS siguiendo buenas prácticas y herramientas como SASS o PostCSS.",
-        "Trabajar con herramientas de desarrollo como Chrome DevTools para depurar y probar estilos.",
-        "Aplicar selectores avanzados y entender la especificidad para un mayor control sobre los estilos.",
-        "Desarrollar proyectos completos desde cero, integrando diseño responsivo, animaciones y frameworks.",
-        "Resolver problemas comunes de diseño de manera eficiente y creativa.",
-        "Mejorar la usabilidad y accesibilidad de tus diseños web."
-    ]
-    ',
-    'No se requieren conocimientos previos de programación. Se recomienda conocimientos básicos de HTML'
+        "Comprender los conceptos básicos y avanzados de SQL.",
+        "Crear y gestionar bases de datos de manera eficiente.",
+        "Realizar consultas básicas y avanzadas para manipular datos.",
+        "Utilizar JOINs y subconsultas para combinar datos de múltiples tablas.",
+        "Aplicar funciones agregadas y agrupación de datos para análisis.",
+        "Optimizar consultas para mejorar el rendimiento.",
+        "Manejar transacciones y control de concurrencia.",
+        "Crear y utilizar vistas, procedimientos almacenados y triggers.",
+        "Integrar SQL con otros lenguajes de programación.",
+        "Desarrollar una base de datos completa desde cero.",
+        "Prepararte para roles de administración de bases de datos o análisis de datos."
+    ]',  -- Habilidades que se obtendrán en formato JSON
+    'No se requieren conocimientos previos de SQL, aunque es recomendable tener nociones básicas de bases de datos.'  -- Requisitos del curso
 );
