@@ -47,21 +47,15 @@ if (!isset($_SESSION['user_id'])) {
       </button>
       <ul class="nav-links">
         <li><a href="MiAcademia.php">Inicio</a></li>
-        <li class="dropdown">
+        <li>
           <a href="InformacionPersonal.php">Mi Perfil</a>
-          <div class="dropdown-content">
-            <a href="InformacionPersonal.php">Información Personal</a>
-            <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
-            <a href="#certificados-logros">Certificados y Logros</a>
-            <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
-            <div class="cerrarSesion">
-              <a href="../php/logout.php">Cerrar Sesión</a>
-            </div>
-          </div>
         </li>
         <li><a href="CursosDentroSesion.php">Cursos</a></li>
         <li><a href="MisCertificados.php">Mis Certificados</a></li>
         <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
+        <li>
+          <a class="cerrarSesion" href="../php/logout.php">Cerrar Sesión</a>
+        </li>
       </ul>
     </nav>
   </header>

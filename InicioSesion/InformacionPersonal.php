@@ -58,21 +58,15 @@ $row = $result->fetch_assoc();
       </button>
       <ul class="nav-links">
         <li><a href="MiAcademia.php">Inicio</a></li>
-        <li class="dropdown">
+        <li>
           <a href="InformacionPersonal.php">Mi Perfil</a>
-          <div class="dropdown-content">
-            <a href="InformacionPersonal.php">Información Personal</a>
-            <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
-            <a href="#certificados-logros">Certificados y Logros</a>
-            <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
-            <div class="cerrarSesion">
-              <a href="../php/logout.php">Cerrar Sesión</a>
-            </div>
-          </div>
         </li>
         <li><a href="CursosDentroSesion.php">Cursos</a></li>
         <li><a href="MisCertificados.php">Mis Certificados</a></li>
         <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
+        <li>
+          <a class="cerrarSesion" href="../php/logout.php">Cerrar Sesión</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -146,11 +140,6 @@ $row = $result->fetch_assoc();
     <!-- Sección con Progreso, Preferencias, etc. -->
     <section class="hero-banner">
       <div class="banner-content">
-        <h2>Progreso en Cursos</h2>
-        <p>Cursos Completados: 3</p>
-        <p>Cursos en Progreso: 2</p>
-        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="MisCertificados.php">Ver Certificados</a>
-
         <h3>Preferencias de Cuenta</h3>
         <p><strong>Idioma:</strong> Español</p>
         <p id="estadoNotificaciones">Notificaciones: Desactivadas</p>
@@ -164,11 +153,13 @@ $row = $result->fetch_assoc();
         <h2>Seguridad</h2>
         <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="CambiarContrasena.php">Cambiar Contraseña</a>
 
-        <h3>Historial de Sesiones Recientes</h3>
+        <h3 class="mt-5">Historial de Sesiones Recientes</h3>
         <ul>
           <li>Fecha: 2024-10-24 20:36:56 - Dispositivo: Chrome en Windows</li>
           <li>Fecha: 2024-10-22 18:22:34 - Dispositivo: Safari en iOS</li>
         </ul>
+        <p><a class="btn btn-primary btn-lg mt-5" style="background-color: #090643; border-color: #090643;" href="#">Consejos de Seguridad</a></p>
+
       </div>
     </section>
 
@@ -176,7 +167,13 @@ $row = $result->fetch_assoc();
     <section id="certificados-logros" class="hero-banner">
       <div class="banner-content">
         <h2>Certificados y Logros</h2>
-        <p>Aquí irían los logros o certificados que tenga el usuario.</p>
+        <p>Aún no tienes cursos para mostrar.</p>
+
+        <h2 class="mt-5">Progreso en Cursos</h2>
+        <p>Cursos Completados: 3</p>
+        <p>Cursos en Progreso: 2</p>
+        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="MisCertificados.php">Ver Certificados</a>
+
       </div>
     </section>
 
@@ -186,8 +183,14 @@ $row = $result->fetch_assoc();
         <h2>Suscripción</h2>
         <p><strong>Tipo de Suscripción:</strong> Mensual</p>
         <p><strong>Fecha de Expiración:</strong> 2024-12-31</p>
-        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
-        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="#">Consejos de Seguridad</a></p>
+      <p class="mt-4"><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="#">Gestionar Suscripción</a></p>
+      </div>
+    </section>
+
+    <section class="hero-banner">
+      <div class="cerrarSesion">
+      <h2>Política de Privacidad</h2>
+      <p class="mt-4"><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
       </div>
     </section>
 

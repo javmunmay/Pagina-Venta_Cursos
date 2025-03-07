@@ -228,6 +228,11 @@ footer {
 
 */
 
+
+li a.cerrarSesion:hover{
+    color: red;
+}
+
 /* Botón de menú hamburguesa */
 .menu-toggle {
     display: none;
