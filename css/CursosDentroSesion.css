@@ -7,14 +7,18 @@ body {
 }
 
 section.cursos {
-    max-width: 1200px; /* Ajusta este valor según sea necesario */
-    margin: 0 auto; /* Centrar el contenido */
+    max-width: 1200px;
+    /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    /* Centrar el contenido */
 }
 
 section.testimonios {
-    max-width: 1200px; /* Ajusta este valor según sea necesario */
-    margin: 0 auto; /* Centrar el contenido */
-    
+    max-width: 1200px;
+    /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    /* Centrar el contenido */
+
     text-align: center;
 }
 
@@ -27,9 +31,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; /* Hace que el header sea pegajoso */
-    top: 0; /* Se adhiere a la parte superior cuando se hace scroll */
-    z-index: 1000; /* Asegura que esté encima del contenido */
+    position: sticky;
+    /* Hace que el header sea pegajoso */
+    top: 0;
+    /* Se adhiere a la parte superior cuando se hace scroll */
+    z-index: 1000;
+    /* Asegura que esté encima del contenido */
 }
 
 nav {
@@ -53,8 +60,10 @@ nav {
     margin: 0;
     position: relative;
     /*left: 1000px;*/
-    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
-    justify-content: center; /* Centra los enlaces del menú */
+    flex-grow: 1;
+    /* Ocupa el espacio disponible para centrar los enlaces */
+    justify-content: center;
+    /* Centra los enlaces del menú */
 }
 
 .nav-links li a {
@@ -69,27 +78,31 @@ nav {
     position: absolute;
     background-color: #090643;
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 10px;
-    
+
 }
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
+
 .dropdown-content a:hover {
     background-color: white;
     color: #090643;
     display: flex;
     border-radius: 10px;
 }
+
 .cerrarSesion a:hover {
     background-color: rgb(255, 3, 3);
     color: white;
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -104,15 +117,18 @@ nav {
 
 .hero h1 {
     color: #090643;
-    font-size: 3rem; /* Texto más grande */
+    font-size: 3rem;
+    /* Texto más grande */
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .hero p {
     color: #666;
-    font-size: 1.5rem; /* Tamaño moderado del subtítulo */
-    margin-bottom: 40px; /* Espacio adicional para el buscador */
+    font-size: 1.5rem;
+    /* Tamaño moderado del subtítulo */
+    margin-bottom: 40px;
+    /* Espacio adicional para el buscador */
 }
 
 /* Estilo del input de búsqueda */
@@ -124,7 +140,8 @@ nav {
     border: 2px solid #ddd;
     border-radius: 25px;
     outline: none;
-    margin: 0 auto; /* Centrar el buscador */
+    margin: 0 auto;
+    /* Centrar el buscador */
     display: block;
 }
 
@@ -139,8 +156,8 @@ nav {
     width: 200px;
     cursor: pointer;
     margin: 0 auto 10px;
-    
-    
+
+
 }
 
 .filtros-container {
@@ -148,20 +165,21 @@ nav {
 }
 
 .selected-option {
-    
+
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 25px;
     color: #090643;
     font-size: 1rem;
-    
-    
+
+
 }
 
 
 .options {
-    display: none; /* Oculto inicialmente */
+    display: none;
+    /* Oculto inicialmente */
     position: absolute;
     top: 100%;
     left: 0;
@@ -170,9 +188,12 @@ nav {
     border: 1px solid #ddd;
     border-radius: 25px;
     z-index: 10;
-    list-style-type: none; /* Quita los puntos de la lista */
-    padding: 0; /* Elimina el padding por defecto del ul */
-    margin: 0; /* Elimina el margen por defecto del ul */
+    list-style-type: none;
+    /* Quita los puntos de la lista */
+    padding: 0;
+    /* Elimina el padding por defecto del ul */
+    margin: 0;
+    /* Elimina el margen por defecto del ul */
 }
 
 
@@ -197,10 +218,14 @@ nav {
 
 /* Sección de todos nuestros cursos */
 .cursos {
-    padding: 20px 0; /* Ajustamos para asegurar margen interno superior e inferior */
-    max-width: 1200px; /* Controlamos el ancho máximo */
-    margin: 0 auto; /* Centra el contenido */
-    box-sizing: border-box; /* Asegura que el padding no sobrepase el contenedor */
+    padding: 20px 0;
+    /* Ajustamos para asegurar margen interno superior e inferior */
+    max-width: 1200px;
+    /* Controlamos el ancho máximo */
+    margin: 0 auto;
+    /* Centra el contenido */
+    box-sizing: border-box;
+    /* Asegura que el padding no sobrepase el contenedor */
 
 }
 
@@ -213,19 +238,27 @@ nav {
 
 .grid-cursos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Asegura que las columnas se distribuyan de manera más uniforme */
-    gap: 70px; /* Aumenta el espacio entre las columnas */
-    padding: 0 20px; /* Espacio lateral */
-    margin: 0 auto; /* Centra la cuadrícula */
-    max-width: 1200px; /* Controla el ancho máximo */
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
-    justify-items: center; /* Centra los elementos dentro de la cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Asegura que las columnas se distribuyan de manera más uniforme */
+    gap: 70px;
+    /* Aumenta el espacio entre las columnas */
+    padding: 0 20px;
+    /* Espacio lateral */
+    margin: 0 auto;
+    /* Centra la cuadrícula */
+    max-width: 1200px;
+    /* Controla el ancho máximo */
+    box-sizing: border-box;
+    /* Asegura que el padding se incluya en el ancho total */
+    justify-items: center;
+    /* Centra los elementos dentro de la cuadrícula */
 }
 
 
 .curso {
     width: 100%;
-    max-width: 350px; /* Ajustamos el tamaño máximo del curso para evitar que se desborde */
+    max-width: 350px;
+    /* Ajustamos el tamaño máximo del curso para evitar que se desborde */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -267,9 +300,12 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    display: block; /* Asegura que el botón se comporte como un bloque completo */
-    text-align: center; /* Centra el texto dentro del botón */
-    text-decoration: none; /* Elimina el subrayado */
+    display: block;
+    /* Asegura que el botón se comporte como un bloque completo */
+    text-align: center;
+    /* Centra el texto dentro del botón */
+    text-decoration: none;
+    /* Elimina el subrayado */
     border: solid;
 }
 
@@ -285,25 +321,27 @@ nav {
     align-items: center;
     overflow: hidden;
     width: 100%;
-  }
-  
-  .carousel {
+}
+
+.carousel {
     display: flex;
     transition: transform 0.5s ease;
     overflow-x: auto;
     scroll-behavior: smooth;
-  }
-  
-  .course-card {
-    min-width: 250px; /* Ajusta el tamaño de cada curso */
-    margin-right: 15px; /* Espacio entre cursos */
+}
+
+.course-card {
+    min-width: 250px;
+    /* Ajusta el tamaño de cada curso */
+    margin-right: 15px;
+    /* Espacio entre cursos */
     background-color: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .arrow {
+}
+
+.arrow {
     background-color: #090643;
     color: white;
     border: none;
@@ -314,15 +352,15 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-  }
-  
-  .arrow.left {
+}
+
+.arrow.left {
     left: 10px;
-  }
-  
-  .arrow.right {
+}
+
+.arrow.right {
     right: 10px;
-  }
+}
 
 
 /* Sección de testimonios */
@@ -376,7 +414,8 @@ nav {
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s;
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
+    /* Elimina el subrayado */
 }
 
 .cta-btn-final:hover {
@@ -396,14 +435,17 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: center; /* Centra el contenido del footer */
+    justify-content: center;
+    /* Centra el contenido del footer */
     align-items: center;
     padding: 20px;
-    flex-wrap: wrap; /* Permite que el contenido se ajuste en filas si es necesario */
+    flex-wrap: wrap;
+    /* Permite que el contenido se ajuste en filas si es necesario */
 }
 
 .footer-menu {
-    margin-right: 50px; /* Espacio entre el menú y las redes sociales */
+    margin-right: 50px;
+    /* Espacio entre el menú y las redes sociales */
 }
 
 .footer-menu ul {
@@ -411,7 +453,8 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
+    gap: 20px;
+    /* Espacio entre los enlaces */
 }
 
 .footer-menu a {
@@ -421,14 +464,95 @@ footer {
 
 .footer-social {
     display: flex;
-    gap: 15px; /* Espacio entre los íconos de redes sociales */
+    gap: 15px;
+    /* Espacio entre los íconos de redes sociales */
 }
 
 .footer-social img {
-    width: 24px; /* Ajusta el tamaño de los íconos */
+    width: 24px;
+    /* Ajusta el tamaño de los íconos */
     height: auto;
 }
 
-.footer-social img:hover{
+.footer-social img:hover {
     transform: scale(1.3);
+}
+
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    /* Asegura que esté sobre otros elementos */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Para móviles: mostrar el menú hamburguesa */
+@media (max-width: 835px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        /* Oculta el menú por defecto */
+        flex-direction: column;
+        /* Cambia a columna */
+        background-color: #090643;
+        position: absolute;
+        top: 400%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        display: flex;
+        /* Muestra el menú cuando se activa */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a,
+    .nav-links .login-btn {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .nav-links .login-btn {
+        margin-top: 15px;
+        background-color: #03fa6e;
+        color: #090643;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .nav-links .login-btn:hover {
+        background-color: white;
+    }
+
+    .nav-links a:hover {
+        color: #02d25f;
+    }
 }

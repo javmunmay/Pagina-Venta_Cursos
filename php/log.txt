@@ -46,3 +46,15 @@ POST Data: Array
     [politica] => on
 )
 
+Método de solicitud: POST
+POST Data: Array
+(
+    [nombre] => Clara
+    [email] => pruebausuario@gmail.com
+    [telefono] => 
+    [asunto] => problema_activacion_cuenta
+    [mensaje] => Oye que esto es un timo y no me deja entrar a la plataforma
+    [preferencia_contacto] => email
+    [politica] => on
+)
+

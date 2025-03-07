@@ -40,10 +40,15 @@ if (!isset($_SESSION['user_id'])) {
         src="../imagenes/LogoFondoAzul.jpg"
         alt="Logo Estudiante Programador"
         class="logo" />
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="MiAcademia.php">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Mi Perfil</a>
+          <a href="InformacionPersonal.php">Mi Perfil</a>
           <div class="dropdown-content">
             <a href="InformacionPersonal.php">Información Personal</a>
             <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
@@ -77,31 +82,29 @@ if (!isset($_SESSION['user_id'])) {
         <div class="row align-items-center"> <!-- Fila para organizar el contenido -->
           <!-- Columna izquierda (Título y botones) -->
           <div class="col-md-7">
+            <h1 style="font-weight: bold; color: #090643;">Bienvenido</h1>
             <h1>
               <div id="welcome-message" style="font-weight: bold; color: #090643;">
               </div>
-              <p class="lead" style="font-weight: bold; color: rgb(119, 119, 119);">
+              <p class="lead mt-2" style="font-weight: bold; color: rgb(119, 119, 119);">
                 Desarrolla tus habilidades al siguiente nivel.
               </p>
             </h1>
-            <div class="mt-3">
-              <a href="CursosDentroSesion.php" class="btn btn-primary btn-lg me-3" style="background-color: #090643; border-color: #090643;">
+            <div class="mt-3 text-center">
+              <a href="CursosDentroSesion.php" class="btn btn-primary btn-lg " style="background-color: #090643; border-color: #090643;">
                 Todos los cursos
-              </a>
-              <a href="#" class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;">
-                Mis cursos
               </a>
             </div>
           </div>
 
           <!-- Columna derecha (Texto y botón) -->
-          <div class="col-md-5 text-center">
+          <div class="col-md-5 text-center mt-5">
             <h2 style="font-weight: bold; color: #090643;">+40 Cursos</h2>
             <p style="font-weight: bold; color: rgb(119, 119, 119);">
               Completa lecciones y finaliza los cursos para subir tu
               nivel formativo y obtener certificados que validen lo aprendido.
             </p>
-            <a href="#" class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;">
+            <a href="MisCertificados.php" class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;">
               Mis certificados
             </a>
           </div>
@@ -194,12 +197,22 @@ if (!isset($_SESSION['user_id'])) {
   // Obtener el nombre de la URL
   const nombre = getParameterByName("nombre");
 
-  // Mostrar el mensaje de bienvenida si el nombre existe
+
+  // Guardar el nombre en localStorage
   if (nombre) {
-    const welcomeMessage = document.getElementById("welcome-message");
-    welcomeMessage.innerHTML = "Hola <br>" + nombre;
+    localStorage.setItem("nombreUsuario", nombre);
   }
 
+  // Recuperar el nombre de localStorage
+  const nombreGuardado = localStorage.getItem("nombreUsuario");
+
+  // Mostrar el nombre en la página
+  if (nombreGuardado) {
+    const welcomeMessage = document.getElementById("welcome-message");
+    if (welcomeMessage) {
+      welcomeMessage.innerHTML = `${nombreGuardado}`;
+    }
+  }
 
 
 

@@ -1,7 +1,7 @@
 <?php
 // Verificar si la sesión ya está iniciada
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 
 // Configuración de caché
@@ -11,8 +11,8 @@ header("Expires: 0");
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
-    header("Location: InicioSesion.php");
-    exit();
+  header("Location: InicioSesion.php");
+  exit();
 }
 
 // Conectar a la base de datos (usando un archivo de conexión común)
@@ -32,6 +32,7 @@ $row = $result->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,18 +43,23 @@ $row = $result->fetch_assoc();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <body>
   <header>
     <nav>
       <img
         src="../imagenes/LogoFondoAzul.jpg"
         alt="Logo Estudiante Programador"
-        class="logo"
-      />
+        class="logo" />
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="MiAcademia.php">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Mi Perfil</a>
+          <a href="InformacionPersonal.php">Mi Perfil</a>
           <div class="dropdown-content">
             <a href="InformacionPersonal.php">Información Personal</a>
             <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
@@ -76,17 +82,17 @@ $row = $result->fetch_assoc();
     <section id="info-personal" class="hero-banner">
       <div class="banner-content">
         <h1>Información Personal</h1>
-        <img src="../imagenes/<?php echo $row['foto_perfil'] ?? 'Usuario.jpg'; ?>" 
-             alt="Foto de Perfil" class="foto-perfil" />
+        <img src="../imagenes/<?php echo $row['foto_perfil'] ?? 'Usuario.jpg'; ?>"
+          alt="Foto de Perfil" class="foto-perfil" />
 
         <p><strong>Nombre Completo:</strong> <?php echo htmlspecialchars($row['nombre']); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
         <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($row['numero_telefono']); ?></p>
         <p><strong>Edad:</strong>
           <?php
-            $fechaNacimiento = new DateTime($row['fecha_nacimiento']);
-            $hoy = new DateTime();
-            echo $hoy->diff($fechaNacimiento)->y;
+          $fechaNacimiento = new DateTime($row['fecha_nacimiento']);
+          $hoy = new DateTime();
+          echo $hoy->diff($fechaNacimiento)->y;
           ?>
           años
         </p>
@@ -120,7 +126,7 @@ $row = $result->fetch_assoc();
       <div class="banner-content">
         <h2>Seguridad</h2>
         <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="CambiarContrasena.php">Cambiar Contraseña</a>
-        
+
         <h3>Historial de Sesiones Recientes</h3>
         <ul>
           <li>Fecha: 2024-10-24 20:36:56 - Dispositivo: Chrome en Windows</li>
@@ -143,10 +149,17 @@ $row = $result->fetch_assoc();
         <h2>Suscripción</h2>
         <p><strong>Tipo de Suscripción:</strong> Mensual</p>
         <p><strong>Fecha de Expiración:</strong> 2024-12-31</p>
-        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="#">Política de Privacidad</a></p>
-        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;"href="#">Consejos de Seguridad</a></p>
+        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="PoliticaPrivacidad.php">Política de Privacidad</a></p>
+        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="#">Consejos de Seguridad</a></p>
       </div>
     </section>
+
+    <section class="hero-banner">
+      <div class="cerrarSesion">
+        <a class="btn btn-danger" href="../php/logout.php">Cerrar Sesión</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -159,18 +172,10 @@ $row = $result->fetch_assoc();
         </ul>
       </div>
       <div class="footer-social">
-        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank"
-          ><img src="../iconos/tik-tok.png" alt="TikTok"
-/></a>
-        <a href="https://www.instagram.com" target="_blank"
-          ><img src="../iconos/instagram.png" alt="Instagram"
-/></a>
-        <a href="https://www.patreon.com" target="_blank"
-          ><img src="../iconos/patreon.png" alt="Patreon"
-/></a>
-        <a href="https://www.youtube.com" target="_blank"
-          ><img src="../iconos/youtube.png" alt="YouTube"
-/></a>
+        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank"><img src="../iconos/tik-tok.png" alt="TikTok" /></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="../iconos/instagram.png" alt="Instagram" /></a>
+        <a href="https://www.patreon.com" target="_blank"><img src="../iconos/patreon.png" alt="Patreon" /></a>
+        <a href="https://www.youtube.com" target="_blank"><img src="../iconos/youtube.png" alt="YouTube" /></a>
       </div>
     </div>
     <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
@@ -194,4 +199,5 @@ $row = $result->fetch_assoc();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

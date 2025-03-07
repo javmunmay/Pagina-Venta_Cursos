@@ -40,10 +40,15 @@ if (!isset($_SESSION['user_id'])) {
         src="../imagenes/LogoFondoAzul.jpg"
         alt="Logo Estudiante Programador"
         class="logo" />
-        <ul class="nav-links">
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
         <li><a href="MiAcademia.php">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Mi Perfil</a>
+          <a href="InformacionPersonal.php">Mi Perfil</a>
           <div class="dropdown-content">
             <a href="InformacionPersonal.php">Información Personal</a>
             <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>

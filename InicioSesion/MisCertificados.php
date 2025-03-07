@@ -43,10 +43,15 @@ $result = $stmt->get_result();
                 src="../imagenes/LogoFondoAzul.jpg"
                 alt="Logo Estudiante Programador"
                 class="logo" />
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="MiAcademia.php">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#">Mi Perfil</a>
+                    <a href="InformacionPersonal.php">Mi Perfil</a>
                     <div class="dropdown-content">
                         <a href="InformacionPersonal.php">Información Personal</a>
                         <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
@@ -103,9 +108,9 @@ $result = $stmt->get_result();
                             <div class="col-md-7">
                                 <h1>
                                     <span style="font-weight: bold; color: #090643;">
-                                    Comienza uno de nuestros cursos
+                                        Comienza uno de nuestros cursos
                                     </span>
-                                    
+
                                     <p class="lead" style="font-weight: bold; color: rgb(119, 119, 119);">
                                         Desarrolla tus habilidades al siguiente nivel.
                                     </p>
@@ -118,13 +123,13 @@ $result = $stmt->get_result();
                             </div>
 
                             <!-- Columna derecha (Texto y botón) -->
-                            <div class="col-md-5 text-center">
+                            <div class="col-md-5 text-center mt-4">
                                 <h2 style="font-weight: bold; color: #090643;">+40 Cursos</h2>
                                 <p style="font-weight: bold; color: rgb(119, 119, 119);">
                                     Completa lecciones y finaliza los cursos para subir tu
                                     nivel formativo y obtener certificados que validen lo aprendido.
                                 </p>
-                                
+
                             </div>
                         </div>
                     </div>

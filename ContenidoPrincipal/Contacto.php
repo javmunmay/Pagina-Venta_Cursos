@@ -187,7 +187,7 @@
         No pierdas la oportunidad de desarrollar tus habilidades con nuestros
         cursos de alta calidad y el apoyo de una comunidad activa.
       </p>
-      <a href="Cursos.html" class="cta-btn-final">Comenzar</a>
+      <a href="Cursos.php" class="cta-btn-final">Comenzar</a>
     </section>
   </main>
 
