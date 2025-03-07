@@ -211,7 +211,19 @@ nav {
     transform: scale(1.05);
 }
 
+/* Estilos responsive para móviles */
+@media (max-width: 768px) {
+    .value-item-BannerTiktok {
+        flex-direction: column; /* Cambia la dirección a vertical */
+        align-items: center;    /* Centra los elementos horizontalmente */
+        text-align: center;     /* Centra el texto */
+    }
 
+    .stats-image {
+        max-width: 100%; /* La imagen ocupa el ancho completo del contenedor */
+        margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+    }
+}
 
 
 /* Sección del equipo */

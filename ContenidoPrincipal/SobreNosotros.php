@@ -70,7 +70,7 @@
                 </div>
             </div>
 
-            <h2>+4.700 Seguidores en TikTok</h2>
+            <h2>+5.200 Seguidores en TikTok</h2>
 
             <div class="values-container">
                 <div class="value-item-BannerTiktok">
