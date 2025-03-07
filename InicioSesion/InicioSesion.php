@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -46,7 +51,7 @@
 
         <!-- Cambié el enlace por un botón de envío del formulario -->
 
-        <button type="submit" class="btn-login">Iniciar Sesión</button> 
+        <button type="submit" class="btn-login">Iniciar Sesión</button>
         <!--<button type="#" class="btn-login">Iniciar Sesión</button>-->
 
         <!--<p class="registro" style="color: red; text-align: center; font-weight: bold; font-size: 1.2rem;">
@@ -86,11 +91,11 @@
   </main>
 
   <?php include '../php/footer.php'; ?>
-  
+
 </body>
 <script>
   // Función para mostrar un mensaje si hay un parámetro en la URL
-  window.onload = function () {
+  window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const mensaje = urlParams.get('mensaje');
 
@@ -118,7 +123,7 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-    }else if (mensaje === 'contrasena_coincide') {
+    } else if (mensaje === 'contrasena_coincide') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'El correo introducido ya tiene una cuenta creada, por favor inicia sesión.';
       mensajeDiv.style.backgroundColor = '#d4edda';
@@ -130,7 +135,7 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-  }else if (mensaje === 'contrasena_incorrecta') {
+    } else if (mensaje === 'contrasena_incorrecta') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'Contraseña Incorrecta.';
       mensajeDiv.style.backgroundColor = '#F8D7DA';
@@ -142,7 +147,7 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-  }else if (mensaje === 'usuario_no_encontrado') {
+    } else if (mensaje === 'usuario_no_encontrado') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'Usuario no encontrado.';
       mensajeDiv.style.backgroundColor = '#F8D7DA';
@@ -154,8 +159,8 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-  }};
-
+    }
+  };
 </script>
 
 
