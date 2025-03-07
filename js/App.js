@@ -1,7 +1,7 @@
 
 // JavaScript para ocultar el logo después de la animación
-window.onload = function() {
-    setTimeout(function() {
+window.onload = function () {
+    setTimeout(function () {
         document.querySelector('.logo-container-animacion').style.display = 'none'; // Oculta el logo
     }, 3000); // El tiempo en milisegundos (3000ms = 3 segundos)
 };
@@ -30,7 +30,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
+    // Alternar el menú al hacer clic en el botón
+    menuToggle.addEventListener("click", function (e) {
+        e.stopPropagation(); // Evitar que el clic se propague al documento
+        navLinks.classList.toggle("show");
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener("click", function (e) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            navLinks.classList.remove("show");
+        }
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("show");
+        });
+    });
+});
 
 
 
@@ -122,14 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
         index = (index + 1) % 3; // Ciclo entre 0, 1 y 2 para los tres cursos
         slides.style.transform = `translateX(${-index * 100}%)`;
     }, 5000); // Cambia de curso cada 5 segundos
-});*/ 
+});*/
 
 
 
 
 
 // Mostrar el popup
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById('welcome-popup');
     const closeButton = document.getElementById('close-popup');
 
@@ -137,12 +160,12 @@ document.addEventListener("DOMContentLoaded", function() {
     popup.style.display = 'flex';
 
     // Cerrar el popup al hacer clic en la "X"
-    closeButton.onclick = function() {
+    closeButton.onclick = function () {
         popup.style.display = 'none';
     }
 
     // Cerrar el popup automáticamente después de 3 segundos
-    setTimeout(function() {
+    setTimeout(function () {
         popup.style.display = 'none';
     }, 3000); // 3 segundos
 });
@@ -151,30 +174,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-  
-    // Alternar el menú al hacer clic en el botón
-    menuToggle.addEventListener("click", function (e) {
-      e.stopPropagation(); // Evitar que el clic se propague al documento
-      navLinks.classList.toggle("show");
-    });
-  
-    // Cerrar el menú al hacer clic fuera de él
-    document.addEventListener("click", function (e) {
-      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-        navLinks.classList.remove("show");
-      }
-    });
-  
-    // Cerrar el menú al hacer clic en un enlace
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-      });
-    });
-  });
-  
+
+
 
 

@@ -181,32 +181,10 @@ if (!isset($_SESSION['user_id'])) {
       <p>📧 Correo: estudianteprogramador0@gmail.com</p>
     </section>
 
-    <!-- Sección de CTA Final -->
-    <section class="cta-final">
-      <h2>¡Únete a nuestra comunidad hoy!</h2>
-      <p>No pierdas la oportunidad de desarrollar tus habilidades con nuestros cursos de alta calidad y el apoyo de una comunidad activa.</p>
-      <a href="Cursos.html" class="cta-btn-final">Comenzar</a>
-    </section>
+    
   </main>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-menu">
-        <ul>
-          <li><a href="../Inicio.html">Inicio</a></li>
-          <li><a href="PoliticaPrivacidad.html" rel="noopener noreferrer">Política de privacidad</a></li>
-          <li><a href="TerminosCondiciones.html" rel="noopener noreferrer">Términos y condiciones</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.tiktok.com/@estudianteprogramador" target="_blank" rel="noopener noreferrer"><img src="../iconos/tik-tok.png" alt="TikTok" /></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="../iconos/instagram.png" alt="Instagram" /></a>
-        <a href="https://www.patreon.com" target="_blank" rel="noopener noreferrer"><img src="../iconos/patreon.png" alt="Patreon" /></a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="../iconos/youtube.png" alt="YouTube" /></a>
-      </div>
-    </div>
-    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-  </footer>
+  <?php include '../php/footerSesion.php'; ?>
 
   <script src="../js/App.js?v=1.0"></script>
 </body>

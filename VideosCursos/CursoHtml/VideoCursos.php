@@ -12,7 +12,7 @@ header("Expires: 0"); // Proxies.
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
     // Redirigir al login si no está autenticado
-    header("Location: InicioSesion.html");
+    header("Location: ../../InicioSesion/InicioSesion.php");
     exit();
 }
 ?>
@@ -102,9 +102,7 @@ if (!isset($_SESSION['user_id'])) {
     </div>
   </main>
 
-<footer>
-    <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
-</footer>
+  <?php include '../../php/footerSesion.php'; ?>
 
 <script src="js/videoCurso.js"></script>
 </body>

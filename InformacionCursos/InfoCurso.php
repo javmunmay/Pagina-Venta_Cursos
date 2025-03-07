@@ -1,20 +1,4 @@
 <?php
-// Verificar si la sesión ya está iniciada
-if (session_status() === PHP_SESSION_NONE) {
-    session_start(); // Iniciar la sesión solo si no está ya iniciada
-}
-
-// Configuraciones para deshabilitar el caché
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-header("Pragma: no-cache"); // HTTP 1.0.
-header("Expires: 0"); // Proxies.
-
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['user_id'])) {
-    // Redirigir al login si no está autenticado
-    header("Location: ../InicioSesion/InicioSesion.php");
-    exit();
-}
 
 require '../php/conexion.php';
 
@@ -50,22 +34,30 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($curso["titulo"]); ?></title>
     <link rel="stylesheet" href="../css/InformacionCursos.css">
-    <link rel="icon" type="image/png" href="../../imagenes/favicon.ico">
+    <link rel="icon" type="image/png" href="../imagenes/favicon.ico">
 </head>
 <body>
 
 <header>
     <nav>
-        <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo">
-        <ul class="nav-links">
-            <li><a href="../">Inicio</a></li>
-            <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
-            <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
-            <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
-            <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
-        </ul>
+      <a href="/">
+        <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+        <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+        <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+        <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
+        <li><a href="../InicioSesion/InicioSesion.php" class="login-btn">Iniciar Sesión</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
 <main>
     <div class="main-content">
@@ -129,6 +121,8 @@ $conn->close();
 </main>
 
 <?php include '../php/footerSesion.php'; ?>
+<script src="../js/AppInfoCurso.js"></script>
+
 
 </body>
 </html>

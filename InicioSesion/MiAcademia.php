@@ -167,9 +167,7 @@ if (!isset($_SESSION['user_id'])) {
 
   </main>
 
-  <footer>
-    <p>© 2025 Estudiante Programador - Todos los derechos reservados.</p>
-  </footer>
+  <?php include '../php/footerSesion.php'; ?>
   <script src="../App.js?v=1.0"></script>
   <!-- Bootstrap JS y dependencias -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

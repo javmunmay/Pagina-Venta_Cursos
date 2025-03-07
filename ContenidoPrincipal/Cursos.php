@@ -11,11 +11,6 @@
   <script src="../js/App.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
-  
-  
-
-
 </head>
 
 <body>
@@ -46,7 +41,11 @@
     <section class="heroCursos">
       <h1>Cursos de Desarrollo, IA, Ciberseguridad...</h1>
       <p>¿Qué quieres aprender hoy?</p>
-      <input type="text" id="buscador" class="search-bar" placeholder="Busca un curso..." />
+      <input
+        type="text"
+        id="buscador"
+        class="search-bar"
+        placeholder="Busca un curso..." />
 
       <div class="filtros-container">
 
@@ -78,129 +77,183 @@
     <section class="cursos">
       <h2>Todos nuestros cursos</h2>
       <div class="grid-cursos">
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoJavaBanner.jpg" alt="Curso Java Orientado a Objetos" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoJavaBanner.jpg"
+            alt="Curso Java Orientado a Objetos" />
           <div class="curso-info">
-            <h3>Java Orientado a Objetos desde 0</h3>
-            <p>Aprende a dominar Java Orientado a Objetos desde cero.</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoJava.html" class="btn-curso">Ver Curso</a>
-          </div>
-        </article>
-        <!--
-          <article class="curso">
-            <img
-              src="imagenes/CursoPythonBanner.jpg"
-              alt="Curso de Python e IA"
-            />
-            <div class="curso-info">
-              <h3>Python: Fundamentos</h3>
-              <p>Aprende los fundamentos de Python.</p>
-              <button class="btn-curso">Ver Curso</button>
-            </div>
-          </article>
-          -->
-
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoPhpBanner.jpg" alt="Curso PHP" />
-          <div class="curso-info">
-            <h3>Curso de PHP Desde Cero</h3>
-            <p>Aprende PHP desde cero con nuestro curso para principiantes</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoPhp.html" class="btn-curso">Ver Curso</a>
+            <h3>Introducción a Java Orientado a Objetos</h3>
+            <p>Aprende a dominar Java Orientado a Objetos desde cero hasta un nivel intermedio.</p>
+            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoHtmlBanner.jpg" alt="Curso de HTML y CSS" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img src="../imagenes/CursoPhpFundamentosBanner.jpg" alt="Curso PHP" />
           <div class="curso-info">
-            <h3>Curso de HTML desde Cero</h3>
+            <h3>Fundamentos de PHP</h3>
+            <p>Aprende los fundamentos de PHP desde cero con nuestro curso para principiantes</p>
+            <a href="../InformacionCursos/InfoCurso.php?id=2" class="btn-curso">Ver Curso</a>
+          </div>
+        </article>
+
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoHtmlBanner.jpg"
+            alt="Curso de HTML y CSS" />
+          <div class="curso-info">
+            <h3>Curso de HTML desde Cero hasta Avanzado</h3>
             <p>
               Aprende HTML con este curso completo desde cero hasta avanzado.
             </p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoHtml.html" class="btn-curso">Ver Curso</a>
+            <a href="../InformacionCursos/InfoCurso.php?id=1" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="ciberseguridad">
-          <img src="../imagenes/CursoCiberSeguridadBanner.jpg" alt="Curso de Ciberseguridad" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoCSSBanner.jpg"
+            alt="Curso de HTML y CSS" />
           <div class="curso-info">
-            <h3>Curso de Ciberseguridad: Inicios</h3>
-            <p>Aprende los conceptos clave para proteger sistemas y datos.</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoCiberseguridad.html" class="btn-curso">Ver Curso</a>
+            <h3>Curso de CSS desde Cero hasta Avanzado</h3>
+            <p>
+              Aprende CSS con este curso completo desde cero hasta avanzado.
+            </p>
+            <a href="../InformacionCursos/InfoCurso.php?id=3" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoPythonBanner.jpg" alt="Python: Fundamentos" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="ciberseguridad">
+          <img
+            src="../imagenes/CursoCiberSeguridadBanner.jpg"
+            alt="Curso de Ciberseguridad" />
+          <div class="curso-info">
+            <h3>Introducción a Ciberseguridad</h3>
+            <p>Aprende los conceptos clave para proteger sistemas y datos.</p>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
+          </div>
+        </article>
+
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoPythonBanner.jpg"
+            alt="Python: Fundamentos" />
           <div class="curso-info">
             <h3>Python: Fundamentos</h3>
             <p>Aprende los fundamentos de Python.</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoPython.html" class="btn-curso">Ver Curso</a>
+            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
         <article class="curso" data-nivel="intermedio" data-categoria="ia">
           <img src="../imagenes/CursoIAiBanner.jpg" alt="IA: Algoritmos" />
           <div class="curso-info">
-            <h3>IA: Algoritmos</h3>
+            <h3>Curso Iniciación IA: Algoritmos</h3>
             <p>Aprende a crear algoritmos de IA con Python.</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoIA.html" class="btn-curso">Ver Curso</a>
+            <a href="../InformacionCursos/InfoCurso.php?id=" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoLinuxBanner.jpg" alt="Linux: Comandos terminal" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoLinuxBanner.jpg"
+            alt="Linux: Comandos terminal" />
           <div class="curso-info">
             <h3>Linux: Comandos terminal</h3>
             <p>Aprende a usar los comandos de Linux como un experto.</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoLinuxComandos.html" class="btn-curso">Ver Curso</a>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoFundamentosJSBanner.jpg" alt="JavaScript: Fundamentos" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoFundamentosJSBanner.jpg"
+            alt="JavaScript: Fundamentos" />
           <div class="curso-info">
             <h3>JavaScript: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Javascript</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoJSFundamentos.html" class="btn-curso">Ver Curso</a>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoIntroduccionProgramacionBanner.jpg" alt="Introducción a la Programación" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoIntroduccionProgramacionBanner.jpg"
+            alt="Introducción a la Programación" />
           <div class="curso-info">
             <h3>Introducción a la Programación</h3>
             <p>
-              Aprende todo lo necesario para saber programar como un
-              profesional.
+              Aprende las bases de programación para saber pensar como un
+              programador profesional.
             </p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoIntroduccionProg.html" class="btn-curso">Ver Curso</a>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoPhpFundamentosBanner.jpg" alt="PHP Fundamentos" />
-          <div class="curso-info">
-            <h3>PHP: Fundamentos</h3>
-            <p>Aprende los fundamentos básicos de PHP</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoPhpFundamentos.html" class="btn-curso">Ver Curso</a>
-          </div>
-        </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
-          <img src="../imagenes/CursoAngularBanner.jpg" alt="PHP Fundamentos" />
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
+          <img
+            src="../imagenes/CursoAngularBanner.jpg"
+            alt="PHP Fundamentos" />
           <div class="curso-info">
             <h3>Angular: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Angular</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoAngularFundamentos.html" class="btn-curso">Ver Curso</a>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
-        <article class="curso" data-nivel="principiante" data-categoria="desarrollo">
+
+        <article
+          class="curso"
+          data-nivel="principiante"
+          data-categoria="desarrollo">
           <img src="../imagenes/CursoSqlBanner.jpg" alt="PHP Fundamentos" />
           <div class="curso-info">
-            <h3>SQL desde 0</h3>
-            <p>Aprende a manejar bases de datos SQL desde cero</p>
-            <a href="https://41095220.servicio-online.net/InformacionCursos/CursoSqlDesdeCero.html" class="btn-curso">Ver Curso</a>
+            <h3>SQL desde 0 hasta Avanzado</h3>
+            <p>Aprende a manejar bases de datos SQL desde cero hasta Avanzado como un profesional en la gestion, administración... de las bases de datos SQL.</p>
+            <a
+              href="../InformacionCursos/InfoCurso.php?id="
+              class="btn-curso">Ver Curso</a>
           </div>
         </article>
 

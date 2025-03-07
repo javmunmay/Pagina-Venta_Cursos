@@ -140,9 +140,7 @@ $result = $stmt->get_result();
 
     </main>
 
-    <footer>
-        <p>© 2025 Estudiante Programador - Todos los derechos reservados.</p>
-    </footer>
+    <?php include '../php/footerSesion.php'; ?>
 
     <script src="../js/App.js?v=1.0"></script>
     <!-- Bootstrap JS y dependencias -->

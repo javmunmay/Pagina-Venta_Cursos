@@ -1,282 +1,362 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 header {
-    background-color: #090643;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #090643;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between; /* Distribuir espacio entre logo, menú y botón */
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* Distribuir espacio entre logo, menú y botón */
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px; /* Espacio entre los enlaces */
-    flex-grow: 1; /* Ocupa el espacio disponible para centrar los enlaces */
-    justify-content: center; /* Centra los enlaces del menú */
-    padding-left: 0; /* Elimina padding innecesario */
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  /* Espacio entre los enlaces */
+  flex-grow: 1;
+  /* Ocupa el espacio disponible para centrar los enlaces */
+  justify-content: center;
+  /* Centra los enlaces del menú */
+  padding-left: 0;
+  /* Elimina padding innecesario */
+  margin: 0;
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .login-btn {
-    background-color: transparent;
-    border: 2px solid white;
-    padding: 10px 25px;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-    text-decoration: none; /* Elimina el subrayado */
-    
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 25px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  text-decoration: none;
+  /* Elimina el subrayado */
+
 }
 
 .login-btn:hover {
-    background-color: white;
-    color: #090643;
-    font-weight: bold;
+  background-color: white;
+  color: #090643;
+  font-weight: bold;
 }
 
 /* Banner */
 .banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .banner img {
-    width: 100%;
-    max-width: 800px; /* Limita el ancho máximo del banner */
-    height: auto;
-    border-radius: 10px; /* Bordes redondeados para darle un estilo limpio */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  width: 100%;
+  max-width: 800px;
+  /* Limita el ancho máximo del banner */
+  height: auto;
+  border-radius: 10px;
+  /* Bordes redondeados para darle un estilo limpio */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
 }
 
+/* Estilos base */
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .main-content {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  /* Por defecto, en pantallas grandes */
+  justify-content: space-between;
+  gap: 20px;
+  /* Espacio entre el contenido principal y el lateral */
 }
 
 .curso-info {
-    flex: 2;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .curso-info h1 {
-    font-size: 2.5rem;
-    color: #090643;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #090643;
+  margin-bottom: 10px;
 }
 
 .curso-info p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .info-extra {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #666;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #666;
 }
 
 .btn-solicitar {
-    background-color: #090643;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-    text-decoration: none; /* Elimina el subrayado */
+  background-color: #090643;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  /* Elimina el subrayado */
 }
 
 .btn-solicitar:hover {
-    background-color: white;
-    color: #090643;
-    font-weight: bolder;
-    border: solid;
-    
+  background-color: white;
+  color: #090643;
+  font-weight: bolder;
+  border: solid;
 }
 
 .contenido-curso {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contenido-curso h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #090643;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #090643;
 }
 
 .contenido-curso ul {
-    list-style: none;
-    font-size: 1.2rem;
+  list-style: none;
+  font-size: 1.2rem;
 }
 
 .contenido-curso li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
 .informacion-lateral {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.habilidades h3, .requisitos h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #090643;
+.habilidades h3,
+.requisitos h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #090643;
 }
 
-.habilidades ul, .requisitos ul {
-    list-style: none;
+.habilidades ul,
+.requisitos ul {
+  list-style: none;
 }
 
-.habilidades ul li, .requisitos p {
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #090643;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+.habilidades ul li,
+.requisitos p {
+  margin-bottom: 10px;
 }
 
 
+/* Banner */
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
+.banner img {
+  width: 100%;
+  max-width: 800px;
+  /* Limita el ancho máximo del banner */
+  height: auto;
+  border-radius: 10px;
+  /* Bordes redondeados para darle un estilo limpio */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
 
-/* Archivo: InformacionCursos.css */
-
-/* Diseño general para móviles */
+/* Media Queries para diseño responsive */
 @media (max-width: 768px) {
-    /* Ajustar el logo */
-    .logo {
-      width: 100px;
-    }
-  
-    /* Ocultar el menú lateral y cambiar a diseño tipo lista desplegable */
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      flex-direction: column;
-        gap: 5px;
-    }
-  
-    .menu-toggle.open + .nav-links {
-      display: flex;
-    }
-  
-    /* Ajustar el contenido principal */
-    .main-content {
-      flex-direction: column;
-      padding: 10px;
-    }
-  
-    .curso-info, .informacion-lateral {
-      width: 100%; /* Ocupan todo el ancho */
-    }
-  
-    .btn-solicitar {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 15px;
-      font-size: 16px;
-    }
-  
-    /* Asegurar que las imágenes se ajusten al contenedor */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  .main-content {
+    flex-direction: column;
+    /* Apila verticalmente en móviles */
   }
-  
+
+  .informacion-lateral {
+    margin-left: 0;
+    /* Elimina el margen izquierdo en móviles */
+    margin-top: 20px;
+    /* Añade un margen superior para separar del contenido principal */
+  }
+
+  .curso-info h1 {
+    font-size: 2rem;
+    /* Reduce el tamaño del título en móviles */
+  }
+
+  .curso-info p {
+    font-size: 1rem;
+    /* Reduce el tamaño del texto en móviles */
+  }
+
+  .btn-solicitar {
+    width: 100%;
+    /* Ocupa todo el ancho en móviles */
+    text-align: center;
+  }
+
+  .contenido-curso h2 {
+    font-size: 1.5rem;
+    /* Reduce el tamaño del subtítulo en móviles */
+  }
+
+  .contenido-curso ul {
+    font-size: 1rem;
+    /* Reduce el tamaño de la lista en móviles */
+  }
+
+  .habilidades h3,
+  .requisitos h3 {
+    font-size: 1.2rem;
+    /* Reduce el tamaño de los títulos en móviles */
+  }
+
+  .banner img {
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde */
+  }
+}
 
 
 
 
+
+
+
+/* Estilos para el encabezado */
+
+header {
+  background-color: #090643;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  /* Hace que el header sea pegajoso */
+  top: 0;
+  /* Se adhiere a la parte superior cuando se hace scroll */
+  z-index: 1000;
+  /* Asegura que esté encima del contenido */
+}
+
+/* Estilos para la navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* Distribuir espacio entre logo, menú y botón */
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  /* Espacio entre los enlaces */
+  flex-grow: 1;
+  /* Ocupa el espacio disponible para centrar los enlaces */
+  justify-content: center;
+  /* Centra los enlaces del menú */
+  padding-left: 0;
+  /* Elimina padding innecesario */
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* Botón de menú hamburguesa */
 .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 1001; /* Asegura que esté sobre otros elementos */
-  }
-  
-  .menu-toggle span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 5px 0;
-    transition: 0.3s;
-  }
-  
-  /* Para móviles: mostrar el menú hamburguesa */
-  @media (max-width: 835px) {
-    .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+  /* Asegura que esté sobre otros elementos */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Para móviles: mostrar el menú hamburguesa */
+@media (max-width: 835px) {
+  .menu-toggle {
       display: block;
-    }
-  
-    .nav-links {
-      display: none; /* Oculta el menú por defecto */
-      flex-direction: column; /* Cambia a columna */
+  }
+
+  .nav-links {
+      display: none;
+      /* Oculta el menú por defecto */
+      flex-direction: column;
+      /* Cambia a columna */
       background-color: #090643;
       position: absolute;
       top: 400%;
@@ -287,38 +367,55 @@ footer {
       border-radius: 10px;
       text-align: center;
       z-index: 1000;
-    }
-  
-    .nav-links.show {
-      display: flex; /* Muestra el menú cuando se activa */
-    }
-  
-    .nav-links li {
+  }
+
+  .nav-links.show {
+      display: flex;
+      /* Muestra el menú cuando se activa */
+  }
+
+  .nav-links li {
       margin: 10px 0;
-    }
-  
-    .nav-links a,
-    .nav-links .login-btn {
+  }
+
+  .nav-links a,
+  .nav-links .login-btn {
       color: #ffffff;
       text-decoration: none;
       font-size: 1.2rem;
       display: block;
-    }
-  
-    .nav-links .login-btn {
+  }
+
+  .nav-links .login-btn {
       margin-top: 15px;
       background-color: #03fa6e;
       color: #090643;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: bold;
-    }
-  
-    .nav-links .login-btn:hover {
-      background-color: white;
-    }
-
-    .nav-links a:hover {
-        color:  #02d25f;
-    }
   }
+
+  .nav-links .login-btn:hover {
+      background-color: white;
+  }
+
+  .nav-links a:hover {
+      color: #02d25f;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: #090643;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+
+
+
+
+

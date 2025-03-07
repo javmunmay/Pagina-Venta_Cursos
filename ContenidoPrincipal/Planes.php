@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="../css/cssInicio.css" />
 
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
-  <script src="../js/App.js"></script>
+  
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/cssInicio.css?v=1.0">
+  <link rel="stylesheet" href="../css/cssInicio.css?v=1.0">
   
   
 
@@ -88,7 +88,8 @@
         <p>
           Ideal para quienes quieren probar antes de comprometerse.
         </p>
-        <p class="precio">19,90 € / mes</p>
+        <p class="precio"><s>19,90 € / mes</s></p>
+        <p class="precio">GRATIS</p>
         <p class="ahorro">Sin compromiso, paga mes a mes.</p>
         <ul>
           <li>Acceso 24/7 a +40 cursos especializados y actualizados</li>
@@ -110,7 +111,8 @@
         <p>
           Para quienes quieren el máximo ahorro y compromiso en su aprendizaje.
         </p>
-        <p class="precio">162 € / año</p>
+        <p class="precio"><s>162 € / año</s></p>
+        <p class="precio">GRATIS</p>
         <p class="ahorro">Equivalente a 13,50 €/mes.</p>
         <ul>
           <li>Acceso 24/7 a +40 cursos especializados y actualizados</li>
@@ -196,7 +198,7 @@
   <?php include '../php/footer.php'; ?>
 
 
-  <script src="../App.js"></script>
+  <script src="../js/App.js"></script>
 </body>
 
 </html>
