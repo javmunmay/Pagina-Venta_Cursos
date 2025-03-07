@@ -1,0 +1,48 @@
+Método de solicitud: POST
+POST Data: Array
+(
+    [nombre] => Prueba
+    [email] => pruebausuario@gmail.com
+    [telefono] => 
+    [asunto] => sugerencia
+    [mensaje] => Me gusta esta plataforma
+    [preferencia_contacto] => email
+    [politica] => on
+)
+
+Método de solicitud: POST
+POST Data: Array
+(
+    [nombre] => Prueba
+    [email] => pruebausuario@gmail.com
+    [telefono] => 
+    [asunto] => problema_conexion_cuenta
+    [mensaje] => probando el cerrado sesión
+    [preferencia_contacto] => email
+    [politica] => on
+)
+
+Método de solicitud: POST
+POST Data: Array
+(
+    [nombre] => Prueba
+    [email] => pruebausuario@gmail.com
+    [telefono] => 
+    [asunto] => no_aparece_suscripcion
+    [mensaje] => probando una cosa
+    [preferencia_contacto] => email
+    [politica] => on
+)
+
+Método de solicitud: POST
+POST Data: Array
+(
+    [nombre] => Prueba
+    [email] => pruebausuario@gmail.com
+    [telefono] => 
+    [asunto] => solicitud_de_reembolso
+    [mensaje] => dadasdsad
+    [preferencia_contacto] => email
+    [politica] => on
+)
+

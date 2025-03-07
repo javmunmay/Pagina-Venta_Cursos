@@ -141,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function() {
         popup.style.display = 'none';
     }
 
-    // Cerrar el popup automáticamente después de 8 segundos
+    // Cerrar el popup automáticamente después de 3 segundos
     setTimeout(function() {
         popup.style.display = 'none';
-    }, 5000); // 5 segundos
+    }, 3000); // 3 segundos
 });
 
 

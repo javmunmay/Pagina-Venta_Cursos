@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
-    header("Location: InicioSesion.html");
+    header("Location: InicioSesion.php");
     exit();
 }
 
@@ -62,11 +62,11 @@ $conn->close();
     <nav>
         <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo">
         <ul class="nav-links">
-            <li><a href="../Index.html">Inicio</a></li>
-            <li><a href="../ContenidoPrincipal/Cursos.html">Cursos</a></li>
-            <li><a href="../ContenidoPrincipal/Planes.html">Planes</a></li>
-            <li><a href="../ContenidoPrincipal/SobreNosotros.html">Sobre Nosotros</a></li>
-            <li><a href="../ContenidoPrincipal/Contacto.html">Contacto</a></li>
+            <li><a href="../">Inicio</a></li>
+            <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+            <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+            <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+            <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
         </ul>
     </nav>
 </header>

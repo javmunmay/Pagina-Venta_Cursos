@@ -72,10 +72,31 @@ $stmt->bind_param("isssssi", $id_usuario, $correo, $telefono, $asunto, $mensaje,
 
 if ($stmt->execute()) {
     header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=incidencia_exitosa");
+
+
+    // Limpiar todas las variables de sesión
+    $_SESSION = array();
+
+    // Eliminar la cookie de sesión
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
+    }
+
+    // Destruir la sesión
+    session_destroy();
+    
     exit();
 } else {
     echo "Error al registrar la incidencia: " . $stmt->error;
 }
 
 $conn->close();
-?>

@@ -11,7 +11,7 @@ header("Expires: 0");
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
-    header("Location: InicioSesion.html");
+    header("Location: InicioSesion.php");
     exit();
 }
 
@@ -38,6 +38,9 @@ $row = $result->fetch_assoc();
   <title>Información Personal | Estudiante Programador</title>
   <link rel="stylesheet" href="../css/cssinfoPersonal.css" />
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
   <header>
@@ -52,9 +55,8 @@ $row = $result->fetch_assoc();
         <li class="dropdown">
           <a href="#">Mi Perfil</a>
           <div class="dropdown-content">
-            <!-- Aquí enlazamos a secciones con IDs en esta misma página -->
-            <a href="#info-personal">Información Personal</a>
-            <a href="#seguridad">Configuración de Seguridad</a>
+            <a href="InformacionPersonal.php">Información Personal</a>
+            <a href="InformacionPersonal.php#h2Seguridad">Configuración de Seguridad</a>
             <a href="#certificados-logros">Certificados y Logros</a>
             <a href="#suscripciones-pagos">Suscripciones y Pagos</a>
             <div class="cerrarSesion">
@@ -62,9 +64,9 @@ $row = $result->fetch_assoc();
             </div>
           </div>
         </li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Mis Certificados</a></li>
-        <li><a href="../Contacto.html">Ayuda</a></li>
+        <li><a href="CursosDentroSesion.php">Cursos</a></li>
+        <li><a href="MisCertificados.php">Mis Certificados</a></li>
+        <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
       </ul>
     </nav>
   </header>
@@ -74,7 +76,7 @@ $row = $result->fetch_assoc();
     <section id="info-personal" class="hero-banner">
       <div class="banner-content">
         <h1>Información Personal</h1>
-        <img src="../imagenes/perfil/<?php echo $row['foto_perfil'] ?? 'default.png'; ?>" 
+        <img src="../imagenes/<?php echo $row['foto_perfil'] ?? 'Usuario.jpg'; ?>" 
              alt="Foto de Perfil" class="foto-perfil" />
 
         <p><strong>Nombre Completo:</strong> <?php echo htmlspecialchars($row['nombre']); ?></p>
@@ -94,7 +96,7 @@ $row = $result->fetch_assoc();
           <strong>Aceptó Política de Privacidad:</strong>
           <?php echo $row['politica_privacidad'] ? 'Sí' : 'No'; ?>
         </p>
-        <button onclick="editarInformacion()">Actualizar Información</button>
+        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" onclick="editarInformacion()">Actualizar Información</a>
       </div>
     </section>
 
@@ -104,12 +106,12 @@ $row = $result->fetch_assoc();
         <h2>Progreso en Cursos</h2>
         <p>Cursos Completados: 3</p>
         <p>Cursos en Progreso: 2</p>
-        <a href="MisCertificados.php">Ver Certificados</a>
+        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="MisCertificados.php">Ver Certificados</a>
 
         <h3>Preferencias de Cuenta</h3>
         <p><strong>Idioma:</strong> Español</p>
         <p><strong>Notificaciones por correo:</strong> Activadas</p>
-        <button onclick="configurarPreferencias()">Modificar Preferencias</button>
+        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" onclick="configurarPreferencias()">Modificar Preferencias</a>
       </div>
     </section>
 
@@ -117,8 +119,8 @@ $row = $result->fetch_assoc();
     <section id="seguridad" class="hero-banner">
       <div class="banner-content">
         <h2>Seguridad</h2>
-        <a href="CambiarContrasena.php">Cambiar Contraseña</a>
-
+        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="CambiarContrasena.php">Cambiar Contraseña</a>
+        
         <h3>Historial de Sesiones Recientes</h3>
         <ul>
           <li>Fecha: 2024-10-24 20:36:56 - Dispositivo: Chrome en Windows</li>
@@ -141,8 +143,8 @@ $row = $result->fetch_assoc();
         <h2>Suscripción</h2>
         <p><strong>Tipo de Suscripción:</strong> Mensual</p>
         <p><strong>Fecha de Expiración:</strong> 2024-12-31</p>
-        <p><a href="#">Política de Privacidad</a></p>
-        <p><a href="#">Consejos de Seguridad</a></p>
+        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="#">Política de Privacidad</a></p>
+        <p><a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;"href="#">Consejos de Seguridad</a></p>
       </div>
     </section>
   </main>
@@ -186,5 +188,10 @@ $row = $result->fetch_assoc();
       alert("Configurar preferencias");
     }
   </script>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

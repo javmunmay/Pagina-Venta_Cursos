@@ -12,7 +12,7 @@ header("Expires: 0"); // Proxies.
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
     // Redirigir al login si no está autenticado
-    header("Location: InicioSesion.html");
+    header("Location: InicioSesion.php");
     exit();
 }
 ?>
@@ -52,8 +52,8 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
               </div>
             </li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Mis Certificados</a></li>
+            <li><a href="CursosDentroSesion.php">Cursos</a></li>
+            <li><a href="MisCertificados.php">Mis Certificados</a></li>
             <li><a href="ContactoSesionIniciada.php">Ayuda</a></li>
           </ul>
         </nav>
@@ -389,6 +389,6 @@ if (!isset($_SESSION['user_id'])) {
       </div>
       <p>© 2024 Estudiante Programador - Todos los derechos reservados.</p>
     </footer>
-    <script src="App.js"></script>
+    <script src="../js/App.js"></script>
   </body>
 </html>

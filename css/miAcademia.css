@@ -132,100 +132,90 @@ nav {
 }
 
 
-
-/* Sección Hero Banner */
-.hero-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+/* Estilo para el contenedor del carrusel */
+.carousel {
+    max-width: 800px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centrar el carrusel en la página */
+    overflow: hidden; /* Evitar desbordamientos */
 }
 
-
-.banner-content {
-    flex: 2;
+/* Estilo para las imágenes del carrusel */
+.carousel-item img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: auto; /* La altura se ajusta automáticamente */
+    max-height: 400px; /* Altura máxima de las imágenes */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
 }
 
-.banner-content h1 {
-    font-size: 2.5rem;
-    color: #090643;
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-item img {
+        max-height: 300px; /* Reducir la altura máxima en dispositivos móviles */
+    }
 }
 
-.banner-content p {
-    font-size: 1.2rem;
-    color: #666;
+@media (max-width: 576px) {
+    .carousel-item img {
+        max-height: 200px; /* Reducir aún más la altura en pantallas muy pequeñas */
+    }
 }
 
-.btn-banner {
-    background-color: #090643;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+/* Estilo para los controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    width: 40px; /* Ancho de los controles */
+    height: 40px; /* Altura de los controles */
+    border-radius: 50%; /* Forma circular */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar posición */
 }
 
-.btn-banner:hover {
-    background-color: white;
-    color: #090643;
-    border: solid;
-    
+/* Ajustes para controles en dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px; /* Reducir el tamaño de los controles */
+        height: 30px;
+    }
 }
 
-.progreso-usuario {
-    flex: 1;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+/* Estilo para los indicadores (puntos) */
+.carousel-indicators {
+    bottom: 10px; /* Posición desde la parte inferior */
 }
 
-.progreso-usuario h3 {
-    font-size: 1.5rem;
-    color: #090643;
+/* Ajustes para indicadores en dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-indicators {
+        bottom: 5px; /* Acercar los indicadores al carrusel */
+    }
 }
 
-.barra-progreso {
-    background-color: #ddd;
-    border-radius: 5px;
-    margin: 10px 0;
-    width: 100%;
-    height: 15px;
-}
-
-.barra {
-    background-color: #03fa6e;
-    height: 100%;
+/* Estilo para el texto de las imágenes */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px;
     border-radius: 5px;
 }
 
+/* Ajustes para el texto en dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding: 5px; /* Reducir el padding */
+    }
 
+    .carousel-caption h5 {
+        font-size: 16px; /* Reducir el tamaño del título */
+    }
 
-/* Botón de comenzar curso */
-.login-btn {
-    text-decoration: none; /* Elimina el subrayado */
-    color: white; /* Color del texto del botón */
-    padding: 10px 25px;
-    background-color: #090643;
-    border: 2px solid #090643;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    .carousel-caption p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+    }
 }
 
-.login-btn:hover {
-    background-color: white;
-    color: #090643; /* Color azul oscuro al pasar el mouse */
-    font-weight: bold;
-    border: solid;
-}
+
+
 
 
   
