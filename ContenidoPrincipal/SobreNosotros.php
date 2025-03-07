@@ -99,6 +99,7 @@
                     <h3>Javier Muñoz</h3>
                     <p>CEO Estudiante Programador y Desarrollador Web Full Stack</p>
                 </div>
+                <!--
                 <div class="team-member">
                     <img src="../imagenes/joven2.jpg" alt="Leandro Ligero">
                     <h3>Leandro Ligero</h3>
@@ -113,7 +114,7 @@
                     <img src="../imagenes/joven3.jpg" alt="Laura García">
                     <h3>Marcos Ligero</h3>
                     <p>Experto en Ciberseguridad y Hacking Ético</p>
-                </div>
+                </div> -->
             </div>
         </section>
 
