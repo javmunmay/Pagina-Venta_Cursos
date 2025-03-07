@@ -1,26 +1,22 @@
 <?php
-// Iniciar sesión si no está iniciada
+// Verificar si la sesión ya está iniciada
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+    session_start(); // Iniciar la sesión solo si no está ya iniciada
 }
+
+// Configuraciones para deshabilitar el caché
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
+    // Redirigir al login si no está autenticado
     header("Location: InicioSesion.php");
     exit();
 }
 
-// Configuración de la base de datos
-$host = "PMYSQL181.dns-servicio.com:3306";
-$username = "Javier";
-$password = "u70q0Z2p@";
-$dbname = "10718674_estudiante_programador";
-
-// Conectar a la base de datos
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+require '../php/conexion.php';
 
 // Obtener el ID del curso desde la URL
 $cursoId = $_GET['id'] ?? null;
