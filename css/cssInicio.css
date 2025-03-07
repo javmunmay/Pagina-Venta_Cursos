@@ -958,24 +958,23 @@ nav {
 /* Sección de bienvenida */
 .heroCursos {
     background-color: #f5f5f5;
-    padding: 50px 20px;
+    padding: 50px 20px; /* Padding reducido en móviles */
     text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .heroCursos h1 {
     color: #090643;
-    font-size: 3rem;
-    /* Texto más grande */
+    font-size: clamp(2rem, 8vw, 3rem); /* Tamaño de fuente responsive */
     font-weight: bold;
     margin-bottom: 20px;
+    overflow-wrap: break-word; /* Divide el texto en varias líneas si es necesario */
 }
 
 .heroCursos p {
     color: #666;
-    font-size: 1.5rem;
-    /* Tamaño moderado del subtítulo */
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Tamaño de fuente responsive */
     margin-bottom: 40px;
-    /* Espacio adicional para el buscador */
 }
 
 
@@ -1005,19 +1004,26 @@ nav {
 /* Estilo del input de búsqueda */
 .search-bar {
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* Limita el ancho máximo */
     padding: 15px;
     font-size: 1rem;
     border: 2px solid #ddd;
     border-radius: 25px;
     outline: none;
-    margin: 0 auto;
-    /* Centrar el buscador */
+    margin: 0 auto; /* Centrar el buscador */
     display: block;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
 .search-bar:focus {
     border-color: #090643;
+}
+
+/* Contenedor para el input (opcional) */
+.search-container {
+    width: 100%;
+    padding: 0 15px; /* Padding lateral para evitar desbordamiento */
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 /*Sección FILTROS buscador*/

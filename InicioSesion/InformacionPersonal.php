@@ -139,7 +139,7 @@ $row = $result->fetch_assoc();
           <strong>Aceptó Política de Privacidad:</strong>
           <?php echo $row['politica_privacidad'] ? 'Sí' : 'No'; ?>
         </p>
-        <a class="btn btn-primary btn-lg" data-bs-toggle="modal"  data-bs-target="#editModal" style="background-color: #090643; border-color: #090643;" onclick="editarInformacion()">Actualizar Información</a>
+        <a class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModal" style="background-color: #090643; border-color: #090643;" onclick="editarInformacion()">Actualizar Información</a>
       </div>
     </section>
 
@@ -153,8 +153,8 @@ $row = $result->fetch_assoc();
 
         <h3>Preferencias de Cuenta</h3>
         <p><strong>Idioma:</strong> Español</p>
-        <p><strong>Notificaciones por correo:</strong> Activadas</p>
-        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" onclick="configurarPreferencias()">Modificar Preferencias</a>
+        <p id="estadoNotificaciones">Notificaciones: Desactivadas</p>
+        <button class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" onclick="configurarPreferencias()">Configurar Preferencias</button>
       </div>
     </section>
 
@@ -267,16 +267,27 @@ $row = $result->fetch_assoc();
         });
     }
 
+
+    let notificationsEnabled = false;
+
     function configurarPreferencias() {
-      // lógica para abrir modal o redirigir a preferencias
-      alert("Configurar preferencias");
+      
+      notificationsEnabled = !notificationsEnabled;
+
+      if (notificationsEnabled) {
+        alert('Notificaciones por correo activadas');
+        document.getElementById('estadoNotificaciones').textContent = 'Notificaciones: Activadas';
+      } else {
+        alert('Notificaciones por correo desactivadas');
+        document.getElementById('estadoNotificaciones').textContent = 'Notificaciones: Desactivadas';
+      }
     }
   </script>
 
   <!-- Bootstrap JS y dependencias -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
+  <script src="../js/App.js?v=1.0"></script>
 </body>
 
 </html>

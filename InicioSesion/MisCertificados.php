@@ -150,6 +150,7 @@ $result = $stmt->get_result();
         <p>© 2025 Estudiante Programador - Todos los derechos reservados.</p>
     </footer>
 
+    <script src="../js/App.js?v=1.0"></script>
     <!-- Bootstrap JS y dependencias -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
