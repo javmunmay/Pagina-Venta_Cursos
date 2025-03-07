@@ -59,37 +59,87 @@ nav {
 }
 
 
-.dropdown-content {
+/* Botón de menú hamburguesa */
+.menu-toggle {
     display: none;
-    position: absolute;
-    background-color: #090643;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 10px;
-    
-}
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* Asegura que esté sobre otros elementos */
+  }
+  
+  .menu-toggle span {
     display: block;
-}
-.dropdown-content a:hover {
-    background-color: white;
-    color: #090643;
-    display: flex;
-    border-radius: 10px;
-}
-.cerrarSesion a:hover {
-    background-color: rgb(255, 3, 3);
-    color: white;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+  
+  /* Para móviles: mostrar el menú hamburguesa */
+  @media (max-width: 835px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none; /* Oculta el menú por defecto */
+      flex-direction: column; /* Cambia a columna */
+      background-color: #090643;
+      position: absolute;
+      top: 400%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+  
+    .nav-links.show {
+      display: flex; /* Muestra el menú cuando se activa */
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .nav-links a,
+    .nav-links .login-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: block;
+    }
+  
+    .nav-links .login-btn {
+      margin-top: 15px;
+      background-color: #03fa6e;
+      color: #090643;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  
+    .nav-links .login-btn:hover {
+      background-color: white;
+    }
+
+    .nav-links a:hover {
+        color:  #02d25f;
+    }
 }
 
-/* Estilos para el reproductor de video */
+
+
+li a.cerrarSesion:hover{
+    color: red;
+}
+
+/* Estilos base para el reproductor de video */
 #cursoVideo {
     width: 100%; /* Ajusta el ancho al contenedor */
     height: auto; /* Mantiene la proporción del video */
@@ -109,27 +159,28 @@ nav {
 }
 
 .nav-btn {
-    background-color: #03fa6e; /* Color de botón principal */
-    color: #090643;
+    background-color: #090643; /* Color de botón principal */
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
+    border: solid 1px white;
 }
 
 .nav-btn:hover {
-    background-color: #02b14b; /* Cambio de color en hover */
+    background-color: #090643; /* Cambio de color en hover */
     color: #ffffff;
     transform: translateY(-2px); /* Efecto de elevación */
+    
 }
-
-
 
 /* Contenedor de video y rúbrica */
 .video-content {
     display: flex;
+    flex-direction: column; /* Apila verticalmente en móviles */
     padding: 20px;
     gap: 20px;
 }
@@ -140,29 +191,6 @@ nav {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.video-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.nav-btn {
-    background-color: #090643;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.nav-btn:hover {
-    background-color: #ffffff;
-    color: #090643;
-    border: 1px solid #090643;
 }
 
 /* Rúbrica de temas */
@@ -200,10 +228,9 @@ nav {
 .course-outline li:hover {
     background-color: #f9f9f9; /* Color de fondo suave al pasar el mouse */
     border-bottom: 1px solid #02d15e; /* Línea divisoria */
-    
 }
 
-.course-outline ul li a:hover{
+.course-outline ul li a:hover {
     color: #090643;
 }
 
@@ -242,26 +269,25 @@ nav {
     text-decoration: underline;
 }
 
-/*Estilo botones Archivos descargables*/
-
-.matDescargable{
+/* Estilo botones Archivos descargables */
+.matDescargable {
     padding: 5px;
     border-radius: 20px;
     background-color: #ffffff;
-    border-radius: solid #090643;
+    border: 1px solid #090643;
     margin: 0 auto;
     display: flex;
     justify-content: center; /* Alinea horizontalmente */
     align-items: center; /* Alinea verticalmente */
     margin-bottom: 10px;
-}
-.matDescargable:hover{
-    background-color: #ffffff;
-    border-radius: solid;
-    border: solid #03fa6e;
-    color: #090643;
+    width: 100%; /* Ocupa todo el ancho en móviles */
 }
 
+.matDescargable:hover {
+    background-color: #ffffff;
+    border: 1px solid #03fa6e;
+    color: #090643;
+}
 
 /* Botón Hacer Examen */
 .exam-btn {
@@ -287,6 +313,16 @@ nav {
     background-color: #02b14b;
 }
 
+/* Media Queries para diseño responsive */
+@media (min-width: 768px) {
+    .video-content {
+        flex-direction: row; /* Coloca el video y la rúbrica uno al lado del otro en pantallas grandes */
+    }
+
+    .matDescargable {
+        width: auto; /* Restaura el ancho automático en pantallas grandes */
+    }
+}
 /* Footer */
 footer {
     background-color: #090643;
