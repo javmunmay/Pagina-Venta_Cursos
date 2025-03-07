@@ -77,7 +77,44 @@ $row = $result->fetch_assoc();
     </nav>
   </header>
 
+
+
   <main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Editar Información</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm" onsubmit="guardarCambios(event)">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" id="telefono" name="telefono">
+              </div>
+              <div class="mb-3">
+                <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+              </div>
+              <button type="submit" class="btn " style="background-color: #090643; border-color: #090643; color: white;">Guardar Cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Sección de Información Personal -->
     <section id="info-personal" class="hero-banner">
       <div class="banner-content">
@@ -102,7 +139,7 @@ $row = $result->fetch_assoc();
           <strong>Aceptó Política de Privacidad:</strong>
           <?php echo $row['politica_privacidad'] ? 'Sí' : 'No'; ?>
         </p>
-        <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" onclick="editarInformacion()">Actualizar Información</a>
+        <a class="btn btn-primary btn-lg" data-bs-toggle="modal"  data-bs-target="#editModal" style="background-color: #090643; border-color: #090643;" onclick="editarInformacion()">Actualizar Información</a>
       </div>
     </section>
 
@@ -182,10 +219,52 @@ $row = $result->fetch_assoc();
   </footer>
 
   <script>
-    // Ejemplos de funciones para botones
     function editarInformacion() {
-      // lógica para abrir modal o redirigir a edición
-      alert("Editar información");
+      // Obtener los datos del usuario desde el HTML
+      const nombre = document.querySelector('#info-personal p:nth-child(3)').textContent.replace('Nombre Completo: ', '');
+      const email = document.querySelector('#info-personal p:nth-child(4)').textContent.replace('Email: ', '');
+      const telefono = document.querySelector('#info-personal p:nth-child(5)').textContent.replace('Teléfono: ', '');
+      const fechaNacimiento = document.querySelector('#info-personal p:nth-child(7)').textContent.replace('Fecha de Nacimiento: ', '');
+
+      // Rellenar los inputs del formulario con los datos del usuario
+      document.getElementById('nombre').value = nombre;
+      document.getElementById('email').value = email;
+      document.getElementById('telefono').value = telefono;
+      document.getElementById('fecha_nacimiento').value = fechaNacimiento;
+
+      // Mostrar el modal
+      document.getElementById('editModal').style.display = 'block';
+    }
+
+    // Función para cerrar el modal
+    function cerrarModal() {
+      document.getElementById('editModal').style.display = 'none';
+    }
+
+    // Función para enviar los datos del formulario
+    function guardarCambios(event) {
+      event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+      // Obtener los datos del formulario
+      const formData = new FormData(document.getElementById('editForm'));
+
+      // Enviar los datos al servidor usando Fetch API
+      fetch('../php/actualizar_usuario.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Información actualizada correctamente.');
+            cerrarModal();
+          } else {
+            alert('Error al actualizar la información: ' + data.message);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     }
 
     function configurarPreferencias() {
