@@ -28,6 +28,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Visualización del Curso</title>
     <link rel="stylesheet" href="../css/cssVideoCurso.css">
     <script src="../js/videoCurso.js"></script>
+    <link rel="icon" type="image/png" href="../../imagenes/favicon.ico" />
 </head>
 <body>
 
@@ -104,6 +105,6 @@ if (!isset($_SESSION['user_id'])) {
 
   <?php include '../../php/footerSesion.php'; ?>
 
-<script src="js/videoCurso.js"></script>
+<script src="../js/videoCurso.js"></script>
 </body>
 </html>
