@@ -25,8 +25,8 @@ if (!isset($_SESSION['user_id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Academia - Estudiante Programador</title>
   <link rel="stylesheet" href="../css/miAcademia.css" />
-  <script src="../App.js"></script>
-  <script src="../js/App.js?v=1.0"></script>
+  
+  
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -168,7 +168,7 @@ if (!isset($_SESSION['user_id'])) {
   </main>
 
   <?php include '../php/footerSesion.php'; ?>
-  <script src="../App.js?v=1.0"></script>
+  <script src="../js/AppMiAcademia.js?v=1.0"></script>
   <!-- Bootstrap JS y dependencias -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

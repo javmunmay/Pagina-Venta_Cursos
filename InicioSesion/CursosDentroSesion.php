@@ -110,7 +110,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="curso-info">
             <h3>Introducción a Java Orientado a Objetos</h3>
             <p>Aprende a dominar Java Orientado a Objetos desde cero hasta un nivel intermedio.</p>
-            <a href="../informacionCursos/CursoJava.html" class="btn-curso">Ver Curso</a>
+            <a href="../InfoCursosSesion/Curso.php?id=4" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -169,7 +169,7 @@ if (!isset($_SESSION['user_id'])) {
             <h3>Introducción a Ciberseguridad</h3>
             <p>Aprende los conceptos clave para proteger sistemas y datos.</p>
             <a
-              href="../informacionCursos/CursoCiberseguridad.html"
+              href="../InfoCursosSesion/Curso.php?id=5"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -184,7 +184,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="curso-info">
             <h3>Python: Fundamentos</h3>
             <p>Aprende los fundamentos de Python.</p>
-            <a href="../informacionCursos/CursoPython.html" class="btn-curso">Ver Curso</a>
+            <a href="../InfoCursosSesion/Curso.php?id=6" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -193,7 +193,7 @@ if (!isset($_SESSION['user_id'])) {
           <div class="curso-info">
             <h3>Curso Iniciación IA: Algoritmos</h3>
             <p>Aprende a crear algoritmos de IA con Python.</p>
-            <a href="../informacionCursos/CursoIA.html" class="btn-curso">Ver Curso</a>
+            <a href="../InfoCursosSesion/Curso.php?id=7" class="btn-curso">Ver Curso</a>
           </div>
         </article>
 
@@ -208,7 +208,7 @@ if (!isset($_SESSION['user_id'])) {
             <h3>Linux: Comandos terminal</h3>
             <p>Aprende a usar los comandos de Linux como un experto.</p>
             <a
-              href="../informacionCursos/CursoLinuxComandos.html"
+              href="../InfoCursosSesion/Curso.php?id=8"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -224,7 +224,7 @@ if (!isset($_SESSION['user_id'])) {
             <h3>JavaScript: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Javascript</p>
             <a
-              href="../informacionCursos/CursoJSFundamentos.html"
+              href="../InfoCursosSesion/Curso.php?id=9"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -243,7 +243,7 @@ if (!isset($_SESSION['user_id'])) {
               programador profesional.
             </p>
             <a
-              href="../informacionCursos/CursoIntroduccionProg.html"
+              href="../InfoCursosSesion/Curso.php?id=10"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -260,7 +260,7 @@ if (!isset($_SESSION['user_id'])) {
             <h3>Angular: Fundamentos</h3>
             <p>Aprende los fundamentos básicos de Angular</p>
             <a
-              href="../informacionCursos/CursoAngularFundamentos.html"
+              href="../InfoCursosSesion/Curso.php?id=11"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
@@ -275,7 +275,7 @@ if (!isset($_SESSION['user_id'])) {
             <h3>SQL desde 0 hasta Avanzado</h3>
             <p>Aprende a manejar bases de datos SQL desde cero hasta Avanzado como un profesional en la gestion, administración... de las bases de datos SQL.</p>
             <a
-              href="../informacionCursos/CursoSqlDesdeCero.html"
+              href="../InfoCursosSesion/Curso.php?id=12"
               class="btn-curso">Ver Curso</a>
           </div>
         </article>
