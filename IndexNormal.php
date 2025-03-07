@@ -223,7 +223,7 @@
 
   <!-- Bootstrap JS y Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/App.js?v=1.0.2"></script>
+  <script src="js/AppIndex.js?v=1.0.2"></script>
 </body>
 
 </html>

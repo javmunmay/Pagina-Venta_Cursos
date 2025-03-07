@@ -10,7 +10,7 @@
 
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
 
-  <script src="../js/App.js"></script>
+  
 
 </head>
 
@@ -193,7 +193,7 @@
 
   <?php include '../php/footer.php'; ?>
 
-
+  <script src="../js/AppInfoCurso.js"></script>
 </body>
 
 

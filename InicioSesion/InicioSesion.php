@@ -14,8 +14,8 @@
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <link rel="stylesheet" href="css/InicioSesion.css?v=1.0">
-  <script src="../js/App.js"></script>
+  <link rel="stylesheet" href="../css/InicioSesion.css?v=1.0">
+  
 </head>
 
 <body>
@@ -91,7 +91,7 @@
   </main>
 
   <?php include '../php/footer.php'; ?>
-
+  <script src="../js/AppInfoCurso.js"></script>
 </body>
 <script>
   // Función para mostrar un mensaje si hay un parámetro en la URL

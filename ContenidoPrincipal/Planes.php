@@ -198,7 +198,7 @@
   <?php include '../php/footer.php'; ?>
 
 
-  <script src="../js/App.js"></script>
+  <script src="../js/AppInfoCurso.js"></script>
 </body>
 
 </html>

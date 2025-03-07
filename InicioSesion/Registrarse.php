@@ -8,25 +8,30 @@
     <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <link rel="stylesheet" href="css/InicioSesion.css?v=1.0">
+    <link rel="stylesheet" href="../css/InicioSesion.css?v=1.0">
     
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a href="/">
-          <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
-          <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
-          <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
-          <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="/">
+        <img src="../imagenes/LogoFondoAzul.jpg" alt="Logo Estudiante Programador" class="logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="../ContenidoPrincipal/Cursos.php">Cursos</a></li>
+        <li><a href="../ContenidoPrincipal/Planes.php">Planes</a></li>
+        <li><a href="../ContenidoPrincipal/SobreNosotros.php">Sobre Nosotros</a></li>
+        <li><a href="../ContenidoPrincipal/Contacto.php">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
     <main>
       <section class="login-container">
@@ -292,14 +297,14 @@
     </main>
 
     <?php include '../php/footer.php'; ?>
-    
+    <script src="../js/AppInfoCurso.js"></script>
   </body>
   <script>
     //Error login
     window.onload = function () {
       const urlParams = new URLSearchParams(window.location.search);
       const error = urlParams.get("error");
-      console.log("Parámetro de error detectado:", error); // Debugging
+      //console.log("Parámetro de error detectado:", error); // Debugging
 
       if (error) {
         const mensajeDiv = document.createElement("div");
