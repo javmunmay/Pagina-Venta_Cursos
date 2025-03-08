@@ -28,7 +28,8 @@ header("Expires: 0"); // Fecha de expiración en el pasado
   <title>Contacto | Estudiante Programador</title>
   <link rel="stylesheet" href="../css/cssContacto.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
 
 
@@ -65,6 +66,9 @@ header("Expires: 0"); // Fecha de expiración en el pasado
         escribirnos. Estamos aquí para ayudarte.
       </p>
     </section>
+
+
+
 
     <!-- Formulario de contacto mejorado -->
     <section class="contact-form">
@@ -170,7 +174,7 @@ header("Expires: 0"); // Fecha de expiración en el pasado
       <form action="../php/procesar_olvido.php" method="post" id="form-recuperar">
         <label for="email">Introduce tu correo electrónico:</label>
         <input type="email" name="email" id="email" required>
-        <p style="color: #090643; background-color: #f9f9f9; border: 1px solid #03fa6e; padding: 10px; border-radius: 5px; font-weight: bold;">
+        <p class="mt-4" style="color: #090643; background-color: #f9f9f9; border: 1px solid #03fa6e; padding: 10px; border-radius: 5px; font-weight: bold;">
           Recibirás un correo con las instrucciones para restablecer tu contraseña.
           <br>Por favor, revisa tu bandeja de entrada, incluida la carpeta de spam.
         </p>
@@ -205,6 +209,9 @@ header("Expires: 0"); // Fecha de expiración en el pasado
   </main>
 
   <?php include '../php/footer.php'; ?>
+
+  <!-- Bootstrap JS (opcional, solo si necesitas funcionalidades JS de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="../js/AppInfoCurso.js"></script>
 </body>
@@ -273,7 +280,7 @@ header("Expires: 0"); // Fecha de expiración en el pasado
       // Inserta el mensaje en el contenedor del formulario de contacto
       const formContainer = document.querySelector('.recuperar-contrasena'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-    }else if (mensaje === 'Usuario_no_registrado') {
+    } else if (mensaje === 'Usuario_no_registrado') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'Usuario no encontrado, para poder cambiar su contraseña debe tener una cuenta de usuario.';
       mensajeDiv.style.backgroundColor = '#F8D7DA';

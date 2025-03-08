@@ -210,7 +210,7 @@ nav {
   
   /* Estilo para los campos de preferencia de contacto */  
   
-  input, textarea, select {
+   textarea, select, #nombre, #email, #telefono {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -220,12 +220,11 @@ nav {
   }
   
   input[type="radio"], input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
-    margin: 6px;
+    margin-right: 1px;
+    margin: 1px;
   }
   input[type="radio"]:hover, input[type="checkbox"]:hover {
-    transform:scale(1.5);
+    transform:scale(1.10);
   }
   
 
@@ -233,7 +232,7 @@ nav {
   .btn-submit {
     background-color: #090643;
     color: white;
-    padding: 15px 30px;
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
     font-size: 1.2rem;
