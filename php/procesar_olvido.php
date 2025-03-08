@@ -1,7 +1,10 @@
 <?php
+ini_set('openssl.cafile', __DIR__ . '/cacert.pem');
+
+
 // 1. Conectarse a la base de datos
 require_once 'conexion.php';
-ini_set('openssl.cafile', __DIR__ . '/cacert.pem');
+
 
 // Verificar que $conn esté definido
 if (!isset($conn)) {
@@ -53,6 +56,15 @@ if ($usuario) {
         $mail->Password = 'diGqyn-dagges-tyfgo5'; // Tu contraseña
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Cifrado TLS
         $mail->Port = 587; // Puerto SMTP para TLS
+
+        // Deshabilitar la verificación del certificado SSL
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true,
+            ],
+        ];
     
         // Habilitar el modo de depuración (opcional, para ver errores detallados)
         $mail->SMTPDebug = 2; // Nivel de depuración (2 = mensajes detallados)
@@ -69,20 +81,22 @@ if ($usuario) {
     
         // Enviar el correo
         $mail->send();
+
     } catch (Exception $e) {
+        /*
         // Capturar el mensaje de error
         $error_message = "Error al enviar el correo: " . $e->getMessage();
         error_log($error_message); // Guardar el error en el log del servidor
     
         // Mostrar el mensaje de error en pantalla (para depuración)
         echo "Error: " . $e->getMessage();
-        exit;
-        /*header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=error_enviar_correo#recuperarcontrasena");
         exit;*/
+        header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=error_enviar_correo#recuperarcontrasena");
+        exit;
     }
 }
 
 // 7. Redirigir a una página que diga: "Si existe una cuenta con ese correo, te hemos enviado un enlace."
-header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Recuperar_Contrasena_Enviado");
+header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Recuperar_Contrasena_Enviado#recuperarcontrasena");
 exit;
 ?>
