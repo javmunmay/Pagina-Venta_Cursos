@@ -159,6 +159,18 @@
 
       const formContainer = document.querySelector('.login-container');
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+    }else if (mensaje === 'Contrasena_actualizada') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'La contraseña se ha actualizado correctamente.';
+      mensajeDiv.style.backgroundColor = '#d4edda';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #d4edda';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+
+      const formContainer = document.querySelector('.login-container');
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
     }
   };
 </script>

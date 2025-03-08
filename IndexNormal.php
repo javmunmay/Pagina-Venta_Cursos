@@ -88,30 +88,30 @@
       <div class="courses-container">
         <div class="course">
           <img src="imagenes/CursoJavaBanner.jpg" alt="Curso de Java" />
-          <h3>Java Orientado a Objetos</h3>
+          <h3>Curso de Java desde Cero hasta Avanzado</h3>
           <p>
             Domina los principios de la programación orientada a objetos con
             uno de los lenguajes más usados en la industria.
           </p>
-          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoJava.html" class="btn-curso">Ver Curso</a>
+          <a href="InformacionCursos/InfoCurso.php?id=4" class="btn-curso">Ver Curso</a>
         </div>
         <div class="course">
           <img src="imagenes/CursoPhpBanner.jpg" alt="Curso de PHP" />
-          <h3>PHP desde Cero</h3>
+          <h3>Curso de PHP: Fundamentos</h3>
           <p>
             Aprende a crear aplicaciones web dinámicas con PHP y domina este
             poderoso lenguaje del lado del servidor.
           </p>
-          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoPhp.html" class="btn-curso">Ver Curso</a>
+          <a href="InformacionCursos/InfoCurso.php?id=2" class="btn-curso">Ver Curso</a>
         </div>
         <div class="course">
           <img src="imagenes/CursoHtmlBanner.jpg" alt="Curso de HTML" />
-          <h3>HTML y CSS desde Cero</h3>
+          <h3>Curso de HTML desde Cero hasta Avanzado</h3>
           <p>
-            Crea páginas web modernas y adaptables usando las mejores
-            prácticas de HTML5 y CSS3.
+            Aprende los fundamentos de HTML desde cero aprendiendo desde la estructura 
+            de una página hasta etiquetas avanzadas...
           </p>
-          <a href="https://41095220.servicio-online.net/InformacionCursos/CursoHtml.html" class="btn-curso">Ver Curso</a>
+          <a href="InformacionCursos/InfoCurso.php?id=1" class="btn-curso">Ver Curso</a>
         </div>
       </div>
     </section>
