@@ -1,7 +1,7 @@
 <?php
 // Verificar si la sesión ya está iniciada
 if (session_status() === PHP_SESSION_NONE) {
-    session_start(); // Iniciar la sesión solo si no está ya iniciada
+  session_start(); // Iniciar la sesión solo si no está ya iniciada
 }
 
 // Configuraciones para deshabilitar el caché
@@ -11,9 +11,9 @@ header("Expires: 0"); // Proxies.
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
-    // Redirigir al login si no está autenticado
-    header("Location: ../../InicioSesion/InicioSesion.php");
-    exit();
+  // Redirigir al login si no está autenticado
+  header("Location: ../../InicioSesion/InicioSesion.php");
+  exit();
 }
 ?>
 
@@ -22,17 +22,19 @@ if (!isset($_SESSION['user_id'])) {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualización del Curso</title>
-    <link rel="stylesheet" href="../css/cssVideoCurso.css">
-    <script src="../js/videoCurso.js"></script>
-    <link rel="icon" type="image/png" href="../../imagenes/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualización del Curso</title>
+  <link rel="stylesheet" href="../css/cssVideoCurso.css">
+  <script src="../js/videoCurso.js"></script>
+  <link rel="icon" type="image/png" href="../../imagenes/favicon.ico" />
 </head>
+
 <body>
 
-<header>
+  <header>
     <nav>
       <img
         src="../../imagenes/LogoFondoAzul.jpg"
@@ -105,6 +107,12 @@ if (!isset($_SESSION['user_id'])) {
 
   <?php include '../../php/footerSesion.php'; ?>
 
-<script src="../js/videoCurso.js"></script>
+  <script src="../js/videoCurso.js"></script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
+
 </html>
