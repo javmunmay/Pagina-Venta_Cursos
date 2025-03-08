@@ -30,5 +30,5 @@ $stmt2->execute([
     'id' => $usuario['id']
 ]);
 
-echo "Tu contraseña ha sido cambiada exitosamente. <a href='../InicioSesion.php'>Iniciar sesión</a>";
+header("Location: ../InicioSesion/InicioSesion.php?mensaje=Contrasena_actualizada");
 ?>
