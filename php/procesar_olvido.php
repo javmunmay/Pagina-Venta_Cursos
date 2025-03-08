@@ -165,6 +165,9 @@ if ($usuario) {
         header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=error_enviar_correo#recuperarcontrasena");
         exit;
     }
+}else{
+header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Usuario_no_registrado#recuperarcontrasena");
+
 }
 
 // 7. Redirigir a una página que diga: "Si existe una cuenta con ese correo, te hemos enviado un enlace."

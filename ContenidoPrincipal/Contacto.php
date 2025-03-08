@@ -273,6 +273,20 @@ header("Expires: 0"); // Fecha de expiración en el pasado
       // Inserta el mensaje en el contenedor del formulario de contacto
       const formContainer = document.querySelector('.recuperar-contrasena'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+    }else if (mensaje === 'Usuario_no_registrado') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'Usuario no encontrado, para poder cambiar su contraseña debe tener una cuenta de usuario.';
+      mensajeDiv.style.backgroundColor = '#F8D7DA';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #F8D7DA';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+      mensajeDiv.style.textAlign = 'center';
+
+      // Inserta el mensaje en el contenedor del formulario de contacto
+      const formContainer = document.querySelector('.recuperar-contrasena'); // Cambia '.contact-container' al contenedor adecuado
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
     }
   };
 </script>
