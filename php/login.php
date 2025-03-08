@@ -1,19 +1,8 @@
 <?php
 session_start();
 
-// Datos de la conexión a la base de datos
-$host = "PMYSQL181.dns-servicio.com:3306";  // Para XAMPP o servidores locales
-$dbname = "10718674_estudiante_programador";  // Nombre de la base de datos
-$username = "Javier";  // Nombre de usuario de MySQL, generalmente 'root' en XAMPP
-$password = "u70q0Z2p@";  // Contraseña, normalmente vacía para 'root' en XAMPP
+require_once 'conexion.php';
 
-// Crear la conexión
-$conn = new mysqli($host, $username, $password, $dbname);
-
-// Verificar si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 // Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

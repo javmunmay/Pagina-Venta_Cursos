@@ -6,7 +6,7 @@ $pass = $_POST['pass'] ?? '';
 $pass2 = $_POST['pass2'] ?? '';
 
 if ($pass !== $pass2) {
-    die("Las contraseñas no coinciden. <a href='javascript:history.back()'>Regresar</a>");
+    header("Location: php/restablecer.php?mensaje=Contrasena_no_coinciden");
 }
 
 // Verificar que el token sigue siendo válido
@@ -15,7 +15,7 @@ $stmt->execute(['token' => $token]);
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$usuario) {
-    die("El token es inválido o ha expirado.");
+    header("Location: php/restablecer.php?mensaje=Token_invalido");
 }
 
 // Encriptar la nueva contraseña

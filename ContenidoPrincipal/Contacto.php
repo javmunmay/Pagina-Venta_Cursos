@@ -10,7 +10,7 @@
 
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
 
-  
+
 
 </head>
 
@@ -144,18 +144,18 @@
       </form>
     </section>
 
-    <section class="contact-form">
-  <h2>Recuperar contraseña</h2>
-  <form action="../php/procesar_olvido.php" method="post" id="form-recuperar">
-    <label for="email">Introduce tu correo electrónico:</label>
-    <input type="email" name="email" id="email" required>
-    <p style="color: #090643; background-color: #f9f9f9; border: 1px solid #03fa6e; padding: 10px; border-radius: 5px; font-weight: bold;">
-      Recibirás un correo con las instrucciones para restablecer tu contraseña.
-      <br>Por favor, revisa tu bandeja de entrada, incluida la carpeta de spam.
-    </p>
-    <button type="submit" class="btn-submit">Recuperar contraseña</button>
-  </form>
-</section>
+    <section class="recuperar-contrasena">
+      <h2>Recuperar contraseña</h2>
+      <form action="../php/procesar_olvido.php" method="post" id="form-recuperar">
+        <label for="email">Introduce tu correo electrónico:</label>
+        <input type="email" name="email" id="email" required>
+        <p style="color: #090643; background-color: #f9f9f9; border: 1px solid #03fa6e; padding: 10px; border-radius: 5px; font-weight: bold;">
+          Recibirás un correo con las instrucciones para restablecer tu contraseña.
+          <br>Por favor, revisa tu bandeja de entrada, incluida la carpeta de spam.
+        </p>
+        <button type="submit" class="btn-submit">Recuperar contraseña</button>
+      </form>
+    </section>
 
     <section class="redes-sociales">
       <h2>Síguenos en nuestras redes</h2>
@@ -224,7 +224,7 @@
       const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
 
-    }else if (mensaje === 'Recuperar_Contrasena_Enviado') {
+    } else if (mensaje === 'Recuperar_Contrasena_Enviado') {
       const mensajeDiv = document.createElement('div');
       mensajeDiv.textContent = 'Hemos enviado un correo de recuperación de contraseña, por favor verifique su correo tanto en la bandeja principal como en spam, el proceso es valido durante 1 hora.';
       mensajeDiv.style.backgroundColor = '#d4edda';
@@ -236,9 +236,24 @@
       mensajeDiv.style.textAlign = 'center';
 
       // Inserta el mensaje en el contenedor del formulario de contacto
-      const formContainer = document.querySelector('.contact-form'); // Cambia '.contact-container' al contenedor adecuado
+      const formContainer = document.querySelector('.recuperar-contrasena'); // Cambia '.contact-container' al contenedor adecuado
       formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
-  }};
+    } else if (mensaje === 'error_enviar_correo') {
+      const mensajeDiv = document.createElement('div');
+      mensajeDiv.textContent = 'Se ha producido un error al enviar el correo de recuperación. Por favor intentelo de nuevo o mandenos un mensaje de lo ocurrido mediante nuestro formulario de contacto.';
+      mensajeDiv.style.backgroundColor = '#F8D7DA';
+      mensajeDiv.style.color = '#155724';
+      mensajeDiv.style.padding = '10px';
+      mensajeDiv.style.border = '1px solid #F8D7DA';
+      mensajeDiv.style.borderRadius = '5px';
+      mensajeDiv.style.marginBottom = '15px';
+      mensajeDiv.style.textAlign = 'center';
+
+      // Inserta el mensaje en el contenedor del formulario de contacto
+      const formContainer = document.querySelector('.recuperar-contrasena'); // Cambia '.contact-container' al contenedor adecuado
+      formContainer.insertBefore(mensajeDiv, formContainer.firstChild);
+    }
+  };
 </script>
 
 </html>
