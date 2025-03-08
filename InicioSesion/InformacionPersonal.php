@@ -151,6 +151,7 @@ $row = $result->fetch_assoc();
     <section id="seguridad" class="hero-banner">
       <div class="banner-content">
         <h2>Seguridad</h2>
+        <p>Se le redirigirá fuera de la sesión para actualizar su contraseña.</p>
         <a class="btn btn-primary btn-lg" style="background-color: #090643; border-color: #090643;" href="../ContenidoPrincipal/Contacto.php#recuperarcontrasena">Cambiar Contraseña</a>
 
         <h3 class="mt-5">Historial de Sesiones Recientes</h3>
