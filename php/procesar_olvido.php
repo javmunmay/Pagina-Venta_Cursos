@@ -1,6 +1,5 @@
 <?php
-
-ob_start();
+ob_start(); // Iniciar el buffering de salida
 ini_set('openssl.cafile', __DIR__ . '/cacert.pem');
 
 // 1. Conectarse a la base de datos
@@ -41,7 +40,7 @@ if ($usuario) {
 
     // 6. Enviar email al usuario con el link de restablecimiento
     $link = "https://41095220.servicio-online.net/php/restablecer.php?token=$token";
-    
+
     // 7. Enviar email al usuario con el link de restablecimiento usando PHPMailer
     $mail = new PHPMailer(true);
 
@@ -161,16 +160,20 @@ if ($usuario) {
         // Enviar el correo
         $mail->send();
     } catch (Exception $e) {
-        // Redirigir en caso de error
+        // Limpiar el buffer de salida antes de redirigir
+        ob_end_clean();
         header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=error_enviar_correo#recuperarcontrasena");
         exit;
     }
-}else{
-header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Usuario_no_registrado#recuperarcontrasena");
 
+    // Limpiar el buffer de salida antes de redirigir
+    ob_end_clean();
+    header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Recuperar_Contrasena_Enviado#recuperarcontrasena");
+    exit;
+} else {
+    // Limpiar el buffer de salida antes de redirigir
+    ob_end_clean();
+    header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Usuario_no_registrado#recuperarcontrasena");
+    exit;
 }
-
-// 7. Redirigir a una página que diga: "Si existe una cuenta con ese correo, te hemos enviado un enlace."
-header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=Recuperar_Contrasena_Enviado#recuperarcontrasena");
-exit;
 ?>
