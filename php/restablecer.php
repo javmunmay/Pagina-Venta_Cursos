@@ -1,5 +1,4 @@
 <?php
-
 // restablecer.php
 require_once 'conexion.php';
 
@@ -7,13 +6,14 @@ require_once 'conexion.php';
 $token = $_GET['token'] ?? '';
 
 // 2. Verificar si existe un usuario con ese token y que no haya expirado
-$stmt = $pdo->prepare("SELECT id, reset_expires FROM usuarios WHERE reset_token = :token");
-$stmt->execute(['token' => $token]);
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $conn->prepare("SELECT id, reset_expires FROM usuarios WHERE reset_token = ?");
+$stmt->bind_param("s", $token); // Vincular el parámetro
+$stmt->execute();
+$result = $stmt->get_result(); // Obtener el resultado
+$usuario = $result->fetch_assoc(); // Obtener la fila como un array asociativo
 
 // Validar fecha de expiración
 $ahora = date('Y-m-d H:i:s');
-
 ?>
 
 <!DOCTYPE html>
