@@ -1,10 +1,8 @@
 <?php
 ini_set('openssl.cafile', __DIR__ . '/cacert.pem');
 
-
 // 1. Conectarse a la base de datos
 require_once 'conexion.php';
-
 
 // Verificar que $conn esté definido
 if (!isset($conn)) {
@@ -41,8 +39,6 @@ if ($usuario) {
 
     // 6. Enviar email al usuario con el link de restablecimiento
     $link = "https://41095220.servicio-online.net/php/restablecer.php?token=$token";
-    $mensaje = "Hola, \n\nHas solicitado restablecer tu contraseña. 
-    Por favor, haz clic en el siguiente enlace (o pégalo en tu navegador): \n\n$link\n\nEste enlace expira en 1 hora.";
     
     // 7. Enviar email al usuario con el link de restablecimiento usando PHPMailer
     $mail = new PHPMailer(true);
@@ -65,32 +61,105 @@ if ($usuario) {
                 'allow_self_signed' => true,
             ],
         ];
-    
+
         // Habilitar el modo de depuración (opcional, para ver errores detallados)
         $mail->SMTPDebug = 2; // Nivel de depuración (2 = mensajes detallados)
-    
+
         // Configuración del correo
+        $mail->CharSet = 'UTF-8'; // Configurar la codificación de caracteres
         $mail->setFrom('noreply@estudianteprogramador.com', 'Estudiante Programador'); // Remitente
         $mail->addAddress($email); // Destinatario
         $mail->isHTML(true); // Formato HTML
+
+        // Agregar imagen incrustada
+        $mail->addEmbeddedImage('../imagenes/LogoEstudianteAzul.png', 'logo', 'LogoEstudianteProgramador.png');
+
+        // Cuerpo del correo en HTML
         $mail->Subject = 'Restablecer contraseña';
-        $mail->Body = "Hola, <br><br>Has solicitado restablecer tu contraseña. 
-            Por favor, haz clic en el siguiente enlace (o pégalo en tu navegador): 
-            <br><br><a href='https://41095220.servicio-online.net/php/restablecer.php?token=$token'>Restablecer contraseña</a>
-            <br><br>Este enlace expira en 1 hora.";
-    
+        $mail->Body = "
+        <!DOCTYPE html>
+        <html lang='es'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Restablecer contraseña</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+                .header {
+                    text-align: center;
+                    padding: 20px 0;
+                }
+                .header img {
+                    max-width: 100px;
+                    height: auto;
+                }
+                .content {
+                    padding: 20px;
+                }
+                .content h1 {
+                    font-size: 24px;
+                    color: #090643;
+                }
+                .content p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+                .content a {
+                    display: inline-block;
+                    margin: 20px 0;
+                    padding: 10px 20px;
+                    background-color: #090643;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 4px;
+                }
+                .footer {
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 14px;
+                    color: #777;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <img src='cid:logo' alt='Logo Estudiante Programador'>
+                </div>
+                <div class='content'>
+                    <h1>Restablecer contraseña</h1>
+                    <p>Hola,</p>
+                    <p>Has solicitado restablecer tu contraseña. Por favor, haz clic en el siguiente enlace para continuar:</p>
+                    <a href='$link'>Restablecer contraseña</a>
+                    <p>Este enlace expira en <strong>1 hora</strong>.</p>
+                    <p>Si no has solicitado este cambio, puedes ignorar este mensaje.</p>
+                </div>
+                <div class='footer'>
+                    <p>&copy; 2023 Estudiante Programador. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        ";
+
         // Enviar el correo
         $mail->send();
-
     } catch (Exception $e) {
-        /*
-        // Capturar el mensaje de error
-        $error_message = "Error al enviar el correo: " . $e->getMessage();
-        error_log($error_message); // Guardar el error en el log del servidor
-    
-        // Mostrar el mensaje de error en pantalla (para depuración)
-        echo "Error: " . $e->getMessage();
-        exit;*/
+        // Redirigir en caso de error
         header("Location: ../ContenidoPrincipal/Contacto.php?mensaje=error_enviar_correo#recuperarcontrasena");
         exit;
     }
