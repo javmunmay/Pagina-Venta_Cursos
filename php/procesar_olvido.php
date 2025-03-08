@@ -1,7 +1,6 @@
 <?php
 
 ob_start();
-
 ini_set('openssl.cafile', __DIR__ . '/cacert.pem');
 
 // 1. Conectarse a la base de datos

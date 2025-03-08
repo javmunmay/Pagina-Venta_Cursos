@@ -7,7 +7,7 @@ $pass2 = $_POST['pass2'] ?? '';
 
 // Verificar que las contraseñas coincidan
 if ($pass !== $pass2) {
-    header("Location: php/restablecer.php?mensaje=Contrasena_no_coinciden");
+    header("Location: restablecer.php?mensaje=Contrasena_no_coinciden");
     exit;
 }
 
@@ -19,7 +19,7 @@ $result = $stmt->get_result(); // Obtener el resultado
 $usuario = $result->fetch_assoc(); // Obtener la fila como un array asociativo
 
 if (!$usuario) {
-    header("Location: php/restablecer.php?mensaje=Token_invalido");
+    header("Location: restablecer.php?mensaje=Token_invalido");
     exit;
 }
 
