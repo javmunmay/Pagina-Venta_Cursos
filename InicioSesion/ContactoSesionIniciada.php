@@ -29,7 +29,10 @@ if (!isset($_SESSION['user_id'])) {
   <title>Contacto | Estudiante Programador</title>
   <link rel="stylesheet" href="../css/contactoSesionIniciada.css" />
   <link rel="stylesheet" href="../css/contactoSesionIniciada.css?v=1.0" />
-  <script src="../App.js?v=1.0"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  
   <link rel="icon" type="image/png" href="../imagenes/favicon.ico" />
 </head>
 
@@ -186,6 +189,9 @@ if (!isset($_SESSION['user_id'])) {
   </main>
 
   <?php include '../php/footerSesion.php'; ?>
+
+  <!-- Bootstrap JS (opcional, solo si necesitas funcionalidades JS de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="../js/App.js?v=1.0"></script>
 </body>
