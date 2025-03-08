@@ -413,7 +413,12 @@ footer {
   padding: 20px 0;
 }
 
-
+/* Estilo para el texto de derechos de autor */
+footer p {
+  margin-top: 10px; /* Espacio superior */
+  font-size: 0.95rem; /* Tamaño de fuente */
+  color: #ccc; /* Color más suave */
+}
 
 
 

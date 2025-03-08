@@ -1827,37 +1827,40 @@ footer {
 
 .footer-container {
     display: flex;
-    justify-content: center;
-    /* Centra el contenido del footer */
+    justify-content: center; /* Centra el contenido del footer */
     align-items: center;
     padding: 20px;
-    flex-wrap: wrap;
-    /* Permite que el contenido se ajuste en filas si es necesario */
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en filas si es necesario */
+    gap: 20px; /* Espacio entre los elementos */
 }
 
-.footer-menu {
-    margin-right: 50px;
-    /* Espacio entre el menú y las redes sociales */
-}
+
 
 .footer-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
-    /* Espacio entre los enlaces */
+    gap: 20px; /* Espacio entre los enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en filas si es necesario */
+    justify-content: center; /* Centra los enlaces */
 }
 
 .footer-menu a {
     color: white;
     text-decoration: none;
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: color 0.3s ease; /* Transición suave para el hover */
+    
+}
+
+.footer-menu a:hover {
+    color: #03fa6e; /* Cambia el color al pasar el ratón */
 }
 
 .footer-social {
     display: flex;
-    gap: 15px;
-    /* Espacio entre los íconos de redes sociales */
+    gap: 15px; /* Espacio entre los íconos de redes sociales */
 }
 
 .footer-social img:hover {
@@ -1865,9 +1868,16 @@ footer {
 }
 
 .footer-social img {
-    width: 24px;
-    /* Ajusta el tamaño de los íconos */
+    width: 24px; /* Ajusta el tamaño de los íconos */
     height: auto;
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Estilo para el texto de derechos de autor */
+footer p {
+    margin-top: 20px; /* Espacio superior */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    color: #ccc; /* Color más suave */
 }
 
 
