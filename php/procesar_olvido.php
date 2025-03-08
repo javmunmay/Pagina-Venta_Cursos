@@ -141,7 +141,7 @@ if ($usuario) {
         <body>
             <div class='container'>
                 <div class='header'>
-                    <img src='cid:logo' alt='Logo Estudiante Programador'>
+                    <img src='cid:LogoEstudianteBlanco' alt='Logo Estudiante Programador'>
                 </div>
                 <div class='content'>
                     <h1>Restablecer contraseña</h1>
@@ -151,13 +151,11 @@ if ($usuario) {
                     <p>Este enlace expira en <strong>1 hora</strong>.</p>
                     <p>Si no has solicitado este cambio, puedes ignorar este mensaje.</p>
                 </div>
-                <div class='footer'>
-                    <p>&copy; 2023 Estudiante Programador. Todos los derechos reservados.</p>
-                </div>
             </div>
         </body>
         </html>
         ";
+        $footer = file_get_contents('php/footer.php'); 
 
         // Enviar el correo
         $mail->send();
