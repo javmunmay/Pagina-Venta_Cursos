@@ -8,7 +8,6 @@ body {
 
 
 /* Estilos para el encabezado */
-
 header {
   background-color: #090643;
   padding: 10px;
@@ -65,7 +64,8 @@ nav {
   border: none;
   cursor: pointer;
   position: relative;
-  z-index: 1001; /* Asegura que esté sobre otros elementos */
+  z-index: 1001;
+  /* Asegura que esté sobre otros elementos */
 }
 
 .menu-toggle span {
@@ -80,55 +80,58 @@ nav {
 /* Para móviles: mostrar el menú hamburguesa */
 @media (max-width: 835px) {
   .menu-toggle {
-    display: block;
+      display: block;
   }
 
   .nav-links {
-    display: none; /* Oculta el menú por defecto */
-    flex-direction: column; /* Cambia a columna */
-    background-color: #090643;
-    position: absolute;
-    top: 400%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1000;
+      display: none;
+      /* Oculta el menú por defecto */
+      flex-direction: column;
+      /* Cambia a columna */
+      background-color: #090643;
+      position: absolute;
+      top: 400%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 1000;
   }
 
   .nav-links.show {
-    display: flex; /* Muestra el menú cuando se activa */
+      display: flex;
+      /* Muestra el menú cuando se activa */
   }
 
   .nav-links li {
-    margin: 10px 0;
+      margin: 10px 0;
   }
 
   .nav-links a,
   .nav-links .login-btn {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: block;
   }
 
   .nav-links .login-btn {
-    margin-top: 15px;
-    background-color: #03fa6e;
-    color: #090643;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+      margin-top: 15px;
+      background-color: white;
+      color: #090643;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
   }
 
   .nav-links .login-btn:hover {
-    background-color: white;
+      background-color: white;
   }
 
   .nav-links a:hover {
-      color:  #02d25f;
+      color: #02d25f;
   }
 }
 
@@ -396,4 +399,3 @@ footer p {
   font-size: 0.9rem; /* Tamaño de fuente */
   color: #ccc; /* Color más suave */
 }
-
