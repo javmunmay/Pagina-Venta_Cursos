@@ -1,3 +1,10 @@
+<?php
+session_unset();  // Limpiar todas las variables de sesión
+session_destroy(); // Destruir la sesión actual
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
